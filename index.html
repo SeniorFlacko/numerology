@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numerología GG33 · Calendario de Energías</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a26;--surface3:#1e1e2c;
+    --border:rgba(180,160,255,0.1);--border2:rgba(180,160,255,0.06);
+    --gold:#c9a84c;--gold-soft:rgba(201,168,76,0.12);--gold-glow:rgba(201,168,76,0.2);
+    --violet:#7c5cbf;--violet-soft:rgba(124,92,191,0.15);
+    --teal:#2eb8a6;--teal-soft:rgba(46,184,166,0.13);
+    --rose:#e06b75;--rose-soft:rgba(224,107,117,0.12);
+    --green:#5db87a;--green-soft:rgba(93,184,122,0.12);
+    --moon:#e8d5a3;--text:#e8e4f0;--text-dim:rgba(232,228,240,0.48);--text-faint:rgba(232,228,240,0.2);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',serif;min-height:100vh;overflow-x:hidden}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 15% 15%,rgba(124,92,191,0.07) 0%,transparent 55%),
+               radial-gradient(ellipse at 85% 80%,rgba(46,184,166,0.05) 0%,transparent 55%),
+               radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.05) 0%,transparent 40%);
+    pointer-events:none;z-index:0}
+  .wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:2rem 1.2rem 5rem}
+
+  /* HEADER */
+  header{text-align:center;padding:2rem 0 1.5rem}
+  .hglyph{font-size:1.7rem;margin-bottom:.7rem;animation:float 7s ease-in-out infinite;display:block}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  h1{font-family:'Cinzel',serif;font-size:clamp(1.4rem,4vw,2.3rem);font-weight:600;letter-spacing:.1em;
+    background:linear-gradient(135deg,#c9a84c 0%,#e8d5a3 45%,#9b7de8 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.3rem}
+  .tagline{font-size:.82rem;color:var(--text-faint);letter-spacing:.22em;font-style:italic}
+
+  /* PANEL BASE */
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:1.2rem;margin-bottom:1.3rem;overflow:hidden}
+  .panel-top-bar{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+  /* BIRTH */
+  .birth-inner{padding:1.3rem 1.6rem}
+  .sec-title{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.45rem}
+  .birth-row{display:flex;gap:.7rem;align-items:flex-end;flex-wrap:wrap}
+  .bfield{display:flex;flex-direction:column;gap:.3rem}
+  .bfield label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint)}
+  .bfield input{background:var(--surface2);border:1px solid var(--border);border-radius:.5rem;
+    padding:.48rem .75rem;color:var(--text);font-family:'DM Mono',monospace;font-size:.83rem;
+    width:88px;outline:none;transition:border-color .2s;-moz-appearance:textfield}
+  .bfield input::-webkit-outer-spin-button,.bfield input::-webkit-inner-spin-button{-webkit-appearance:none}
+  .bfield input:focus{border-color:rgba(201,168,76,.6)}
+  .birth-btn{background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(124,92,191,.18));
+    border:1px solid rgba(201,168,76,.38);border-radius:.5rem;padding:.52rem 1.1rem;
+    color:var(--gold);font-family:'Cinzel',serif;font-size:.75rem;letter-spacing:.1em;
+    cursor:pointer;transition:all .2s;white-space:nowrap;height:fit-content}
+  .birth-btn:hover{box-shadow:0 0 16px var(--gold-glow)}
+  .profile-strip{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem}
+  .chip{padding:.24rem .7rem;border-radius:20px;font-family:'DM Mono',monospace;font-size:.65rem;
+    letter-spacing:.04em;display:flex;align-items:center;gap:.3rem}
+  .chip-lp{background:var(--gold-soft);border:1px solid rgba(201,168,76,.35);color:var(--gold)}
+  .chip-a{background:var(--violet-soft);border:1px solid rgba(124,92,191,.4);color:#b09ee0}
+  .chip-soul{background:var(--teal-soft);border:1px solid rgba(46,184,166,.35);color:var(--teal)}
+  .chip-fr{background:var(--green-soft);border:1px solid rgba(93,184,122,.3);color:var(--green)}
+  .chip-en{background:var(--rose-soft);border:1px solid rgba(224,107,117,.35);color:var(--rose)}
+
+  /* CAL NAV */
+  .cal-nav{display:flex;align-items:center;justify-content:space-between;margin:.5rem 0 .7rem}
+  .nav-btn{width:38px;height:38px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);
+    color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+  .nav-btn:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 14px var(--gold-glow)}
+  #month-label{font-family:'Cinzel',serif;font-size:1.1rem;letter-spacing:.1em;color:var(--moon)}
+
+  /* CALENDAR GRID */
+  .cal-inner{padding:1rem}
+  .dheaders{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:5px}
+  .dh{text-align:center;font-family:'DM Mono',monospace;font-size:.55rem;
+    letter-spacing:.13em;color:var(--text-faint);padding:.28rem 0;text-transform:uppercase}
+  .days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+  .dc{aspect-ratio:1;border-radius:.5rem;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;cursor:pointer;position:relative;background:var(--surface2);
+    border:1px solid transparent;transition:all .15s;gap:1px;min-width:0}
+  .dc:hover{border-color:var(--border2);background:var(--surface3)}
+  .dc.empty{background:transparent;cursor:default;pointer-events:none}
+  .dc.today{background:linear-gradient(135deg,rgba(46,184,166,.2),rgba(46,184,166,.07));border-color:var(--teal)}
+  .dc.today .dn{color:var(--teal)}
+  .dc.sel{background:linear-gradient(135deg,rgba(201,168,76,.2),rgba(201,168,76,.06));border-color:var(--gold);box-shadow:0 0 12px var(--gold-glow)}
+  .dc.sel .dn{color:var(--gold)}
+  .dc.master{border-color:rgba(124,92,191,.35)}
+  .dc.master .de{color:var(--violet)}
+  .dc.anim-fr{box-shadow:inset 0 0 0 1px rgba(93,184,122,.55)}
+  .dc.anim-en{box-shadow:inset 0 0 0 1px rgba(224,107,117,.5)}
+  .dn{font-family:'Cinzel',serif;font-size:clamp(.65rem,1.7vw,.9rem);font-weight:400;line-height:1}
+  .de{font-family:'DM Mono',monospace;font-size:.42rem;color:var(--text-faint);letter-spacing:.04em}
+  .da{font-size:.48rem;line-height:1}
+  .badge{position:absolute;top:2px;right:3px;font-size:.52rem;line-height:1}
+
+  /* DETAIL */
+  .detail-panel{animation:slideUp .3s ease}
+  @keyframes slideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .detail-header{padding:1.1rem 1.5rem;background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(124,92,191,.06));
+    border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+  .detail-date{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--moon)}
+  .epills{display:flex;gap:.45rem;flex-wrap:wrap}
+  .pill{padding:.2rem .6rem;border-radius:20px;font-size:.65rem;font-family:'DM Mono',monospace;letter-spacing:.04em}
+  .pill-p{background:var(--gold-soft);border:1px solid rgba(201,168,76,.4);color:var(--gold)}
+  .pill-s{background:var(--violet-soft);border:1px solid rgba(124,92,191,.4);color:#b09ee0}
+  .pill-a{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-dim)}
+  .dbody{padding:1.2rem 1.5rem}
+  .brow{display:flex;align-items:center;gap:.38rem;flex-wrap:wrap;
+    font-family:'DM Mono',monospace;font-size:.72rem;color:var(--text-dim);margin-bottom:.22rem}
+  .brow .v{color:var(--moon)}
+  .brow .r{color:var(--gold);font-size:.88rem;font-weight:600}
+  hr.dv{border:none;border-top:1px solid var(--border);margin:1rem 0}
+
+  /* CARDS */
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1rem}
+  @media(max-width:580px){.cards3{grid-template-columns:1fr 1fr}}
+  @media(max-width:380px){.cards3{grid-template-columns:1fr}}
+  .card{background:var(--surface2);border:1px solid var(--border);border-radius:.75rem;padding:.9rem}
+  .ct{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--text-faint);margin-bottom:.55rem;display:flex;align-items:center;gap:.35rem}
+  .cv{font-size:1rem;color:var(--moon);margin-bottom:.12rem}
+  .cs{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--text-faint)}
+
+  /* COMPAT PANEL */
+  .compat-panel{background:var(--surface2);border:1px solid var(--border);border-radius:.75rem;padding:1rem;margin-bottom:1rem}
+  .cp-title{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--text-faint);margin-bottom:.7rem;display:flex;align-items:center;gap:.35rem}
+  .compat-row{display:flex;gap:.45rem;flex-wrap:wrap}
+  .cb{padding:.22rem .65rem;border-radius:12px;font-size:.68rem;font-family:'DM Mono',monospace;display:flex;align-items:center;gap:.28rem}
+  .cb-soul{background:var(--teal-soft);border:1px solid rgba(46,184,166,.4);color:var(--teal)}
+  .cb-fr{background:var(--green-soft);border:1px solid rgba(93,184,122,.3);color:var(--green)}
+  .cb-en{background:var(--rose-soft);border:1px solid rgba(224,107,117,.35);color:var(--rose)}
+  .cb-n{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-dim)}
+  .no-birth{font-size:.85rem;color:var(--text-faint);font-style:italic;text-align:center;padding:.4rem 0}
+
+  /* AI GUIDANCE */
+  .guidance{background:var(--surface2);border:1px solid var(--border);border-radius:.75rem;padding:1.2rem;position:relative;overflow:hidden}
+  .guidance::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,var(--gold),var(--violet),var(--teal))}
+  .gtitle{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.17em;text-transform:uppercase;
+    color:var(--text-faint);margin-bottom:.9rem;display:flex;align-items:center;gap:.35rem}
+  .gsec{margin-bottom:.9rem}
+  .gsec:last-child{margin-bottom:0}
+  .glabel{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem;display:flex;align-items:center;gap:.3rem}
+  .gl-v{color:var(--gold)} .gl-d{color:var(--text-faint)} .gl-do{color:var(--teal)} .gl-dont{color:var(--rose)} .gl-u{color:var(--gold)}
+  .gtext{font-size:.98rem;line-height:1.7;color:var(--text);font-style:italic}
+  .gplain{font-size:.92rem;line-height:1.65;color:var(--text)}
+  .dolist,.dontlist{list-style:none;display:flex;flex-direction:column;gap:.32rem}
+  .dolist li,.dontlist li{font-size:.9rem;line-height:1.5;padding-left:1.15rem;position:relative;color:var(--text)}
+  .dolist li::before{content:'✦';position:absolute;left:0;color:var(--teal);font-size:.58rem;top:.35rem}
+  .dontlist li::before{content:'✕';position:absolute;left:0;color:var(--rose);font-size:.58rem;top:.3rem}
+  .do-dont{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:.9rem}
+  @media(max-width:480px){.do-dont{grid-template-columns:1fr}}
+  .affbox{background:var(--gold-soft);border:1px solid rgba(201,168,76,.18);border-radius:.5rem;padding:.8rem .95rem;text-align:center}
+  .afflabel{font-family:'DM Mono',monospace;font-size:.56rem;color:var(--gold);letter-spacing:.2em;margin-bottom:.28rem}
+  .afftext{font-style:italic;font-size:.97rem;color:var(--moon)}
+  .uinsight{background:var(--gold-soft);border:1px solid rgba(201,168,76,.15);border-radius:.5rem;padding:.85rem;margin-bottom:.9rem}
+
+  .loading{display:flex;align-items:center;gap:.7rem;color:var(--text-dim);font-style:italic;font-size:.92rem}
+  .spinner{width:15px;height:15px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--gold);animation:spin .8s linear infinite;flex-shrink:0}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .errmsg{color:var(--rose);font-style:italic;font-size:.88rem}
+
+  /* LEGEND */
+  .legend{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;
+    font-size:.67rem;color:var(--text-dim);font-family:'DM Mono',monospace}
+  .li{display:flex;align-items:center;gap:.3rem}
+  .ld{width:8px;height:8px;border-radius:50%;border:2px solid currentColor}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="hglyph">✦</span>
+    <h1>Calendario Numerológico GG33</h1>
+    <p class="tagline">energías · zodiaco chino · compatibilidad · guía diaria</p>
+  </header>
+
+  <!-- BIRTH DATE -->
+  <div class="panel">
+    <div class="panel-top-bar"></div>
+    <div class="birth-inner">
+      <div class="sec-title">✦ Tu fecha de nacimiento</div>
+      <div class="birth-row">
+        <div class="bfield"><label>Día</label><input type="number" id="bd" min="1" max="31" placeholder="DD"></div>
+        <div class="bfield"><label>Mes</label><input type="number" id="bm" min="1" max="12" placeholder="MM"></div>
+        <div class="bfield"><label>Año</label><input type="number" id="by" min="1920" max="2010" placeholder="AAAA"></div>
+        <button class="birth-btn" onclick="setBirth()">Calcular mi energía</button>
+      </div>
+      <div id="profile-strip"></div>
+    </div>
+  </div>
+
+  <!-- CALENDAR -->
+  <div class="cal-nav">
+    <button class="nav-btn" onclick="changeMonth(-1)">‹</button>
+    <div id="month-label"></div>
+    <button class="nav-btn" onclick="changeMonth(1)">›</button>
+  </div>
+  <div class="panel">
+    <div class="cal-inner">
+      <div class="dheaders">
+        <div class="dh">Dom</div><div class="dh">Lun</div><div class="dh">Mar</div>
+        <div class="dh">Mié</div><div class="dh">Jue</div><div class="dh">Vie</div><div class="dh">Sáb</div>
+      </div>
+      <div class="days-grid" id="days-grid"></div>
+    </div>
+  </div>
+
+  <div id="detail-panel" class="panel detail-panel"></div>
+
+  <div class="legend">
+    <div class="li" style="color:var(--teal)"><div class="ld"></div>Hoy</div>
+    <div class="li" style="color:var(--violet)"><div class="ld"></div>Nº Maestro</div>
+    <div class="li" style="color:var(--moon)"><div class="ld"></div>Luna Llena</div>
+    <div class="li" style="color:var(--green)"><span>◈</span>Animal Amigo</div>
+    <div class="li" style="color:var(--rose)"><span>✕</span>Animal Enemigo</div>
+  </div>
+</div>
+
+<script>
+// ── CONSTANTS ──────────────────────────────────────────────
+const MONTHS_ES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const ANIMALS=['Rata','Buey','Tigre','Conejo','Dragón','Serpiente','Caballo','Cabra','Mono','Gallo','Perro','Cerdo'];
+const AEMOJI=['🐀','🐂','🐯','🐇','🐲','🐍','🐴','🐐','🐒','🐓','🐕','🐷'];
+
+// Month animals (approximate: Jan=Buey, Feb=Tigre, ...)
+const MONTH_ANIM=[1,2,3,4,5,6,7,8,9,10,11,0];
+
+// Day base: Jan 1 2024 = index 8 (Mono, approximation)
+const BASE=new Date(2024,0,1);
+const BASE_IDX=8;
+
+// Compatibility
+const A_ENEMY={0:[6],1:[7],2:[8],3:[9],4:[10],5:[11],6:[0],7:[1],8:[2],9:[3],10:[4],11:[5]};
+const A_FRIEND={0:[4,8],1:[5,9],2:[6,10],3:[7,11],4:[0,8],5:[1,9],6:[2,10],7:[3,11],8:[0,4],9:[1,5],10:[2,6],11:[3,7]};
+
+// GG33 Lifepath data
+const LP={
+  1:{name:'El Líder',e:'👑',soul:[9],friend:[3],enemy:[4,6,11],desc:'Energía masculina, competitivo, líder natural. Alma gemela: 9. Amigo: 3. Enemigos: 4, 6, 11.'},
+  2:{name:'La Novia',e:'🌙',soul:[1,9,10,18,19,27,28],friend:[],enemy:[],desc:'Energía femenina, diplomático, pacífico. Todos son soulmates del 2.'},
+  3:{name:'El Niño',e:'🎨',soul:[3],friend:[1,2],enemy:[7],desc:'Creativo, comunicador, necesita disciplina. Amigos: 1, 2. Enemigo: 7.'},
+  4:{name:'El Trabajador',e:'🔨',soul:[8],friend:[3],enemy:[1,9],desc:'El más trabajador, constructor, número real de la riqueza. Alma: 8. Enemigos: 1, 9.'},
+  5:{name:'El Viajero',e:'🌍',soul:[11],friend:[7,33],enemy:[8],desc:'Cambio, libertad, conquistador. Alma: 11. Amigos: 7, 33. Enemigo: 8.'},
+  6:{name:'El Hogareño',e:'🏡',soul:[33],friend:[8],enemy:[7],desc:'Familia, responsable, amante de animales. Alma: 33. Amigo: 8. Enemigo: 7.'},
+  7:{name:'El Solitario',e:'🔮',soul:[],friend:[5,9],enemy:[1,2,3,4,6,8,11,22,33],desc:'Lobo solitario, extremadamente inteligente. Amigos: 5, 9. El número más odiado.'},
+  8:{name:'El Dinero',e:'💰',soul:[4],friend:[6],enemy:[5],desc:'Poder, karma, dinero, ups y downs. Alma: 4. Amigo: 6. Enemigo: 5.'},
+  9:{name:'El Secreto',e:'🌟',soul:[1],friend:[1,2,3,4,5,6,7,8],enemy:[11,22,33],desc:'Completud, manifestación, número de la realidad. Alma: 1. Enemigos: 11, 22, 33.'},
+  11:{name:'El Maestro Emocional',e:'⚡',soul:[5],friend:[],enemy:[9],desc:'Número maestro, altamente emocional y atlético. Alma: 5. Enemigo: 9.'},
+  22:{name:'El Constructor Maestro',e:'🏛️',soul:[],friend:[],enemy:[9],desc:'Número maestro, construye a gran escala. Enemigo: 9.'},
+  33:{name:'El Cristo Cósmico',e:'✨',soul:[6],friend:[5],enemy:[9],desc:'El número maestro más alto. Alma: 6. Amigo: 5. Enemigo: 9.'}
+};
+
+// ── NUMEROLOGY ─────────────────────────────────────────────
+function dsum(n){return String(Math.abs(n)).split('').reduce((a,c)=>a+parseInt(c),0)}
+function reduce(n){
+  if([11,22,33].includes(n))return n;
+  while(n>9){n=dsum(n);if([11,22,33].includes(n))return n}
+  return n;
+}
+function isMaster(n){return[11,22,33].includes(n)}
+
+function calcDay(date){
+  const y=date.getFullYear(),m=date.getMonth()+1,d=date.getDate();
+  const digits=[...String(y).padStart(4,'0'),...String(m).padStart(2,'0'),...String(d).padStart(2,'0')].map(Number);
+  const sum=digits.reduce((a,b)=>a+b,0);
+  const primary=reduce(sum);
+  // Secondary = solo los dígitos del día sumados (ej: día 21 → 2+1=3, día 31 → 3+1=4)
+  const dayDigits=String(d).padStart(2,'0').split('').map(Number);
+  const secSum=dayDigits.reduce((a,b)=>a+b,0);
+  const secondary=reduce(secSum);
+  return{digits,sum,primary,secondary,secSum,dayDigits};
+}
+
+function calcLP(d,m,y){
+  const digits=[...String(y).padStart(4,'0'),...String(m).padStart(2,'0'),...String(d).padStart(2,'0')].map(Number);
+  const sum=digits.reduce((a,b)=>a+b,0);
+  return{lp:reduce(sum),sum};
+}
+
+// ── CHINESE ZODIAC ─────────────────────────────────────────
+function yearAnim(y){return((y-4)%12+12)%12}
+function dayAnim(date){
+  const diff=Math.round((date-BASE)/(864e5));
+  return((BASE_IDX+diff)%12+12)%12;
+}
+function monthAnim(m){return MONTH_ANIM[m]}
+
+function animCompat(a,b){
+  if(a===b)return'same';
+  if(A_ENEMY[a]?.includes(b))return'enemy';
+  if(A_FRIEND[a]?.includes(b))return'friend';
+  return'neutral';
+}
+function numCompat(lp,num){
+  const d=LP[lp]||LP[1];
+  if(d.soul.includes(num))return'soul';
+  if(d.enemy.includes(num))return'enemy';
+  if(d.friend.includes(num))return'friend';
+  return'neutral';
+}
+
+// Full moons 2026
+const FM=[new Date(2026,0,3),new Date(2026,1,1),new Date(2026,2,3),new Date(2026,3,2),
+  new Date(2026,4,1),new Date(2026,4,31),new Date(2026,5,30),new Date(2026,6,29),
+  new Date(2026,7,28),new Date(2026,8,26),new Date(2026,9,26),new Date(2026,10,25),new Date(2026,11,24)];
+function isFM(d){return FM.some(f=>f.getFullYear()===d.getFullYear()&&f.getMonth()===d.getMonth()&&f.getDate()===d.getDate())}
+
+// ── STATE ──────────────────────────────────────────────────
+const today=new Date();
+let cur={year:today.getFullYear(),month:today.getMonth()};
+let sel={year:today.getFullYear(),month:today.getMonth(),day:today.getDate()};
+let user=null;
+
+// ── BIRTH ──────────────────────────────────────────────────
+function setBirth(){
+  const d=parseInt(document.getElementById('bd').value);
+  const m=parseInt(document.getElementById('bm').value);
+  const y=parseInt(document.getElementById('by').value);
+  if(!d||!m||!y||y<1920||y>2010||m<1||m>12||d<1||d>31)return;
+  const{lp}=calcLP(d,m,y);
+  user={lp,bd:d,bm:m,by:y,anim:yearAnim(y)};
+  renderProfile();renderCalendar();renderDetail();
+}
+
+function renderProfile(){
+  const el=document.getElementById('profile-strip');
+  if(!user){el.innerHTML='';return}
+  const lpd=LP[user.lp]||LP[1];
+  const soulStr=lpd.soul.length?lpd.soul.join(', '):'—';
+  const frStr=lpd.friend.length?lpd.friend.join(', '):'—';
+  const enStr=lpd.enemy.length?lpd.enemy.join(', '):'—';
+  el.innerHTML=`<div class="profile-strip">
+    <div class="chip chip-lp">✦ LP ${user.lp} · ${lpd.name} ${lpd.e}</div>
+    <div class="chip chip-a">${AEMOJI[user.anim]} ${ANIMALS[user.anim]}</div>
+    <div class="chip chip-soul">◈ Alma: ${soulStr}</div>
+    <div class="chip chip-fr">✦ Amigos: ${frStr}</div>
+    <div class="chip chip-en">✕ Enemigos: ${enStr}</div>
+  </div>`;
+}
+
+// ── CALENDAR ───────────────────────────────────────────────
+function renderCalendar(){
+  const{year,month}=cur;
+  document.getElementById('month-label').textContent=`${MONTHS_ES[month]} ${year}`;
+  const grid=document.getElementById('days-grid');
+  grid.innerHTML='';
+  const first=new Date(year,month,1).getDay();
+  const total=new Date(year,month+1,0).getDate();
+  for(let i=0;i<first;i++){const e=document.createElement('div');e.className='dc empty';grid.appendChild(e)}
+  for(let d=1;d<=total;d++){
+    const date=new Date(year,month,d);
+    const{primary,secondary}=calcDay(date);
+    const da=dayAnim(date);
+    const cell=document.createElement('div');cell.className='dc';
+    const isToday=d===today.getDate()&&month===today.getMonth()&&year===today.getFullYear();
+    const isSel=d===sel.day&&month===sel.month&&year===sel.year;
+    const fm=isFM(date);const master=isMaster(primary);
+    if(isToday)cell.classList.add('today');
+    if(isSel)cell.classList.add('sel');
+    if(master)cell.classList.add('master');
+    if(user){
+      const ac=animCompat(user.anim,da);
+      if(ac==='friend')cell.classList.add('anim-fr');
+      else if(ac==='enemy')cell.classList.add('anim-en');
+    }
+    const badge=fm?'<div class="badge">🌕</div>':(master?`<div class="badge" style="color:var(--violet);font-size:.62rem">✦</div>`:'');
+    cell.innerHTML=`<div class="dn">${d}</div><div class="de">${primary}·${secondary}</div><div class="da">${AEMOJI[da]}</div>${badge}`;
+    cell.onclick=()=>{sel={year,month,day:d};renderCalendar();renderDetail()};
+    grid.appendChild(cell);
+  }
+}
+function changeMonth(dir){
+  cur.month+=dir;
+  if(cur.month<0){cur.month=11;cur.year--}
+  if(cur.month>11){cur.month=0;cur.year++}
+  renderCalendar();
+}
+
+// ── DETAIL ─────────────────────────────────────────────────
+function renderDetail(){
+  const{year,month,day}=sel;
+  const date=new Date(year,month,day);
+  const{digits,sum,primary,secondary,secSum,dayDigits}=calcDay(date);
+  const fm=isFM(date);
+  const da=dayAnim(date);
+  const ma=monthAnim(month);
+  const ya=yearAnim(year);
+  const masterLabel=isMaster(primary)?' ✦ Maestro':'';
+  const dateStr=`${day} de ${MONTHS_ES[month]}, ${year}`;
+  const formula=digits.map((d,i)=>`<span class="v">${d}</span>${i<digits.length-1?' + ':''}`).join('');
+  const sfml=dayDigits.map(c=>`<span class="v">${c}</span>`).join(' + ');
+
+  let compatHtml='';
+  if(user){
+    const nc=numCompat(user.lp,primary);
+    const ac=animCompat(user.anim,da);
+    const mac=animCompat(user.anim,ma);
+    const yac=animCompat(user.anim,ya);
+    const ncLabel={soul:'✦ Alma gemela',friend:'✦ Amigo',enemy:'✕ Enemigo',neutral:'◎ Neutral'}[nc];
+    const ncCls={soul:'cb-soul',friend:'cb-fr',enemy:'cb-en',neutral:'cb-n'}[nc];
+    const acLabel={friend:'◈ Amigo',enemy:'✕ Enemigo',same:'◎ Mismo',neutral:'◎ Neutral'}[ac];
+    const acCls={friend:'cb-fr',enemy:'cb-en',same:'cb-soul',neutral:'cb-n'}[ac];
+    const macLabel={friend:'◈ Amigo',enemy:'✕ Enemigo',same:'◎ Mismo',neutral:'◎ Neutral'}[mac];
+    const macCls={friend:'cb-fr',enemy:'cb-en',same:'cb-soul',neutral:'cb-n'}[mac];
+    compatHtml=`<div class="compat-panel">
+      <div class="cp-title">🔗 Tu interacción con este día · LP${user.lp} / ${ANIMALS[user.anim]}</div>
+      <div class="compat-row">
+        <div class="cb ${ncCls}">${ncLabel}: tu LP${user.lp} vs #${primary} del día</div>
+        <div class="cb ${acCls}">${acLabel}: tu ${AEMOJI[user.anim]}${ANIMALS[user.anim]} vs ${AEMOJI[da]}${ANIMALS[da]} del día</div>
+        <div class="cb ${macCls}">${macLabel}: tu animal vs ${AEMOJI[ma]}${ANIMALS[ma]} del mes</div>
+      </div>
+    </div>`;
+  } else {
+    compatHtml=`<div class="no-birth">Ingresa tu fecha de nacimiento para ver tu compatibilidad personal con este día</div>`;
+  }
+
+  document.getElementById('detail-panel').innerHTML=`
+    <div class="panel-top-bar"></div>
+    <div class="detail-header">
+      <div class="detail-date">${dateStr}${fm?' 🌕':''}</div>
+      <div class="epills">
+        <div class="pill pill-p">✦ ${primary}${masterLabel}</div>
+        <div class="pill pill-s">◈ ${secondary}</div>
+        <div class="pill pill-a">${AEMOJI[da]} ${ANIMALS[da]}</div>
+      </div>
+    </div>
+    <div class="dbody">
+      <div class="brow">Día: ${formula} = <span class="v">${sum}</span> → Primario: <span class="r">${primary}</span></div>
+      <div class="brow" style="margin-left:.7rem;font-size:.68rem">${sfml} = <span class="v">${secSum}</span> → Secundario del día: <span class="r">${secondary}</span></div>
+      <hr class="dv">
+      <div class="cards3">
+        <div class="card"><div class="ct">☉ Animal del Día</div><div class="cv">${AEMOJI[da]} ${ANIMALS[da]}</div><div class="cs">Energía diaria</div></div>
+        <div class="card"><div class="ct">☽ Animal del Mes</div><div class="cv">${AEMOJI[ma]} ${ANIMALS[ma]}</div><div class="cs">${MONTHS_ES[month]}</div></div>
+        <div class="card"><div class="ct">✦ Animal del Año</div><div class="cv">${AEMOJI[ya]} ${ANIMALS[ya]}</div><div class="cs">Año ${year}</div></div>
+      </div>
+      ${compatHtml}
+      <div class="guidance" id="guidance">
+        <div class="gtitle">✦ Guía Numerológica GG33 · IA</div>
+        <div class="loading"><div class="spinner"></div> Consultando las energías…</div>
+      </div>
+    </div>`;
+
+  fetchGuidance({primary,secondary,dateStr,da,ma,ya,fm,year,month,day});
+}
+
+// ── AI GUIDANCE ────────────────────────────────────────────
+async function fetchGuidance({primary,secondary,dateStr,da,ma,ya,fm}){
+  const panel=document.getElementById('guidance');
+  if(!panel)return;
+
+  const lpd=LP[primary]||LP[1];
+  const lpds=LP[secondary]||LP[1];
+  let uCtx='';
+  if(user){
+    const ulpd=LP[user.lp]||LP[1];
+    const nc=numCompat(user.lp,primary);
+    const ac=animCompat(user.anim,da);
+    uCtx=`
+USUARIO:
+- Lifepath ${user.lp} (${ulpd.name}): ${ulpd.desc}
+- Animal chino: ${ANIMALS[user.anim]}
+- Nacido el día ${user.bd}
+- Su LP${user.lp} vs #${primary} del día: ${nc}
+- Su animal ${ANIMALS[user.anim]} vs ${ANIMALS[da]} del día: ${ac}`;
+  }
+
+  const sys=`Eres un experto en numerología GG33 con conocimiento del sistema completo: lifepaths 1-9, 11, 22, 33; sus almas gemelas, amigos, enemigos; energía masculina/femenina; y zodiaco chino con compatibilidades. Respondes siempre en español, con profundidad práctica y espiritual.`;
+
+  const prompt=`Fecha: "${dateStr}"
+Número Primario: ${primary} (${lpd.name}) — ${lpd.desc}
+Número Secundario: ${secondary} (${lpds.name}) — ${lpds.desc}
+Animal del Día: ${ANIMALS[da]}
+Animal del Mes: ${ANIMALS[ma]}
+Animal del Año: ${ANIMALS[ya]}
+${fm?'⚠️ LUNA LLENA — intensifica toda energía':''}
+${uCtx}
+
+Responde SOLO con JSON válido sin markdown ni backticks:
+{
+  "vibe": "Frase poética de 1-2 oraciones capturando la esencia energética del día.",
+  "description": "2-3 oraciones sobre cómo se siente la combinación de #${primary} y #${secondary} hoy, qué oportunidades o retos generan.",
+  "animal_insight": "1-2 oraciones sobre la interacción del ${ANIMALS[da]} (día) + ${ANIMALS[ma]} (mes) + ${ANIMALS[ya]} (año) y su energía combinada.",
+  "user_insight": "${user?`1-2 oraciones concretas sobre cómo LP${user.lp} interactúa con las energías de hoy. ¿Es día favorable, neutro o retador?`:'null'}",
+  "do": ["Acción específica 1 basada en la numerología GG33 del día (max 14 palabras)", "Acción específica 2 (max 14 palabras)", "Acción específica 3 (max 14 palabras)"],
+  "dont": ["Cosa concreta a evitar según GG33 (max 14 palabras)", "Cosa a evitar 2 (max 14 palabras)", "Cosa a evitar 3 (max 14 palabras)"],
+  "affirmation": "Afirmación de poder para este día, máx 15 palabras."
+}`;
+
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:sys,messages:[{role:'user',content:prompt}]})
+    });
+    const data=await res.json();
+    const text=data.content.map(b=>b.text||'').join('');
+    const g=JSON.parse(text.replace(/```json|```/g,'').trim());
+    const ulpd=user?LP[user.lp]:null;
+
+    panel.innerHTML=`
+      <div class="gtitle">✦ Guía Numerológica GG33 · IA</div>
+      <div class="gsec"><div class="glabel gl-v">◈ Vibración</div><div class="gtext">${g.vibe}</div></div>
+      <div class="gsec"><div class="glabel gl-d">◎ La energía de hoy</div><div class="gplain">${g.description}</div></div>
+      <div class="gsec"><div class="glabel" style="color:var(--violet)">🐉 Animales: ${ANIMALS[da]} · ${ANIMALS[ma]} · ${ANIMALS[ya]}</div><div class="gplain">${g.animal_insight}</div></div>
+      ${user&&g.user_insight&&g.user_insight!=='null'?`<div class="uinsight"><div class="glabel gl-u">✦ Tu energía personal · LP${user.lp} ${ulpd?ulpd.name:''}</div><div class="gplain">${g.user_insight}</div></div>`:''}
+      <hr style="border:none;border-top:1px solid var(--border);margin:.9rem 0">
+      <div class="do-dont">
+        <div><div class="glabel gl-do">✦ Hazlo hoy</div><ul class="dolist">${g.do.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+        <div><div class="glabel gl-dont">✕ Evita hoy</div><ul class="dontlist">${g.dont.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+      </div>
+      <div class="affbox"><div class="afflabel">AFIRMACIÓN DEL DÍA</div><div class="afftext">"${g.affirmation}"</div></div>`;
+  }catch(e){
+    console.error(e);
+    panel.innerHTML=`<div class="gtitle">✦ Guía del Día</div><div class="errmsg">No se pudo cargar la guía. Intenta de nuevo.</div>`;
+  }
+}
+
+// ── INIT ───────────────────────────────────────────────────
+renderCalendar();
+renderDetail();
+</script>
+</body>
+</html>
