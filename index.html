@@ -437,84 +437,179 @@ function renderDetail(){
         <div class="card"><div class="ct">✦ Animal del Año</div><div class="cv">${AEMOJI[ya]} ${ANIMALS[ya]}</div><div class="cs">Año ${year}</div></div>
       </div>
       ${compatHtml}
-      <div class="guidance" id="guidance">
-        <div class="gtitle">✦ Guía Numerológica GG33 · IA</div>
-        <div class="loading"><div class="spinner"></div> Consultando las energías…</div>
-      </div>
+      <div class="guidance" id="guidance"></div>
     </div>`;
 
   fetchGuidance({primary,secondary,dateStr,da,ma,ya,fm,year,month,day});
 }
 
-// ── AI GUIDANCE ────────────────────────────────────────────
-async function fetchGuidance({primary,secondary,dateStr,da,ma,ya,fm}){
+// ── PRELOADED GUIDANCE DATABASE ────────────────────────────
+// Guía precargada por número primario (1-9, 11, 22, 33)
+const GUIDE={
+  1:{
+    vibe:"El guerrero despierta — el día pide acción, iniciativa y voluntad sin disculpas.",
+    description:"El 1 trae energía de liderazgo puro: es momento de tomar decisiones, empezar proyectos y no esperar permiso de nadie. La energía masculina del 1 favorece la competencia sana y el enfoque en un solo objetivo. Cuidado con la arrogancia — el liderazgo verdadero incluye escuchar.",
+    do:["Toma una decisión que has estado postergando sin dudar más","Inicia ese proyecto, conversación o cambio que requiere valentía","Posicionate como líder en tu trabajo, familia o círculo social"],
+    dont:["Evita debates y peleas innecesarias — el 1 puede volverse agresivo","No te disperses en múltiples tareas; el 1 es de mente única","No ignores las necesidades emocionales de quienes te rodean"],
+    affirmation:"Soy líder nato, actúo con decisión y abro caminos donde antes no los había."
+  },
+  2:{
+    vibe:"El día susurra en lugar de gritar — la diplomacia y la escucha son las armas más poderosas hoy.",
+    description:"El 2 es energía femenina, suave y dual. Este día favorece la mediación, las alianzas y ver ambos lados de cualquier conflicto. Es un día ideal para colaborar, no para actuar solo. La sensibilidad está elevada — tanto la tuya como la de los demás.",
+    do:["Escucha activamente antes de hablar — el 2 entiende ambas partes","Fortalece relaciones importantes con gestos de paz y diplomacia","Trabaja en equipo; hoy el uno más uno vale más que dos"],
+    dont:["No uses la fuerza ni la confrontación directa — el 2 falla en violencia","No tomes decisiones unilaterales que afecten a otros sin consultar","Evita aislarte; el 2 necesita conexión para florecer"],
+    affirmation:"Mi suavidad es mi fortaleza, creo puentes donde otros ven muros."
+  },
+  3:{
+    vibe:"La creatividad desborda como río en temporada de lluvias — exprésate sin censura hoy.",
+    description:"El 3 es el niño cósmico: juguetón, creativo y comunicador nato. Este día favorece el arte, la escritura, el humor y toda forma de expresión. La energía del 3 puede dispersarse fácilmente — necesitas disciplina para que tanta creatividad produzca algo real.",
+    do:["Expresa una idea creativa que guardas — escribe, dibuja, canta, habla","Conéctate con amigos o familia con ligereza y humor genuino","Usa tu don de comunicación para inspirar o enseñar a alguien"],
+    dont:["No te comprometas con más de lo que puedes cumplir — el 3 sobreestima","Evita las indulgencias excesivas en comida, redes o entretenimiento","No pospongas tareas bajo el pretexto de esperar 'inspiración'"],
+    affirmation:"Mi creatividad es un regalo al mundo; hoy la libero con disciplina y amor."
+  },
+  4:{
+    vibe:"Los cimientos se construyen en días como este — trabaja con método, ladrillo por ladrillo.",
+    description:"El 4 es el trabajador más disciplinado del zodiaco numerológico. Hoy el universo premia el esfuerzo constante, el orden y la construcción sistemática. Es un día excelente para organizar, planificar a largo plazo y hacer el trabajo que nadie más quiere hacer. El 4 no brillará en fiestas — brilla en los resultados.",
+    do:["Organiza un espacio, proyecto o rutina que lleva tiempo desorganizado","Trabaja en algo que requiere concentración profunda sin interrupciones","Haz una lista concreta con pasos y ejecútalos en orden"],
+    dont:["No improvises — el 4 necesita estructura y orden para rendir","Evita gastos impulsivos; el 4 construye riqueza con disciplina","No te quedes atascado en el trabajo hasta olvidar descansar y relajarte"],
+    affirmation:"Construyo mi realidad paso a paso; cada acción disciplinada hoy es riqueza mañana."
+  },
+  5:{
+    vibe:"El viento cambia de dirección y tú puedes surfear esa ola o ser arrastrado por ella.",
+    description:"El 5 es el número del cambio, la libertad y la aventura. Hoy el universo favorece lo inesperado, los giros de guión y las nuevas experiencias. Es un mal día para rutinas rígidas y un excelente día para adaptarte, moverte y explorar. El riesgo calculado vale la pena hoy.",
+    do:["Di que sí a algo nuevo o diferente que te saca de tu zona de confort","Muévete físicamente — viaja, camina por un lugar desconocido, explora","Conecta con personas distintas a tu círculo habitual"],
+    dont:["No te aferres a planes fijos — la rigidez choca con la energía del 5","Evita el exceso: el 5 puede caer en libertinaje sin límites","No tomes decisiones financieras grandes hoy — el 5 es volátil con el dinero"],
+    affirmation:"El cambio es mi aliado; me adapto con gracia y atraigo oportunidades nuevas."
+  },
+  6:{
+    vibe:"El hogar, el amor y la responsabilidad se vuelven sagrados — cuida lo que construiste.",
+    description:"El 6 vibra con energía familiar, de servicio y de amor responsable. Hoy es día de cuidar relaciones cercanas, atender el hogar y cumplir compromisos con quienes dependen de ti. La energía del 6 recompensa la lealtad y el sacrificio genuino. No es día para el ego — es día para el nosotros.",
+    do:["Dedica tiempo de calidad a tu familia o personas más cercanas","Cumple una responsabilidad que has estado evitando","Crea o mejora algo en tu hogar que genere bienestar para todos"],
+    dont:["No descuides tus obligaciones por placeres pasajeros hoy","Evita los chismes y el drama ajeno — el 6 se contamina fácilmente","No te pierdas en el trabajo olvidando que el 6 prioriza lo humano"],
+    affirmation:"Soy pilar de amor y responsabilidad; mi hogar y mi gente florecen con mi presencia."
+  },
+  7:{
+    vibe:"El silencio habla más fuerte que cualquier ruido — retírate hacia adentro y escucha.",
+    description:"El 7 es el número del solitario brillante, la introspección y la verdad oculta. Hoy la energía favorece el estudio profundo, la meditación, la investigación y estar consigo mismo. No es día para socializar en exceso ni para decisiones impulsivas. Es día para ir al fondo de las cosas.",
+    do:["Dedica tiempo a leer, estudiar o investigar algo que te apasiona profundamente","Medita, reflexiona o escribe en tu diario — el 7 revela verdades en silencio","Confía en tu intuición hoy por encima de la opinión de los demás"],
+    dont:["Evita el ruido social innecesario — reuniones vacías drenan al 7","No compartas tus planes con todo el mundo; el 7 necesita privacidad","Evita el alcohol o sustancias — el 7 ya tiende a la evasión"],
+    affirmation:"En mi solitud encuentro sabiduría; soy un canal de verdad e intuición profunda."
+  },
+  8:{
+    vibe:"El poder circula hoy como corriente eléctrica — úsalo con intención o te quema.",
+    description:"El 8 es el número del dinero, el poder y el karma. Lo que siembras hoy regresa amplificado — para bien o para mal. Es un día ideal para negociaciones, decisiones financieras y ejercer autoridad. El 8 no perdona la deshonestidad; el karma del 8 actúa rápido.",
+    do:["Toma acción concreta en temas de dinero, negocios o inversiones","Ejerce tu autoridad con justicia — el 8 recompensa el liderazgo ético","Cierra ciclos kármicos: perdona una deuda emocional o resuelve un conflicto pendiente"],
+    dont:["No actúes con deshonestidad hoy — el karma del 8 regresa inmediato","Evita confrontaciones de poder innecesarias; elige tus batallas con sabiduría","No tomes decisiones financieras por miedo o por ego — actúa desde la claridad"],
+    affirmation:"El poder fluye a través de mí con integridad; lo que siembro hoy, lo cosecho con abundancia."
+  },
+  9:{
+    vibe:"Un ciclo llega a su conclusión natural — suelta lo que ya cumplió su propósito.",
+    description:"El 9 es el número de la completud, el fin de ciclos y la manifestación. Hoy el universo pide que cierres lo que está abierto, que perdones lo que pesa y que te prepares para un nuevo comienzo. Es también el día más poderoso para la ley de atracción — visualiza con claridad lo que deseas crear.",
+    do:["Cierra un proyecto, conversación o ciclo emocional que lleva tiempo pendiente","Practica el perdón — a otros y a ti mismo — el 9 libera cuando suelta","Visualiza con detalle lo que quieres manifestar en el próximo ciclo"],
+    dont:["No te aferres a lo que el universo ya está cerrando — fluye con el 9","Evita iniciar proyectos nuevos grandes hoy — primero cierra, luego abre","No cargues rencores; el 9 que no perdona bloquea su propia manifestación"],
+    affirmation:"Cierro con gratitud lo que fue, y abro mis manos para recibir lo que viene."
+  },
+  11:{
+    vibe:"La antena cósmica está en su frecuencia máxima — lo que sientes hoy es una señal, no un ruido.",
+    description:"El 11 es el maestro emocional, el número de la intuición elevada y la sensibilidad extrema. Hoy las emociones están amplificadas y los mensajes del universo llegan con fuerza. Es un día poderoso para el arte, la espiritualidad y la conexión con algo más grande que tú. Maneja la intensidad con conciencia.",
+    do:["Pon atención a tus sueños, corazonadas e intuiciones — son mensajes reales","Canaliza la intensidad emocional hacia el arte, la música o la escritura","Medita o reza — el 11 tiene acceso directo a frecuencias superiores"],
+    dont:["No reprimas las emociones — el 11 bloqueado se convierte en ansiedad","Evita el drama emocional y las reacciones exageradas ante provocaciones menores","No tomes decisiones importantes solo desde la emoción — busca también la razón"],
+    affirmation:"Soy un canal de luz y sabiduría; mi sensibilidad es mi superpoder, no mi debilidad."
+  },
+  22:{
+    vibe:"El arquitecto del destino tiene el plano en mano — hoy se construye a escala monumental.",
+    description:"El 22 es el Constructor Maestro, el número más poderoso para materializar sueños a gran escala. Hoy la energía favorece los planes ambiciosos, las visiones de largo plazo y el trabajo que deja legado. El 22 exige disciplina del 4 y visión del 11 — es la combinación más poderosa del sistema.",
+    do:["Trabaja en tu proyecto o visión más ambiciosa — hoy el universo apoya lo grande","Diseña un plan de largo plazo con pasos concretos y fechas reales","Conecta con personas que piensan en grande y comparten tu visión"],
+    dont:["No desperdicies este día en trivialidades — el 22 pide altura de miras","Evita el perfeccionismo paralizante; avanza aunque no esté todo listo","No actúes solo por ego; el 22 construye para el bien colectivo, no personal"],
+    affirmation:"Soy constructor de mundos; mi visión es grande, mis acciones son precisas, mi legado es eterno."
+  },
+  33:{
+    vibe:"El amor universal pulsa hoy con una frecuencia que puede sanar lo que parecía roto.",
+    description:"El 33 es el número maestro más alto — el Cristo Cósmico, el maestro de maestros. Hoy la energía es de servicio elevado, amor incondicional y enseñanza. Es un día para dar sin esperar nada, para inspirar con el ejemplo y para conectar con la dimensión más espiritual de tu existencia.",
+    do:["Haz un acto de servicio genuino sin esperar reconocimiento ni recompensa","Comparte conocimiento o sabiduría con alguien que lo necesita de verdad","Conéctate con tu práctica espiritual más profunda — meditación, oración, gratitud"],
+    dont:["No uses tu energía en conflictos mundanos — el 33 está por encima de eso","Evita el martirio: servir no significa destruirte a ti mismo por los demás","No ignores tu propia necesidad espiritual en el afán de ayudar a todos"],
+    affirmation:"Soy amor en acción; mi presencia eleva todo lo que toca y mi luz guía sin imponer."
+  }
+};
+
+// Insight adicional por número secundario
+const SEC_INSIGHT={
+  1:"El secundario 1 añade un impulso extra de iniciativa — actúa hoy, no mañana.",
+  2:"El secundario 2 suaviza la energía principal con intuición femenina y diplomacia.",
+  3:"El secundario 3 inyecta creatividad y comunicación — exprésate con libertad.",
+  4:"El secundario 4 pide estructura y método — organiza antes de ejecutar.",
+  5:"El secundario 5 trae un toque de imprevisibilidad — mantente flexible ante cambios.",
+  6:"El secundario 6 ancla la energía en el amor, la familia y las responsabilidades.",
+  7:"El secundario 7 profundiza la introspección — confía en tu intuición sobre el ruido externo.",
+  8:"El secundario 8 activa el karma financiero — sé consciente de lo que das y recibes.",
+  9:"El secundario 9 cierra subciclos — suelta lo que ya no sirve para hacer espacio.",
+  11:"El secundario 11 eleva la sensibilidad emocional — escucha los mensajes sutiles del día.",
+  22:"El secundario 22 amplifica el poder constructivo — piensa en grande, ejecuta con precisión.",
+  33:"El secundario 33 baña todo con amor incondicional — sirve desde el corazón hoy."
+};
+
+// Compatibilidad numérica usuario-día
+const COMPAT_MSG={
+  soul:"🌟 Día de alma gemela para tu lifepath — las energías se amplifican mutuamente. Aprovecha al máximo.",
+  friend:"✦ Día amigo para tu energía — fluye con naturalidad, el universo está de tu lado.",
+  enemy:"⚡ Día de tensión con tu lifepath — úsala como combustible, no como obstáculo. Mantén calma.",
+  neutral:"◎ Día neutro para tu lifepath — ni viento a favor ni en contra. Depende de ti la dirección."
+};
+
+// Compatibilidad animal
+const ANIM_COMPAT_MSG={
+  friend:"Los animales del día y el tuyo son aliados — la energía animal fluye a tu favor hoy.",
+  enemy:"Tu animal y el del día se oponen energéticamente — navega con precaución y paciencia.",
+  same:"Compartes animal con el día — tu energía está en casa, usa esa familiaridad.",
+  neutral:"Los animales son neutrales entre sí — la energía es libre para moldearse."
+};
+
+// Luna llena
+const FM_MSG="🌕 Luna Llena activa: toda energía se intensifica al doble. Lo bueno brilla más, lo difícil pesa más. Actúa con conciencia plena.";
+
+// ── RENDER GUIDANCE ─────────────────────────────────────────
+function fetchGuidance({primary,secondary,dateStr,da,ma,ya,fm}){
   const panel=document.getElementById('guidance');
   if(!panel)return;
 
-  const lpd=LP[primary]||LP[1];
-  const lpds=LP[secondary]||LP[1];
-  let uCtx='';
+  const g=GUIDE[primary]||GUIDE[1];
+  const secNote=SEC_INSIGHT[secondary]||'';
+  const ulpd=user?LP[user.lp]:null;
+
+  // User compat text
+  let userHtml='';
   if(user){
-    const ulpd=LP[user.lp]||LP[1];
     const nc=numCompat(user.lp,primary);
     const ac=animCompat(user.anim,da);
-    uCtx=`
-USUARIO:
-- Lifepath ${user.lp} (${ulpd.name}): ${ulpd.desc}
-- Animal chino: ${ANIMALS[user.anim]}
-- Nacido el día ${user.bd}
-- Su LP${user.lp} vs #${primary} del día: ${nc}
-- Su animal ${ANIMALS[user.anim]} vs ${ANIMALS[da]} del día: ${ac}`;
+    const ncMsg=COMPAT_MSG[nc]||'';
+    const acMsg=ANIM_COMPAT_MSG[ac]||'';
+    userHtml=`<div class="uinsight">
+      <div class="glabel gl-u">✦ Tu energía personal · LP${user.lp} ${ulpd?ulpd.name:''}</div>
+      <div class="gplain" style="margin-bottom:.5rem">${ncMsg}</div>
+      <div class="gplain">${acMsg}</div>
+    </div>`;
   }
 
-  const sys=`Eres un experto en numerología GG33 con conocimiento del sistema completo: lifepaths 1-9, 11, 22, 33; sus almas gemelas, amigos, enemigos; energía masculina/femenina; y zodiaco chino con compatibilidades. Respondes siempre en español, con profundidad práctica y espiritual.`;
+  // Animal insight
+  const aDay=ANIMALS[da], aMes=ANIMALS[ma], aYear=ANIMALS[ya];
+  const dac=animCompat(da,ma);
+  const dacLabel={friend:'aliados',enemy:'en tensión',same:'en armonía perfecta',neutral:'neutrales'}[dac];
+  const animalInsight=`El ${aDay} del día y el ${aMes} del mes están ${dacLabel} entre sí, bajo el año del ${aYear}. Esta combinación ${dac==='enemy'?'genera fricción que puede usarse para crear movimiento y cambio':'crea una corriente energética que favorece '+( dac==='friend'?'la acción coordinada y los resultados rápidos':'la estabilidad y el flujo natural')}.`;
 
-  const prompt=`Fecha: "${dateStr}"
-Número Primario: ${primary} (${lpd.name}) — ${lpd.desc}
-Número Secundario: ${secondary} (${lpds.name}) — ${lpds.desc}
-Animal del Día: ${ANIMALS[da]}
-Animal del Mes: ${ANIMALS[ma]}
-Animal del Año: ${ANIMALS[ya]}
-${fm?'⚠️ LUNA LLENA — intensifica toda energía':''}
-${uCtx}
-
-Responde SOLO con JSON válido sin markdown ni backticks:
-{
-  "vibe": "Frase poética de 1-2 oraciones capturando la esencia energética del día.",
-  "description": "2-3 oraciones sobre cómo se siente la combinación de #${primary} y #${secondary} hoy, qué oportunidades o retos generan.",
-  "animal_insight": "1-2 oraciones sobre la interacción del ${ANIMALS[da]} (día) + ${ANIMALS[ma]} (mes) + ${ANIMALS[ya]} (año) y su energía combinada.",
-  "user_insight": "${user?`1-2 oraciones concretas sobre cómo LP${user.lp} interactúa con las energías de hoy. ¿Es día favorable, neutro o retador?`:'null'}",
-  "do": ["Acción específica 1 basada en la numerología GG33 del día (max 14 palabras)", "Acción específica 2 (max 14 palabras)", "Acción específica 3 (max 14 palabras)"],
-  "dont": ["Cosa concreta a evitar según GG33 (max 14 palabras)", "Cosa a evitar 2 (max 14 palabras)", "Cosa a evitar 3 (max 14 palabras)"],
-  "affirmation": "Afirmación de poder para este día, máx 15 palabras."
-}`;
-
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:sys,messages:[{role:'user',content:prompt}]})
-    });
-    const data=await res.json();
-    const text=data.content.map(b=>b.text||'').join('');
-    const g=JSON.parse(text.replace(/```json|```/g,'').trim());
-    const ulpd=user?LP[user.lp]:null;
-
-    panel.innerHTML=`
-      <div class="gtitle">✦ Guía Numerológica GG33 · IA</div>
-      <div class="gsec"><div class="glabel gl-v">◈ Vibración</div><div class="gtext">${g.vibe}</div></div>
-      <div class="gsec"><div class="glabel gl-d">◎ La energía de hoy</div><div class="gplain">${g.description}</div></div>
-      <div class="gsec"><div class="glabel" style="color:var(--violet)">🐉 Animales: ${ANIMALS[da]} · ${ANIMALS[ma]} · ${ANIMALS[ya]}</div><div class="gplain">${g.animal_insight}</div></div>
-      ${user&&g.user_insight&&g.user_insight!=='null'?`<div class="uinsight"><div class="glabel gl-u">✦ Tu energía personal · LP${user.lp} ${ulpd?ulpd.name:''}</div><div class="gplain">${g.user_insight}</div></div>`:''}
-      <hr style="border:none;border-top:1px solid var(--border);margin:.9rem 0">
-      <div class="do-dont">
-        <div><div class="glabel gl-do">✦ Hazlo hoy</div><ul class="dolist">${g.do.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-        <div><div class="glabel gl-dont">✕ Evita hoy</div><ul class="dontlist">${g.dont.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-      </div>
-      <div class="affbox"><div class="afflabel">AFIRMACIÓN DEL DÍA</div><div class="afftext">"${g.affirmation}"</div></div>`;
-  }catch(e){
-    console.error(e);
-    panel.innerHTML=`<div class="gtitle">✦ Guía del Día</div><div class="errmsg">No se pudo cargar la guía. Intenta de nuevo.</div>`;
-  }
+  panel.innerHTML=`
+    <div class="gtitle">✦ Guía Numerológica GG33</div>
+    ${fm?`<div class="gsec"><div class="glabel" style="color:var(--moon)">🌕 Luna Llena</div><div class="gplain">${FM_MSG}</div></div>`:''}
+    <div class="gsec"><div class="glabel gl-v">◈ Vibración del día</div><div class="gtext">${g.vibe}</div></div>
+    <div class="gsec"><div class="glabel gl-d">◎ La energía de hoy · #${primary}</div><div class="gplain">${g.description}</div></div>
+    <div class="gsec"><div class="glabel" style="color:#b09ee0">◈ Secundario ${secondary} · matiz del día</div><div class="gplain">${secNote}</div></div>
+    <div class="gsec"><div class="glabel" style="color:var(--violet)">🐉 ${aDay} · ${aMes} · ${aYear}</div><div class="gplain">${animalInsight}</div></div>
+    ${userHtml}
+    <hr style="border:none;border-top:1px solid var(--border);margin:.9rem 0">
+    <div class="do-dont">
+      <div><div class="glabel gl-do">✦ Hazlo hoy</div><ul class="dolist">${g.do.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+      <div><div class="glabel gl-dont">✕ Evita hoy</div><ul class="dontlist">${g.dont.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+    </div>
+    <div class="affbox"><div class="afflabel">AFIRMACIÓN DEL DÍA</div><div class="afftext">"${g.affirmation}"</div></div>`;
 }
 
 // ── INIT ───────────────────────────────────────────────────
