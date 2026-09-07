@@ -378,6 +378,8 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 .yr-hero.acc{border-color:var(--accent-line);background:linear-gradient(160deg,var(--violet-2),var(--mauve-2))}
 .yr-big{display:flex;align-items:center;gap:var(--size-3);margin-top:var(--size-2)}
 .yr-big>:first-child{font-size:2.6rem;line-height:1;flex-shrink:0}
+.yr-big>div:last-child{flex:1;min-width:0}
+.yr-big .prof-meta{white-space:normal;line-height:1.5}
 .yr-title{font-family:var(--font-display);font-size:1.05rem;color:var(--moon);line-height:1.3;margin-bottom:.2rem}
 .cd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--size-2)}
 @media(max-width:640px){.cd-grid{grid-template-columns:1fr}}
@@ -475,6 +477,26 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 .syn-line b.ok{color:var(--pos)} .syn-line b.bad{color:var(--neg)}
 .fam-hint{text-align:center;font-family:var(--font-mono);font-size:.53rem;color:var(--mauve-8);
   letter-spacing:.05em;padding:var(--size-2) var(--size-2) 0}
+
+.yr-e{font-family:var(--font-mono);font-size:.5rem;color:var(--text-3);letter-spacing:.03em}
+.pre-cny{display:inline-block;font-size:.5rem;letter-spacing:.06em;color:var(--gold);
+  border:1px solid var(--gold-line);border-radius:var(--radius-round);padding:0 .35rem;margin-left:.2rem}
+.warn-note{background:var(--gold-bg);border:1px solid var(--gold-line);border-radius:var(--radius-3);
+  padding:.7rem .8rem;font-size:.86rem;line-height:1.5;color:var(--moon);margin-top:var(--size-2)}
+.cat-out{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-3);padding:.9rem}
+.cat-big{display:flex;align-items:center;gap:.7rem}
+.cat-big>:first-child{font-size:2.1rem;line-height:1;flex-shrink:0}
+.cat-range{font-family:var(--font-mono);font-size:.6rem;color:var(--gold);letter-spacing:.04em;margin-top:.55rem}
+.cat-table{margin-top:var(--size-3);max-height:52vh;overflow-y:auto;display:flex;flex-direction:column;gap:2px;
+  border:1px solid var(--line-soft);border-radius:var(--radius-3);padding:.35rem}
+.cat-row{display:grid;grid-template-columns:2.9rem 1fr;gap:.5rem;align-items:baseline;
+  padding:.35rem .5rem;border-radius:var(--radius-2);border:1px solid transparent}
+.cat-row.sel{background:var(--gold-bg);border-color:var(--gold-line)}
+.cat-row.me{box-shadow:inset 2px 0 0 var(--accent-solid)}
+.cat-row.now{box-shadow:inset 2px 0 0 var(--pos-solid)}
+.cat-y{font-family:var(--font-mono);font-size:.68rem;color:var(--text-2)}
+.cat-a{font-size:.85rem;color:var(--text)}
+.cat-d{grid-column:2;font-family:var(--font-mono);font-size:.53rem;color:var(--text-3);letter-spacing:.03em}
 </style>
 </head>
 <body>
@@ -537,6 +559,7 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
   <section class="view" id="view-perfil">
     <div class="card flush" id="prof-list"></div>
     <div id="fam-panel"></div>
+    <div class="card" id="syn-card"></div>
     <div class="card" id="fam-members"></div>
     <div class="card" id="fam-sets"></div>
     <div class="card" id="fam-graph"></div>
@@ -841,6 +864,49 @@ const PD_MEAN={
 };
 
 
+
+// ═══ CALENDARIO CHINO PRECISO ══════════════════════════════
+// El año chino NO arranca el 1 de enero: empieza con el Año Nuevo Chino,
+// entre el 21 de enero y el 20 de febrero. Quien nace antes de esa fecha
+// pertenece al animal del año anterior (ej: 16 ene 2006 es Gallo, no Perro,
+// porque el año del Perro arrancó el 29 de enero de 2006).
+// Tabla 1900-2100: un carácter por año = días de desfase desde el 21 de enero.
+// Generada con sxtwl (efemérides astronómicas) y verificada contra lunardate
+// y las tablas de Wikipedia: cero discrepancias en 201 años.
+const CNY_Y0=1900, CNY_AL='0123456789abcdefghijklmnopqrstu';
+const CNY_OFF='ati8qe4nc1k9sg5od2lbui7qf3nc2k9rg5oe3lati6pf4nc1k8rg6od3masi7pf4nc0j9rg6pd2lash7qf4ncuj8rg6pe2kath7qf3mb1j8sh5od2kati7qf4mb1k8rg5nd2lati7pe3mb1k9rg5oc2lbti7pe3mc0j8rf5od2lath6pf3mc1j8rg5od3k9sh6pf4mb0j';
+function cnyStart(y){
+  const i=y-CNY_Y0;
+  if(i<0||i>=CNY_OFF.length)return new Date(y,1,4);      // fuera de tabla: aproximación
+  return new Date(y,0,21+CNY_AL.indexOf(CNY_OFF[i]));
+}
+function cnyKnown(y){const i=y-CNY_Y0;return i>=0&&i<CNY_OFF.length}
+function cnyEnd(y){return new Date(cnyStart(y+1).getTime()-864e5)}
+// año chino al que pertenece una fecha
+function chineseYear(date){
+  const t=d0(date),y=t.getFullYear();
+  return t<cnyStart(y)?y-1:y;
+}
+function animOfDate(date){return yearAnim(chineseYear(date))}
+function animOfPerson(p){
+  if(!p||!p.bd||!p.bm||!p.by)return null;
+  return animOfDate(new Date(p.by,p.bm-1,p.bd));
+}
+// ¿nació antes del Año Nuevo Chino de su año de nacimiento?
+function preCny(p){
+  if(!p||!p.bd||!p.bm||!p.by)return false;
+  return new Date(p.by,p.bm-1,p.bd)<cnyStart(p.by);
+}
+// tronco celeste → elemento y polaridad
+const ELEM=['Madera','Madera','Fuego','Fuego','Tierra','Tierra','Metal','Metal','Agua','Agua'];
+const EGLYPH=['🌿','🌿','🔥','🔥','⛰️','⛰️','⚙️','⚙️','💧','💧'];
+function stemOf(cy){return((cy-4)%10+10)%10}
+function elemOf(cy){return ELEM[stemOf(cy)]}
+function elemGlyph(cy){return EGLYPH[stemOf(cy)]}
+function polarOf(cy){return stemOf(cy)%2===0?'yang':'yin'}
+function anioNombre(cy){return `${ANIMALS[yearAnim(cy)]} de ${elemOf(cy)} · ${polarOf(cy)}`}
+function fmtDMY(d){return `${d.getDate()} ${MONTHS_ES[d.getMonth()].slice(0,3).toLowerCase()} ${d.getFullYear()}`}
+
 // ═══ ESTADO + ALMACENAMIENTO ═══════════════════════════════
 const today=new Date();
 const TODAY0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
@@ -870,7 +936,7 @@ function saveStore(){
 }
 function syncUser(){
   const p=profiles[activeIdx];
-  user=p?{name:p.name,lp:p.lp,bd:p.bd,bm:p.bm,by:p.by,anim:yearAnim(p.by)}:null;
+  user=p?{name:p.name,lp:p.lp,bd:p.bd,bm:p.bm,by:p.by,anim:animOfPerson(p)}:null;
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function toast(msg){
@@ -1103,7 +1169,15 @@ const NW={soul:25,friend:14,neutral:0,enemy:-20};
 const AW={friend:18,same:8,neutral:0,enemy:-18};
 function synastry(a,b){
   const ab=numCompat(a.lp,b.lp),ba=numCompat(b.lp,a.lp),an=animCompat(a.anim,b.anim);
-  const score=Math.max(3,Math.min(99,50+NW[ab]+NW[ba]+AW[an]));
+  let ex=0,eline=null;
+  if(a.by&&a.bm&&a.bd&&b.by&&b.bm&&b.bd){
+    const ea=elemIdx(chineseYear(new Date(a.by,a.bm-1,a.bd))),
+          eb=elemIdx(chineseYear(new Date(b.by,b.bm-1,b.bd)));
+    const er=elemRel(ea,eb,a.name||'A',b.name||'B');
+    ex={same:3,gen:5,ctrl:-5}[er.k]||0;
+    eline=['ELEMENTOS',er.t,er.k==='ctrl'?'enemy':er.k==='same'?'neutral':'friend'];
+  }
+  const score=Math.max(3,Math.min(99,50+NW[ab]+NW[ba]+AW[an]+ex));
   const L={soul:'alma gemela',friend:'amigo',enemy:'enemigo',neutral:'neutral'};
   const A={friend:'aliados',same:'el mismo animal',enemy:'opuestos',neutral:'neutrales'};
   const lines=[
@@ -1112,6 +1186,7 @@ function synastry(a,b){
     ['ANIMALES',`${AEMOJI[a.anim]} ${ANIMALS[a.anim]} y ${AEMOJI[b.anim]} ${ANIMALS[b.anim]} son ${A[an]}.`,
       an==='enemy'?'enemy':an==='friend'?'friend':'neutral']
   ];
+  if(eline)lines.push(eline);
   const verdict=score>=78?'Química fuerte: se amplifican.'
     :score>=60?'Buena base, con roces manejables.'
     :score>=42?'Neutral: la relación la construyen ustedes, no los números.'
@@ -1129,7 +1204,7 @@ function sharedDays(a,b,year,month){
 // ═══ GUÍA (compartida por Hoy y Detalle) ═══════════════════
 function guideHtml(date){
   const{primary,secondary}=calcDay(date);
-  const da=dayAnim(date),ma=monthAnim(date.getMonth()),ya=yearAnim(date.getFullYear());
+  const da=dayAnim(date),ma=monthAnim(date.getMonth()),ya=animOfDate(date);
   const g=GUIDE[primary]||GUIDE[1];
   const fm=isFM(date),nm=isNM(date);
   const dac=animCompat(da,ma);
@@ -1296,7 +1371,7 @@ function renderDetail(){
   const el=document.getElementById('detail-panel');
   const{year,month,day}=sel,date=new Date(year,month,day);
   const{digits,sum,primary,secondary,secSum,dayDigits}=calcDay(date);
-  const da=dayAnim(date),ma=monthAnim(month),ya=yearAnim(year);
+  const da=dayAnim(date),ma=monthAnim(month),ya=animOfDate(date);
   const formula=digits.map((d,i)=>`<span class="v">${d}</span>${i<digits.length-1?' + ':''}`).join('');
   const sfml=dayDigits.map(c=>`<span class="v">${c}</span>`).join(' + ');
   let compat='';
@@ -1441,45 +1516,6 @@ function renderPlan(keepFocus){
   </div>`;
 }
 
-// ═══ VISTA PERFILES + SINASTRÍA ════════════════════════════
-function pickSyn(v){synB=+v;renderSyn()}
-function renderSyn(){
-  const el=document.getElementById('syn-card');
-  if(profiles.length<2){
-    el.innerHTML=`<div class="eyebrow">🔗 Compatibilidad</div>
-      <p class="muted">Añade una segunda persona (tu pareja, un hijo, un socio) y comparo las dos energías: lifepath contra lifepath, animal contra animal, y los días que les caen bien a los dos.</p>`;
-    return;
-  }
-  if(synB<0||synB===activeIdx)synB=profiles.findIndex((_,i)=>i!==activeIdx);
-  const A={...profiles[activeIdx],anim:yearAnim(profiles[activeIdx].by)};
-  const B={...profiles[synB],anim:yearAnim(profiles[synB].by)};
-  const r=synastry(A,B);
-  const col={soul:'var(--pos)',friend:'var(--pos)',enemy:'var(--neg)',neutral:'var(--text-3)'};
-  const shared=sharedDays(A,B,cur.year,cur.month).slice(0,3);
-  el.innerHTML=`<div class="eyebrow">🔗 Compatibilidad</div>
-    <div class="syn-pick">
-      <div class="field"><label>Persona A (activa)</label>
-        <select disabled><option>${escapeHtml(A.name)} · LP${A.lp}</option></select></div>
-      <div class="syn-vs">vs</div>
-      <div class="field"><label>Persona B</label>
-        <select onchange="pickSyn(this.value)">${profiles.map((p,i)=>
-          i===activeIdx?'':opt(i,`${escapeHtml(p.name)} · LP${p.lp}`,i===synB)).join('')}</select></div>
-    </div>
-    <div class="syn-verdict">
-      <div class="syn-score" style="color:${r.score>=60?'var(--pos)':r.score>=42?'var(--gold)':'var(--neg)'}">${r.score}<span style="font-size:1rem;color:var(--text-3)">/100</span></div>
-      <div class="syn-label">${r.verdict}</div>
-    </div>
-    <div class="syn-lines">${r.lines.map(([t,txt,k])=>
-      `<div class="syn-line"><b style="color:${col[k]}">${t}</b><span>${txt}</span></div>`).join('')}</div>
-    <div class="eyebrow" style="margin-top:var(--size-4)">◈ Mejores días para los dos · ${MONTHS_ES[cur.month]}</div>
-    ${shared.map(x=>`<button class="row-item row-good" onclick="jumpTo(${cur.year},${cur.month},${x.day})">
-        <div class="row-day">${x.day}</div>
-        <div class="row-info"><div class="row-meta">${escapeHtml(A.name).toUpperCase()} ${x.a>0?'+':''}${x.a} · ${escapeHtml(B.name).toUpperCase()} ${x.b>0?'+':''}${x.b}</div>
-        <div class="row-why">${x.why.join(' · ')||'día tranquilo para ambos'}</div></div>
-        <div class="row-score">${x.s>0?'+':''}${x.s}</div></button>`).join('')}`;
-}
-
-
 // ═══ BASE DE DATOS EXTERNA (data.json) ═════════════════════
 let DATA=null;
 async function loadData(){
@@ -1495,7 +1531,7 @@ const SOULPAIR={0:1,1:0};   // Rata y Buey: el único par de almas gemelas del z
 function fingerprint(date,u){
   u=u||user;
   const{primary,secondary}=calcDay(date);
-  const da=dayAnim(date),ma=monthAnim(date.getMonth()),ya=yearAnim(date.getFullYear());
+  const da=dayAnim(date),ma=monthAnim(date.getMonth()),ya=animOfDate(date);
   const f={day:primary,sec:secondary,weekday:date.getDay(),
     master:isMaster(primary),
     moon:isFM(date)?'full':isNM(date)?'new':'none',
@@ -1503,7 +1539,7 @@ function fingerprint(date,u){
   if(u){
     f.trine=animCompat(u.anim,da);
     f.mtrine=animCompat(u.anim,ma);
-    f.ytrine=yearRel(u,date.getFullYear())==='soul'?'soul':animCompat(u.anim,ya);
+    f.ytrine=yearRel(u,chineseYear(date))==='soul'?'soul':animCompat(u.anim,ya);
     f.clash=(A_ENEMY[u.anim]||[]).includes(da);
     f.rel=numCompat(u.lp,primary);
     f.lp=u.lp;
@@ -1564,22 +1600,17 @@ function yearRel(u,y){
   if((A_FRIEND[u.anim]||[]).includes(ya))return'trine';
   return'neutral';
 }
-function cnyDate(y){
-  const t=DATA&&DATA.anio&&DATA.anio.cny&&DATA.anio.cny[String(y)];
-  if(!t)return null;
-  const[m,d]=t.split('-').map(Number);
-  return new Date(y,m-1,d);
-}
+function cnyDate(y){return cnyStart(y)}
 function cnyLabel(y){
-  const d=cnyDate(y);
-  return d?`${d.getDate()} ${MONTHS_ES[d.getMonth()].slice(0,3).toLowerCase()}`:'~feb';
+  const d=cnyStart(y);
+  return `${d.getDate()} ${MONTHS_ES[d.getMonth()].slice(0,3).toLowerCase()}`;
 }
 function nextYearOf(u,rel,from){
   for(let i=0;i<13;i++){const y=from+i;if(yearRel(u,y)===rel)return y}
   return null;
 }
 function faltan(y){
-  const start=cnyDate(y)||new Date(y,1,4);
+  const start=cnyStart(y);
   const ms=start-TODAY0;
   if(ms<=0)return null;
   const dias=Math.round(ms/864e5);
@@ -1594,7 +1625,8 @@ function renderAnio(){
   const el=document.getElementById('anio-body');
   if(!user){el.innerHTML=onboardingHtml();return}
   if(!DATA||!DATA.anio){el.innerHTML='<div class="card"><p class="muted">Cargando la base de datos…</p></div>';return}
-  const Y=today.getFullYear(),rel=yearRel(user,Y),E=DATA.anio.estados[rel];
+  const Y=chineseYear(TODAY0);            // el año chino en curso, no el calendario
+  const rel=yearRel(user,Y),E=DATA.anio.estados[rel];
   const ya=yearAnim(Y);
   const enemyYear=nextYearOf(user,'enemigo',rel==='enemigo'?Y+1:Y);
   const ownYear=nextYearOf(user,'propio',rel==='propio'?Y+1:Y);
@@ -1602,13 +1634,14 @@ function renderAnio(){
   const f=faltan(enemyYear);
   const avisoKey=rel==='enemigo'?'dentro':!f?'lejos':(enemyYear-Y<=1?'cerca':(enemyYear-Y<=4?'medio':'lejos'));
   const enemyAnim=A_ENEMY[user.anim][0];
+  const miCY=chineseYear(new Date(user.by,user.bm-1,user.bd));
 
   const rows=[];
   for(let i=0;i<12;i++){
     const y=Y+i,r=yearRel(user,y),a=yearAnim(y);
     rows.push(`<div class="yr-row ${r==='enemigo'?'bad':r==='trine'||r==='soul'?'good':''}${y===Y?' now':''}">
       <div class="yr-y">${y}</div>
-      <div class="yr-a">${AEMOJI[a]} ${ANIMALS[a]}</div>
+      <div class="yr-a">${AEMOJI[a]} ${ANIMALS[a]} <span class="yr-e">${elemGlyph(y)}${elemOf(y)}</span></div>
       <div class="yr-c">${cnyLabel(y)}</div>
       <div class="chip ${REL_CLS[r]}" style="font-size:.54rem">${REL_ICON[r]} ${DATA.anio.estados[r].label}</div>
     </div>`);
@@ -1617,7 +1650,7 @@ function renderAnio(){
   <div class="card yr-hero ${REL_CLS[rel]||''}">
     <div class="eyebrow">${REL_ICON[rel]} ${E.label} · ${Y}</div>
     <div class="yr-big">${AEMOJI[ya]}<div><div class="yr-title">${E.titulo}</div>
-      <div class="prof-meta">Tú eres ${AEMOJI[user.anim]} ${ANIMALS[user.anim]} · ${Y} es año del ${ANIMALS[ya]}${cnyDate(Y)?` (arrancó el ${cnyLabel(Y)})`:''}</div></div></div>
+      <div class="prof-meta">Tú eres ${AEMOJI[user.anim]} ${anioNombre(miCY)} · ahora corre el año del ${anioNombre(Y)}, del ${fmtDMY(cnyStart(Y))} al ${fmtDMY(cnyEnd(Y))}</div></div></div>
     <p class="gplain" style="margin-top:var(--size-3)">${E.texto}</p>
     <div class="do-dont" style="margin-top:var(--size-4)">
       <div><div class="glabel" style="color:var(--pos)">✦ ESTE AÑO SÍ</div>
@@ -1652,8 +1685,9 @@ function renderAnio(){
   <div class="card">
     <div class="eyebrow">◈ Tu ciclo de 12 años</div>
     <div class="yr-table">${rows.join('')}</div>
-    <p class="credit" style="text-align:left;margin-top:var(--size-3)">EL AÑO CHINO ARRANCA CON EL AÑO NUEVO CHINO, NO EL 1 DE ENERO. SI NACISTE ENTRE ENERO Y MEDIADOS DE FEBRERO, TU ANIMAL PUEDE SER EL DEL AÑO ANTERIOR.</p>
-  </div>`;
+    <p class="credit" style="text-align:left;margin-top:var(--size-3)">CADA AÑO CORRE DE UN AÑO NUEVO CHINO AL SIGUIENTE. TU ANIMAL SE CALCULA CON TU FECHA COMPLETA, NO SOLO CON EL AÑO.</p>
+  </div>
+  ${catHtml()}`;
 }
 function anioAlertHtml(){
   if(!user||!DATA||!DATA.anio)return '';
@@ -1681,7 +1715,7 @@ let cy=null,famSel=null,famAff=true,famNoDate=false,famAffTot={al:0,co:0,pares:0
 
 function relOf(p){const R=(DATA&&DATA.parentescos)||{};return R[p.rel]||R.otro||{n:'Otro',g:0,s:'f',b:0,a:[]}}
 function hasDate(p){return !!(p&&p.bd&&p.bm&&p.by)}
-function memAnim(p){return hasDate(p)?yearAnim(p.by):null}
+function memAnim(p){return hasDate(p)?animOfPerson(p):null}
 function cssv(k){return getComputedStyle(document.documentElement).getPropertyValue(k).trim()||'#888'}
 
 function famBuild(){
@@ -1707,7 +1741,7 @@ function famBuild(){
   return{nodes,edges};
 }
 function famPair(a,b){
-  return synastry({...a,anim:yearAnim(a.by)},{...b,anim:yearAnim(b.by)});
+  return synastry({...a,anim:animOfPerson(a)},{...b,anim:animOfPerson(b)});
 }
 function famAffinity(nodes){
   const out=[],w=nodes.filter(n=>hasDate(n.p));
@@ -1740,8 +1774,8 @@ function famDraw(){
   const els=[
     ...nodes.map(n=>({group:'nodes',position:{...pos[n.id]},data:{
       id:n.id,label:n.p.name,
-      lbl:`${n.p.name}\n${hasDate(n.p)?`LP${n.p.lp} ${AEMOJI[yearAnim(n.p.by)]}`:'sin fecha'}`,
-      sub:hasDate(n.p)?`${n.r.n} · LP${n.p.lp} ${AEMOJI[yearAnim(n.p.by)]}`:`${n.r.n} · sin fecha`,
+      lbl:`${n.p.name}\n${hasDate(n.p)?`LP${n.p.lp} ${AEMOJI[animOfPerson(n.p)]}`:'sin fecha'}`,
+      sub:hasDate(n.p)?`${n.r.n} · LP${n.p.lp} ${AEMOJI[animOfPerson(n.p)]}`:`${n.r.n} · sin fecha`,
       side:n.side,yo:n.p.rel==='yo'?1:0,act:n.p.idx===activeIdx?1:0,nod:hasDate(n.p)?0:1}})),
     ...edges.map((e,i)=>({group:'edges',data:{id:'s'+i,source:e.s,target:e.t,k:e.k,fb:e.fb?1:0}})),
     ...aff.map((e,i)=>({group:'edges',data:{id:'a'+i,source:e.s,target:e.t,k:e.k,sc:e.sc}}))
@@ -1806,14 +1840,14 @@ function famSets(){
     (porGen[n.gen]=porGen[n.gen]||[]).push(n);
     (n.r.b?sangre:politica).push(n);
   });
-  const porTrine=TRINES.map(t=>conD.filter(n=>t.includes(yearAnim(n.p.by))));
+  const porTrine=TRINES.map(t=>conD.filter(n=>t.includes(animOfPerson(n.p))));
   const yo=nodes.find(n=>n.p.rel==='yo');
   let miTrine=null,enMiTrine=[],miOpuesto=[];
   if(yo&&hasDate(yo.p)){
-    const ya=yearAnim(yo.p.by);
+    const ya=animOfPerson(yo.p);
     miTrine=TRINES.findIndex(t=>t.includes(ya));
-    enMiTrine=conD.filter(n=>n.id!==yo.id&&(A_FRIEND[ya]||[]).includes(yearAnim(n.p.by)));
-    miOpuesto=conD.filter(n=>(A_ENEMY[ya]||[]).includes(yearAnim(n.p.by)));
+    enMiTrine=conD.filter(n=>n.id!==yo.id&&(A_FRIEND[ya]||[]).includes(animOfPerson(n.p)));
+    miOpuesto=conD.filter(n=>(A_ENEMY[ya]||[]).includes(animOfPerson(n.p)));
   }
   return{nodes,conD,porLado,porGen,sangre,politica,porTrine,yo,miTrine,enMiTrine,miOpuesto};
 }
@@ -1912,7 +1946,7 @@ function famPanel(){
   const i=profiles.findIndex(p=>(p.id||'')===n.id);
   el.innerHTML=`<div class="card">
     <div class="act-head">
-      <i>${hasDate(n.p)?AEMOJI[yearAnim(n.p.by)]:'◌'}</i>
+      <i>${hasDate(n.p)?AEMOJI[animOfPerson(n.p)]:'◌'}</i>
       <div><div class="act-title">${escapeHtml(n.p.name)}</div>
         <div class="chips" style="margin-top:.35rem">
           <span class="chip ${L.cl}">${n.r.n}</span>
@@ -1920,9 +1954,11 @@ function famPanel(){
           <span class="chip">${n.gen>0?'+'+n.gen:n.gen} generación</span>
           ${n.r.b?'<span class="chip">sangre</span>':'<span class="chip">no consanguíneo</span>'}
           ${hasDate(n.p)?`<span class="chip gold">LP${n.p.lp} · ${(LP[n.p.lp]||{}).name||''}</span>`:''}
+          ${hasDate(n.p)?`<span class="chip">${anioNombre(chineseYear(new Date(n.p.by,n.p.bm-1,n.p.bd)))}</span>`:''}
         </div></div>
       <button class="icon-btn" onclick="famSel=null;famPanel()" title="Cerrar">×</button>
     </div>
+    ${hasDate(n.p)&&preCny(n.p)?`<div class="warn-note">Nació el ${n.p.bd}/${n.p.bm}/${n.p.by}, <b>antes</b> del Año Nuevo Chino de ${n.p.by} (${fmtDMY(cnyStart(n.p.by))}). Por eso su animal es el del año anterior.</div>`:''}
     ${rel}
     <div style="display:flex;gap:var(--size-2);margin-top:var(--size-3);flex-wrap:wrap">
       ${hasDate(n.p)&&i!==activeIdx?`<button class="btn ghost" onclick="selectProfile(${i})">Usar en el calendario</button>`:''}
@@ -1968,7 +2004,7 @@ function famRender(){
         <div class="prof-av" style="border-color:var(${L.v})">${escapeHtml((p.name||'?').trim()[0]||'?').toUpperCase()}</div>
         <div class="prof-body" onclick="famSel='${p.id}';famPanel();document.getElementById('fam-panel').scrollIntoView({behavior:'smooth',block:'center'})">
           <div class="prof-name">${escapeHtml(p.name)} ${i===activeIdx?'<span class="chip gold" style="font-size:.52rem">calendario</span>':''}</div>
-          <div class="prof-meta">${r.n} · ${hasDate(p)?`${String(p.bd).padStart(2,'0')}/${String(p.bm).padStart(2,'0')}/${p.by} · LP${p.lp} ${AEMOJI[an]}`:'sin fecha'}</div>
+          <div class="prof-meta">${r.n} · ${hasDate(p)?`${String(p.bd).padStart(2,'0')}/${String(p.bm).padStart(2,'0')}/${p.by} · LP${p.lp} ${AEMOJI[an]} ${ANIMALS[an]}${preCny(p)?' <span class="pre-cny">pre año nuevo</span>':''}`:'sin fecha'}</div>
         </div>
         <button class="icon-btn" title="Eliminar" onclick="deleteProfile(${i},event)">×</button>
       </div>`}).join('')}</div>`
@@ -2042,6 +2078,7 @@ function famRender(){
   },30);
 
   // aliados y conflictos
+  renderSyn();
   const A=document.getElementById('fam-aff');
   const aff=famAffinity(nodes);
   const al=aff.filter(x=>x.k==='alianza').slice(0,4),co=aff.filter(x=>x.k==='conflicto').slice(0,4);
@@ -2055,6 +2092,115 @@ function famRender(){
     </div>`}`;
 }
 function renderProfiles(){famRender()}
+
+
+// ═══ CINCO ELEMENTOS ═══════════════════════════════════════
+const ELEM5=['Madera','Fuego','Tierra','Metal','Agua'];
+function elemIdx(cy){return Math.floor(stemOf(cy)/2)}
+function elemRel(a,b,na,nb){
+  if(a===b)return{k:'same',t:`Comparten el elemento ${ELEM5[a]}: se refuerzan, para bien y para mal.`};
+  if((a+1)%5===b)return{k:'gen',t:`${ELEM5[a]} genera a ${ELEM5[b]}: ${na} alimenta a ${nb}.`};
+  if((b+1)%5===a)return{k:'gen',t:`${ELEM5[b]} genera a ${ELEM5[a]}: ${nb} alimenta a ${na}.`};
+  if((a+2)%5===b)return{k:'ctrl',t:`${ELEM5[a]} domina a ${ELEM5[b]}: ${na} tiende a imponerse.`};
+  return{k:'ctrl',t:`${ELEM5[b]} domina a ${ELEM5[a]}: ${nb} tiende a imponerse.`};
+}
+
+// ═══ CATÁLOGO DE AÑOS CHINOS ═══════════════════════════════
+let catOpen=false,catD=null;
+function catInit(){
+  if(catD)return;
+  const b=user?new Date(user.by,user.bm-1,user.bd):TODAY0;
+  catD={d:b.getDate(),m:b.getMonth()+1,y:b.getFullYear()};
+}
+function catSet(k,v){catD[k]=+v;if(k!=='d'){const max=new Date(catD.y,catD.m,0).getDate();if(catD.d>max)catD.d=max}renderAnio()}
+function catToggle(){catOpen=!catOpen;renderAnio()}
+function catHtml(){
+  catInit();
+  const max=new Date(catD.y,catD.m,0).getDate();
+  const dt=new Date(catD.y,catD.m-1,Math.min(catD.d,max));
+  const cy=chineseYear(dt),a=yearAnim(cy);
+  const fuera=!cnyKnown(cy);
+  const dOpts=Array.from({length:max},(_,i)=>opt(i+1,i+1,i+1===Math.min(catD.d,max))).join('');
+  const mOpts=MONTHS_ES.map((m,i)=>opt(i+1,m,i+1===catD.m)).join('');
+  let yOpts='';for(let y=2100;y>=1900;y--)yOpts+=opt(y,y,y===catD.y);
+  let tabla='';
+  if(catOpen){
+    const miCY=user?chineseYear(new Date(user.by,user.bm-1,user.bd)):null;
+    const hoyCY=chineseYear(TODAY0);const rows=[];
+    for(let y=1900;y<=2100;y++){
+      const an=yearAnim(y),mark=y===miCY?' me':y===hoyCY?' now':'';
+      rows.push(`<div class="cat-row${mark}${y===cy?' sel':''}">
+        <div class="cat-y">${y}</div>
+        <div class="cat-a">${AEMOJI[an]} ${ANIMALS[an]} <span class="yr-e">${elemGlyph(y)}${elemOf(y)} ${polarOf(y)}</span></div>
+        <div class="cat-d">${fmtDMY(cnyStart(y))} → ${fmtDMY(cnyEnd(y))}</div></div>`);
+    }
+    tabla=`<div class="cat-table">${rows.join('')}</div>`;
+  }
+  return `<div class="card">
+    <div class="eyebrow">📖 Catálogo de años chinos · 1900-2100</div>
+    <p class="muted" style="margin-bottom:var(--size-3)">El año chino no empieza el 1 de enero. Fechas calculadas con efemérides astronómicas y contrastadas contra dos fuentes independientes.</p>
+    <div class="form-grid">
+      <div class="field"><label>Día</label><select onchange="catSet('d',this.value)">${dOpts}</select></div>
+      <div class="field"><label>Mes</label><select onchange="catSet('m',this.value)">${mOpts}</select></div>
+      <div class="field yr"><label>Año</label><select onchange="catSet('y',this.value)">${yOpts}</select></div>
+    </div>
+    <div class="cat-out">
+      <div class="cat-big">${AEMOJI[a]}<div>
+        <div class="yr-title">${anioNombre(cy)}</div>
+        <div class="prof-meta">${dt.getDate()} de ${MONTHS_ES[dt.getMonth()]} de ${dt.getFullYear()} cae en el año chino ${cy}</div>
+      </div></div>
+      <div class="cat-range">${fmtDMY(cnyStart(cy))} → ${fmtDMY(cnyEnd(cy))}${fuera?' · aproximado, fuera de la tabla':''}</div>
+      ${dt<cnyStart(dt.getFullYear())?`<div class="warn-note">Ojo: esta fecha es <b>anterior</b> al Año Nuevo Chino de ${dt.getFullYear()} (${fmtDMY(cnyStart(dt.getFullYear()))}), así que pertenece al animal del año anterior.</div>`:''}
+    </div>
+    <button class="btn ghost" onclick="catToggle()" style="margin-top:var(--size-3)">${catOpen?'Ocultar':'Ver'} los 201 años</button>
+    ${tabla}
+  </div>`;
+}
+
+// ═══ COMPATIBILIDAD 1 VS 1 ═════════════════════════════════
+let synA=-1;
+function pickSynA(v){synA=+v;renderSyn()}
+function pickSyn(v){synB=+v;renderSyn()}
+function renderSyn(){
+  const el=document.getElementById('syn-card');if(!el)return;
+  const idx=profiles.map((p,i)=>i).filter(i=>hasDate(profiles[i]));
+  if(idx.length<2){
+    el.innerHTML=`<div class="eyebrow">⚖ Compatibilidad 1 vs 1</div>
+      <p class="muted">Necesito dos personas con fecha de nacimiento. Añade a alguien más y aquí comparo las dos energías: lifepath contra lifepath, animal contra animal, elemento contra elemento y los días que les caen bien a los dos.</p>`;
+    return;
+  }
+  if(!idx.includes(synA))synA=idx.includes(activeIdx)?activeIdx:idx[0];
+  if(!idx.includes(synB)||synB===synA)synB=idx.find(i=>i!==synA);
+  const PA=profiles[synA],PB=profiles[synB];
+  const A={...PA,anim:animOfPerson(PA)},B={...PB,anim:animOfPerson(PB)};
+  const r=synastry(A,B);
+  const cyA=chineseYear(new Date(PA.by,PA.bm-1,PA.bd)),cyB=chineseYear(new Date(PB.by,PB.bm-1,PB.bd));
+  const shared=sharedDays(A,B,cur.year,cur.month).slice(0,3);
+  const col={soul:'var(--pos)',friend:'var(--pos)',enemy:'var(--neg)',neutral:'var(--text-3)'};
+  const sel=(v,on)=>profiles.map((p,i)=>idx.includes(i)?opt(i,`${escapeHtml(p.name)} · LP${p.lp}`,i===on):'').join('');
+  el.innerHTML=`<div class="eyebrow">⚖ Compatibilidad 1 vs 1</div>
+    <div class="syn-pick">
+      <div class="field"><label>Persona A</label><select onchange="pickSynA(this.value)">${sel(0,synA)}</select></div>
+      <div class="syn-vs">vs</div>
+      <div class="field"><label>Persona B</label><select onchange="pickSyn(this.value)">${sel(0,synB)}</select></div>
+    </div>
+    <div class="syn-verdict">
+      <div class="syn-score" style="color:${r.score>=60?'var(--pos)':r.score>=42?'var(--gold)':'var(--neg)'}">${r.score}<span style="font-size:1rem;color:var(--text-3)">/100</span></div>
+      <div class="syn-label">${r.verdict}</div>
+    </div>
+    <div class="chips" style="justify-content:center;margin-bottom:var(--size-3)">
+      <span class="chip gold">${escapeHtml(PA.name)} · LP${PA.lp} ${(LP[PA.lp]||{}).name||''} · ${AEMOJI[A.anim]} ${anioNombre(cyA)}</span>
+      <span class="chip acc">${escapeHtml(PB.name)} · LP${PB.lp} ${(LP[PB.lp]||{}).name||''} · ${AEMOJI[B.anim]} ${anioNombre(cyB)}</span>
+    </div>
+    <div class="syn-lines">${r.lines.map(([t,txt,k])=>
+      `<div class="syn-line"><b style="color:${col[k]||'var(--text-3)'}">${t}</b><span>${txt}</span></div>`).join('')}</div>
+    <div class="eyebrow" style="margin-top:var(--size-4)">◈ Mejores días para los dos · ${MONTHS_ES[cur.month]}</div>
+    ${shared.map(x=>`<button class="row-item row-good" onclick="jumpTo(${cur.year},${cur.month},${x.day})">
+        <div class="row-day">${x.day}</div>
+        <div class="row-info"><div class="row-meta">${escapeHtml(PA.name).toUpperCase()} ${x.a>0?'+':''}${x.a} · ${escapeHtml(PB.name).toUpperCase()} ${x.b>0?'+':''}${x.b}</div>
+        <div class="row-why">${x.why.join(' · ')||'día tranquilo para ambos'}</div></div>
+        <div class="row-score">${x.s>0?'+':''}${x.s}</div></button>`).join('')}`;
+}
 
 // ═══ ORQUESTADOR ═══════════════════════════════════════════
 function renderAll(){
