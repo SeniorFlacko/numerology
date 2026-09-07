@@ -451,6 +451,30 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
   font-size:.88rem;line-height:1.5;color:var(--text)}
 .game-str b{font-family:var(--font-mono);font-size:.52rem;letter-spacing:.14em;color:var(--accent);
   display:block;margin-bottom:.2rem}
+
+/* ── FAMILIA · grafo ── */
+.fam-tools{display:flex;gap:var(--size-1);flex-wrap:wrap;padding:var(--size-2) var(--size-2) 0}
+#cy{height:min(62vh,480px);width:100%;margin-top:var(--size-2);border-radius:var(--radius-3);
+  background:radial-gradient(ellipse at 50% 40%,var(--mauve-2),var(--mauve-1) 70%);
+  border:1px solid var(--line-soft);touch-action:none}
+.fam-legend{display:flex;gap:var(--size-2);flex-wrap:wrap;justify-content:center;
+  padding:var(--size-2);font-family:var(--font-mono);font-size:.53rem;color:var(--text-3);letter-spacing:.04em}
+.fam-legend .li{display:flex;align-items:center;gap:.3rem}
+.fam-legend .li i{width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0}
+.check{display:flex;align-items:center;gap:.5rem;font-size:.88rem;color:var(--text-2);
+  cursor:pointer;padding:.4rem 0;min-height:36px}
+.check input{width:18px;height:18px;accent-color:var(--amber-9);flex-shrink:0}
+.set-row{display:grid;grid-template-columns:auto 2.2rem 1fr;gap:.5rem;align-items:baseline;
+  padding:.4rem .55rem;border-radius:var(--radius-3);background:var(--surface-2);
+  border:1px solid var(--line-soft);margin-bottom:.3rem}
+.set-row b{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--text-2);font-weight:400;white-space:nowrap}
+.set-row b.ok{color:var(--pos)} .set-row b.bad{color:var(--neg)}
+.set-n{font-family:var(--font-display);font-size:.95rem;color:var(--gold);text-align:right}
+.set-m{font-size:.8rem;color:var(--text-3);line-height:1.35;min-width:0;word-break:break-word}
+.syn-line b.ok{color:var(--pos)} .syn-line b.bad{color:var(--neg)}
+.fam-hint{text-align:center;font-family:var(--font-mono);font-size:.53rem;color:var(--mauve-8);
+  letter-spacing:.05em;padding:var(--size-2) var(--size-2) 0}
 </style>
 </head>
 <body>
@@ -509,40 +533,22 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
     <div id="plan-result"></div>
   </section>
 
-  <!-- ══ PERFILES ══ -->
+  <!-- ══ FAMILIA ══ -->
   <section class="view" id="view-perfil">
-    <div class="card">
-      <div class="eyebrow">✦ Perfiles</div>
-      <div class="prof-list" id="prof-list"></div>
-      <button class="btn ghost" id="add-btn" onclick="openForm()">+ Añadir persona</button>
-
-      <div id="birth-form" hidden style="margin-top:var(--size-3)">
-        <hr class="dv">
-        <div class="form-grid">
-          <div class="field full"><label for="bn">Nombre</label>
-            <input type="text" id="bn" placeholder="Yo" maxlength="18" autocomplete="off"></div>
-          <div class="field"><label for="bd">Día</label><select id="bd"></select></div>
-          <div class="field"><label for="bm">Mes</label><select id="bm"></select></div>
-          <div class="field yr"><label for="by">Año</label><select id="by"></select></div>
-        </div>
-        <div style="display:flex;gap:var(--size-2);align-items:center">
-          <button class="btn" onclick="saveProfile()">Guardar perfil</button>
-          <button class="btn ghost" onclick="closeForm()">Cancelar</button>
-        </div>
-        <div id="form-err" class="err" hidden></div>
-      </div>
-    </div>
-
-    <div class="card" id="syn-card"></div>
-
+    <div class="card flush" id="prof-list"></div>
+    <div id="fam-panel"></div>
+    <div class="card" id="fam-members"></div>
+    <div class="card" id="fam-sets"></div>
+    <div class="card" id="fam-graph"></div>
+    <div class="card" id="fam-aff"></div>
     <div class="card">
       <div class="eyebrow">◎ La app</div>
       <p class="muted" id="pwa-status">—</p>
     </div>
-
     <p class="credit">
-      Sistema de diseño sobre <a href="https://www.radix-ui.com/colors" target="_blank" rel="noopener">Radix Colors</a>
-      y <a href="https://open-props.style" target="_blank" rel="noopener">Open Props</a> · MIT<br>
+      Grafo con <a href="https://js.cytoscape.org" target="_blank" rel="noopener">Cytoscape.js</a> ·
+      diseño sobre <a href="https://www.radix-ui.com/colors" target="_blank" rel="noopener">Radix Colors</a>
+      y <a href="https://open-props.style" target="_blank" rel="noopener">Open Props</a> · todo MIT<br>
       Numerología GG33 · uso personal y de entretenimiento
     </p>
   </section>
@@ -554,11 +560,12 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
   <button class="tab"     data-tab="cal" onclick="go('cal')"><i>▦</i>Calendario</button>
   <button class="tab"     data-tab="anio" onclick="go('anio')"><i>🐉</i>Año</button>
   <button class="tab"     data-tab="plan" onclick="go('plan')"><i>◈</i>Planificar</button>
-  <button class="tab"     data-tab="perfil" onclick="go('perfil')"><i>✦</i>Perfiles</button>
+  <button class="tab"     data-tab="perfil" onclick="go('perfil')"><i>🌳</i>Familia</button>
 </nav>
 
 <div class="toast" id="toast"></div>
 
+<script src="vendor/cytoscape.min.js"></script>
 <script>
 // ── CONSTANTS ──────────────────────────────────────────────
 const MONTHS_ES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
@@ -849,6 +856,13 @@ function loadStore(){
     activeIdx=typeof d.active==='number'?d.active:(profiles.length?0:-1);
     if(activeIdx>=profiles.length)activeIdx=profiles.length?0:-1;
     heatOn=!!d.heat; intent=d.intent||null;
+    let yoVisto=false;                                   // migración a nodos del árbol
+    profiles.forEach((p,i)=>{
+      if(!p.id)p.id='n'+i+'x'+(p.by||0)+(p.bm||0)+(p.bd||0);
+      if(!p.rel)p.rel=(i===(activeIdx>=0?activeIdx:0))?'yo':'otro';
+      if(p.rel==='yo'){if(yoVisto)p.rel='otro';else yoVisto=true}
+    });
+    if(!yoVisto&&profiles.length)profiles[activeIdx>=0?activeIdx:0].rel='yo';
   }catch(e){profiles=[];activeIdx=-1}
 }
 function saveStore(){
@@ -894,43 +908,8 @@ function syncDays(){
 }
 
 // ═══ PERFILES ══════════════════════════════════════════════
-function openForm(){
-  const f=document.getElementById('birth-form');
-  f.hidden=false;
-  document.getElementById('add-btn').hidden=true;
-  fillSelects();
-  document.getElementById('bn').focus();
-}
-function closeForm(){
-  document.getElementById('birth-form').hidden=true;
-  document.getElementById('add-btn').hidden=false;
-  document.getElementById('form-err').hidden=true;
-  document.getElementById('bn').value='';
-}
-function saveProfile(){
-  const name=(document.getElementById('bn').value||'').trim()||`Perfil ${profiles.length+1}`;
-  const d=+document.getElementById('bd').value,m=+document.getElementById('bm').value,y=+document.getElementById('by').value;
-  const probe=new Date(y,m-1,d);
-  if(!d||!m||!y||probe.getDate()!==d||probe.getMonth()!==m-1){
-    const e=document.getElementById('form-err');
-    e.textContent='Esa fecha no existe. Revisa día y mes.';e.hidden=false;return;
-  }
-  profiles.push({name,bd:d,bm:m,by:y,lp:calcLP(d,m,y).lp});
-  activeIdx=profiles.length-1;
-  syncUser();saveStore();closeForm();
-  toast(`Perfil de ${name} guardado`);
-  renderAll();
-}
-function selectProfile(i){activeIdx=i;syncUser();saveStore();renderAll()}
-function deleteProfile(i,ev){
-  if(ev)ev.stopPropagation();
-  const n=profiles[i]?.name||'';
-  profiles.splice(i,1);
-  if(activeIdx>=profiles.length)activeIdx=profiles.length-1;
-  if(!profiles.length)activeIdx=-1;
-  if(synB>=profiles.length)synB=-1;
-  syncUser();saveStore();toast(`${n} eliminado`);renderAll();
-}
+function openForm(){go('perfil');setTimeout(famOpenForm,90)}
+function closeForm(){famCloseForm()}
 
 // ═══ NÚMEROS PERSONALES ════════════════════════════════════
 // El AÑO PERSONAL arranca el día de tu cumpleaños y termina
@@ -1463,25 +1442,6 @@ function renderPlan(keepFocus){
 }
 
 // ═══ VISTA PERFILES + SINASTRÍA ════════════════════════════
-function renderProfiles(){
-  const list=document.getElementById('prof-list');
-  document.getElementById('who-btn').textContent=user?user.name.trim()[0].toUpperCase():'✦';
-  if(!profiles.length){
-    list.innerHTML=`<p class="muted">Todavía no hay perfiles. Añade el tuyo para empezar.</p>`;
-  }else{
-    list.innerHTML=profiles.map((p,i)=>{
-      const an=yearAnim(p.by),d=LP[p.lp]||LP[1];
-      return `<div class="prof-card${i===activeIdx?' on':''}">
-        <div class="prof-av">${escapeHtml(p.name.trim()[0]||'?').toUpperCase()}</div>
-        <div class="prof-body" onclick="selectProfile(${i})">
-          <div class="prof-name">${escapeHtml(p.name)} ${i===activeIdx?'<span class="chip gold" style="font-size:.52rem">activo</span>':''}</div>
-          <div class="prof-meta">${String(p.bd).padStart(2,'0')}/${String(p.bm).padStart(2,'0')}/${p.by} · LP${p.lp} ${d.name} · ${AEMOJI[an]} ${ANIMALS[an]}</div>
-        </div>
-        <button class="icon-btn" title="Eliminar" onclick="deleteProfile(${i},event)">×</button>
-      </div>`}).join('');
-  }
-  renderSyn();
-}
 function pickSyn(v){synB=+v;renderSyn()}
 function renderSyn(){
   const el=document.getElementById('syn-card');
@@ -1706,6 +1666,395 @@ function anioAlertHtml(){
     <div class="muted" style="margin-top:.25rem">${E.do[0]} →</div>
   </button>`;
 }
+
+// ═══ FAMILIA · TEORÍA DE CONJUNTOS Y DE GRAFOS ═════════════
+const LADOS={
+  p:{n:'Linaje paterno',v:'--jade-9',cl:'pos'},
+  m:{n:'Linaje materno',v:'--violet-9',cl:'acc'},
+  x:{n:'Núcleo propio',v:'--amber-9',cl:'gold'},
+  c:{n:'Familia política',v:'--ruby-9',cl:'neg'},
+  f:{n:'Familia elegida',v:'--mauve-8',cl:''}
+};
+const SIDE_ORD={p:0,x:1,m:2,c:3,f:4};
+const TRINES=[[0,4,8],[1,5,9],[2,6,10],[3,7,11]];
+let cy=null,famSel=null,famAff=true,famNoDate=false,famAffTot={al:0,co:0,pares:0};
+
+function relOf(p){const R=(DATA&&DATA.parentescos)||{};return R[p.rel]||R.otro||{n:'Otro',g:0,s:'f',b:0,a:[]}}
+function hasDate(p){return !!(p&&p.bd&&p.bm&&p.by)}
+function memAnim(p){return hasDate(p)?yearAnim(p.by):null}
+function cssv(k){return getComputedStyle(document.documentElement).getPropertyValue(k).trim()||'#888'}
+
+function famBuild(){
+  const P=profiles.map((p,i)=>({...p,idx:i,id:p.id||('n'+i)}));
+  const byRel={};P.forEach(p=>{const r=p.rel||'otro';(byRel[r]=byRel[r]||[]).push(p)});
+  const nodes=P.map(p=>{const r=relOf(p);return{p,r,id:p.id,gen:r.g,side:r.s}});
+  const edges=[];
+  for(const n of nodes){
+    for(let k=0;k<n.r.a.length;k++){
+      const[rel,tipo]=n.r.a[k],list=byRel[rel];
+      if(!list)continue;
+      const anchor=list.find(x=>x.id!==n.id);
+      if(!anchor)continue;
+      const fb=k>0;
+      if(tipo==='hijoDe')       edges.push({s:anchor.id,t:n.id,k:'parent',fb});
+      else if(tipo==='padreDe') edges.push({s:n.id,t:anchor.id,k:'parent',fb});
+      else if(tipo==='parejaDe')edges.push({s:anchor.id,t:n.id,k:'pareja',fb});
+      else if(tipo==='hermanoDe')edges.push({s:anchor.id,t:n.id,k:'hermano',fb});
+      else edges.push({s:anchor.id,t:n.id,k:'vinculo',fb});
+      break;
+    }
+  }
+  return{nodes,edges};
+}
+function famPair(a,b){
+  return synastry({...a,anim:yearAnim(a.by)},{...b,anim:yearAnim(b.by)});
+}
+function famAffinity(nodes){
+  const out=[],w=nodes.filter(n=>hasDate(n.p));
+  for(let i=0;i<w.length;i++)for(let j=i+1;j<w.length;j++){
+    const r=famPair(w[i].p,w[j].p);
+    if(r.score>=78)out.push({s:w[i].id,t:w[j].id,k:'alianza',sc:r.score,a:w[i],b:w[j]});
+    else if(r.score<=28)out.push({s:w[i].id,t:w[j].id,k:'conflicto',sc:r.score,a:w[i],b:w[j]});
+  }
+  return out.sort((x,y)=>y.k==='alianza'?y.sc-x.sc:x.sc-y.sc);
+}
+function famPositions(nodes){
+  const byGen={},pos={};
+  nodes.forEach(n=>{(byGen[n.gen]=byGen[n.gen]||[]).push(n)});
+  Object.keys(byGen).forEach(g=>{
+    const row=byGen[g].sort((a,b)=>(SIDE_ORD[a.side]-SIDE_ORD[b.side])||(a.p.idx-b.p.idx));
+    row.forEach((n,i)=>{pos[n.id]={x:(i-(row.length-1)/2)*152,y:(2-Number(g))*150}});
+  });
+  return pos;
+}
+
+function famDraw(){
+  const cont=document.getElementById('cy');
+  if(!cont||typeof cytoscape!=='function'||!DATA||!DATA.parentescos)return;
+  const{nodes,edges}=famBuild(),affAll=famAffinity(nodes),pos=famPositions(nodes);
+  const TOPE=8;   // el grafo completo K(n) satura la vista: solo las relaciones más fuertes
+  const aff=[...affAll.filter(x=>x.k==='alianza').slice(0,TOPE),
+             ...affAll.filter(x=>x.k==='conflicto').slice(0,TOPE)];
+  famAffTot={al:affAll.filter(x=>x.k==='alianza').length,co:affAll.filter(x=>x.k==='conflicto').length,
+             pares:nodes.filter(n=>hasDate(n.p)).length*(nodes.filter(n=>hasDate(n.p)).length-1)/2};
+  const els=[
+    ...nodes.map(n=>({group:'nodes',position:{...pos[n.id]},data:{
+      id:n.id,label:n.p.name,
+      lbl:`${n.p.name}\n${hasDate(n.p)?`LP${n.p.lp} ${AEMOJI[yearAnim(n.p.by)]}`:'sin fecha'}`,
+      sub:hasDate(n.p)?`${n.r.n} · LP${n.p.lp} ${AEMOJI[yearAnim(n.p.by)]}`:`${n.r.n} · sin fecha`,
+      side:n.side,yo:n.p.rel==='yo'?1:0,act:n.p.idx===activeIdx?1:0,nod:hasDate(n.p)?0:1}})),
+    ...edges.map((e,i)=>({group:'edges',data:{id:'s'+i,source:e.s,target:e.t,k:e.k,fb:e.fb?1:0}})),
+    ...aff.map((e,i)=>({group:'edges',data:{id:'a'+i,source:e.s,target:e.t,k:e.k,sc:e.sc}}))
+  ];
+  if(cy){try{cy.destroy()}catch(e){}cy=null}
+  cy=cytoscape({
+    container:cont,elements:els,layout:{name:'preset'},
+    minZoom:.25,maxZoom:2.5,wheelSensitivity:.25,
+    style:[
+      {selector:'node',style:{
+        'shape':'round-rectangle','width':118,'height':46,
+        'background-color':cssv('--mauve-3'),'border-width':1.5,
+        'border-color':ele=>cssv(LADOS[ele.data('side')].v),
+        'label':'data(lbl)','color':cssv('--mauve-12'),
+        'font-family':'Cormorant Garamond, serif','font-size':13,'line-height':1.35,
+        'text-valign':'center','text-halign':'center','text-wrap':'wrap','text-max-width':104}},
+      {selector:'node[nod=1]',style:{'border-style':'dashed','opacity':.62}},
+      {selector:'node[yo=1]',style:{'border-width':2.5,'background-color':cssv('--amber-3')}},
+      {selector:'node[act=1]',style:{'border-color':cssv('--amber-9'),'border-width':3}},
+      {selector:'node:selected',style:{'border-color':cssv('--amber-11'),'border-width':3.5}},
+      {selector:'edge',style:{'width':1.4,'line-color':cssv('--mauve-7'),'curve-style':'bezier',
+        'target-arrow-shape':'none','opacity':.85}},
+      {selector:'edge[k="parent"]',style:{'line-color':cssv('--mauve-8'),'width':1.8,
+        'target-arrow-shape':'triangle','target-arrow-color':cssv('--mauve-8'),'arrow-scale':.7}},
+      {selector:'edge[k="pareja"]',style:{'line-color':cssv('--amber-8'),'line-style':'solid','width':2}},
+      {selector:'edge[k="hermano"]',style:{'line-color':cssv('--mauve-7'),'line-style':'dotted'}},
+      {selector:'edge[k="vinculo"]',style:{'line-color':cssv('--mauve-6'),'line-style':'dashed'}},
+      {selector:'edge[fb=1]',style:{'line-style':'dashed','opacity':.5}},
+      {selector:'edge[k="alianza"]',style:{'line-color':cssv('--jade-9'),'line-style':'dashed',
+        'width':1.6,'curve-style':'unbundled-bezier','control-point-distances':[42],'control-point-weights':[.5],'opacity':.75}},
+      {selector:'edge[k="conflicto"]',style:{'line-color':cssv('--ruby-9'),'line-style':'dashed',
+        'width':1.6,'curve-style':'unbundled-bezier','control-point-distances':[-42],'control-point-weights':[.5],'opacity':.8}}
+    ]
+  });
+  cy.on('tap','node',ev=>{famSel=ev.target.id();famPanel()});
+  cy.on('tap',ev=>{if(ev.target===cy){famSel=null;famPanel()}});
+  famToggleAff(famAff,true);
+  cy.fit(undefined,18);
+  famPanel();
+}
+function famToggleAff(v,silent){
+  famAff=v;
+  if(cy)cy.edges('[k="alianza"],[k="conflicto"]').style('display',v?'element':'none');
+  if(!silent){const b=document.getElementById('aff-btn');if(b)b.classList.toggle('on',v)}
+}
+function famFit(){if(!cy)return;cy.resize();cy.fit(undefined,18)}
+function famZoom(f){
+  if(!cy)return;
+  const yo=cy.$('node[yo=1]');
+  cy.zoom({level:Math.max(cy.minZoom(),Math.min(cy.maxZoom(),cy.zoom()*f)),
+           renderedPosition:{x:cy.width()/2,y:cy.height()/2}});
+  if(f>1&&yo.length&&cy.zoom()>1.1)cy.center(yo);
+}
+
+// ── Teoría de conjuntos ──
+function famSets(){
+  const{nodes}=famBuild();
+  const conD=nodes.filter(n=>hasDate(n.p));
+  const porLado={},porGen={},sangre=[],politica=[];
+  nodes.forEach(n=>{
+    (porLado[n.side]=porLado[n.side]||[]).push(n);
+    (porGen[n.gen]=porGen[n.gen]||[]).push(n);
+    (n.r.b?sangre:politica).push(n);
+  });
+  const porTrine=TRINES.map(t=>conD.filter(n=>t.includes(yearAnim(n.p.by))));
+  const yo=nodes.find(n=>n.p.rel==='yo');
+  let miTrine=null,enMiTrine=[],miOpuesto=[];
+  if(yo&&hasDate(yo.p)){
+    const ya=yearAnim(yo.p.by);
+    miTrine=TRINES.findIndex(t=>t.includes(ya));
+    enMiTrine=conD.filter(n=>n.id!==yo.id&&(A_FRIEND[ya]||[]).includes(yearAnim(n.p.by)));
+    miOpuesto=conD.filter(n=>(A_ENEMY[ya]||[]).includes(yearAnim(n.p.by)));
+  }
+  return{nodes,conD,porLado,porGen,sangre,politica,porTrine,yo,miTrine,enMiTrine,miOpuesto};
+}
+// ── Teoría de grafos ──
+function famMetrics(){
+  if(!cy)return null;
+  const est=cy.edges().filter(e=>['parent','pareja','hermano','vinculo'].includes(e.data('k')));
+  const g=cy.nodes().union(est);
+  const n=cy.nodes().length,m=est.length;
+  const comps=g.components();
+  let cut=[];try{cut=g.hopcroftTarjanBiconnected().cut.map(x=>x.id())}catch(e){}
+  let bc=null;try{bc=g.betweennessCentrality({directed:false})}catch(e){}
+  const grados=cy.nodes().map(x=>({id:x.id(),label:x.data('label'),
+    d:est.filter(e=>e.source().id()===x.id()||e.target().id()===x.id()).length,
+    b:bc?bc.betweennessNormalized(x):0}));
+  grados.sort((a,b)=>b.d-a.d||b.b-a.b);
+  const alianzas=famAffTot.al,conflictos=famAffTot.co;
+  const dens=n>1?(2*m)/(n*(n-1)):0;
+  return{n,m,dens,comps:comps.length,compList:comps,cut,grados,alianzas,conflictos,
+    puente:grados.slice().sort((a,b)=>b.b-a.b)[0]};
+}
+
+// ── Alta de miembros ──
+function famOpenForm(){
+  const f=document.getElementById('fam-form');
+  f.hidden=false;document.getElementById('fam-add').hidden=true;
+  fillSelects();famNoDate=false;famSyncDate();
+  document.getElementById('bn').focus();
+}
+function famCloseForm(){
+  const f=document.getElementById('fam-form');
+  f.hidden=true;document.getElementById('fam-add').hidden=false;
+  document.getElementById('form-err').hidden=true;
+  document.getElementById('bn').value='';
+}
+function famSyncDate(){
+  famNoDate=document.getElementById('no-date').checked;
+  document.getElementById('date-grid').style.display=famNoDate?'none':'';
+}
+function saveProfile(){
+  const name=(document.getElementById('bn').value||'').trim()||'Sin nombre';
+  const rel=document.getElementById('brel').value;
+  const err=document.getElementById('form-err');
+  const nuevo={id:'n'+Date.now().toString(36)+Math.floor(Math.random()*999),name,rel};
+  if(!famNoDate){
+    const d=+document.getElementById('bd').value,m=+document.getElementById('bm').value,y=+document.getElementById('by').value;
+    const probe=new Date(y,m-1,d);
+    if(!d||!m||!y||probe.getDate()!==d||probe.getMonth()!==m-1){
+      err.textContent='Esa fecha no existe. Revisa día y mes, o marca “no sé la fecha”.';err.hidden=false;return;
+    }
+    Object.assign(nuevo,{bd:d,bm:m,by:y,lp:calcLP(d,m,y).lp});
+  }
+  if(rel==='yo')profiles.forEach(p=>{if(p.rel==='yo')p.rel='otro'});
+  profiles.push(nuevo);
+  if(hasDate(nuevo)&&(activeIdx<0||rel==='yo'))activeIdx=profiles.length-1;
+  syncUser();saveStore();famCloseForm();
+  toast(`${name} añadido al árbol`);
+  famSel=nuevo.id;renderAll();
+}
+function selectProfile(i){
+  if(!hasDate(profiles[i])){toast('Ese miembro no tiene fecha guardada');return}
+  activeIdx=i;syncUser();saveStore();renderAll();
+}
+function deleteProfile(i,ev){
+  if(ev)ev.stopPropagation();
+  const n=profiles[i]?.name||'';
+  if(profiles[i]&&profiles[i].id===famSel)famSel=null;
+  profiles.splice(i,1);
+  if(activeIdx>=profiles.length)activeIdx=profiles.length-1;
+  if(activeIdx>=0&&!hasDate(profiles[activeIdx]))activeIdx=profiles.findIndex(hasDate);
+  if(!profiles.length)activeIdx=-1;
+  if(synB>=profiles.length)synB=-1;
+  syncUser();saveStore();toast(`${n} eliminado`);renderAll();
+}
+
+// ── Panel del nodo seleccionado ──
+function famPanel(){
+  const el=document.getElementById('fam-panel');if(!el)return;
+  if(!famSel){el.innerHTML='';return}
+  const{nodes}=famBuild();
+  const n=nodes.find(x=>x.id===famSel);
+  if(!n){el.innerHTML='';return}
+  const L=LADOS[n.side];
+  let rel='';
+  if(hasDate(n.p)){
+    const otros=nodes.filter(o=>o.id!==n.id&&hasDate(o.p))
+      .map(o=>({o,r:famPair(n.p,o.p)})).sort((a,b)=>b.r.score-a.r.score);
+    const top=otros.slice(0,3),bot=otros.slice(-3).reverse().filter(x=>x.r.score<50);
+    const line=(x,cls)=>`<div class="syn-line"><b class="${cls}">${x.r.score}</b>
+      <span>${escapeHtml(x.o.p.name)} · ${x.o.r.n}${x.r.score>=70?' — alianza':x.r.score<=35?' — choque':''}</span></div>`;
+    rel=`<div class="eyebrow" style="margin-top:var(--size-3)">◈ Dentro de la familia</div>
+      <div class="syn-lines">${top.map(x=>line(x,'ok')).join('')}${bot.length?bot.map(x=>line(x,'bad')).join(''):''}</div>`;
+  }else{
+    rel=`<p class="muted" style="margin-top:var(--size-3)">Sin fecha de nacimiento no puedo calcular alianzas ni choques. Aparece en el árbol como estructura.</p>`;
+  }
+  const i=profiles.findIndex(p=>(p.id||'')===n.id);
+  el.innerHTML=`<div class="card">
+    <div class="act-head">
+      <i>${hasDate(n.p)?AEMOJI[yearAnim(n.p.by)]:'◌'}</i>
+      <div><div class="act-title">${escapeHtml(n.p.name)}</div>
+        <div class="chips" style="margin-top:.35rem">
+          <span class="chip ${L.cl}">${n.r.n}</span>
+          <span class="chip">${L.n}</span>
+          <span class="chip">${n.gen>0?'+'+n.gen:n.gen} generación</span>
+          ${n.r.b?'<span class="chip">sangre</span>':'<span class="chip">no consanguíneo</span>'}
+          ${hasDate(n.p)?`<span class="chip gold">LP${n.p.lp} · ${(LP[n.p.lp]||{}).name||''}</span>`:''}
+        </div></div>
+      <button class="icon-btn" onclick="famSel=null;famPanel()" title="Cerrar">×</button>
+    </div>
+    ${rel}
+    <div style="display:flex;gap:var(--size-2);margin-top:var(--size-3);flex-wrap:wrap">
+      ${hasDate(n.p)&&i!==activeIdx?`<button class="btn ghost" onclick="selectProfile(${i})">Usar en el calendario</button>`:''}
+      <button class="btn ghost" onclick="deleteProfile(${i})">Eliminar del árbol</button>
+    </div>
+  </div>`;
+}
+
+// ── Vista Familia ──
+function famRender(){
+  const el=document.getElementById('prof-list');
+  document.getElementById('who-btn').textContent=user?user.name.trim()[0].toUpperCase():'✦';
+  if(!DATA||!DATA.parentescos){el.innerHTML='<p class="muted">Cargando…</p>';return}
+  const R=DATA.parentescos;
+  const{nodes,conD,porLado,porGen,sangre,politica,porTrine,yo,miTrine,enMiTrine,miOpuesto}=famSets();
+  const TRN=['Rata · Dragón · Mono','Buey · Serpiente · Gallo','Tigre · Caballo · Perro','Conejo · Cabra · Cerdo'];
+  const relOpts=Object.entries(R).map(([k,v])=>opt(k,v.n,k==='pareja')).join('');
+  const genN=g=>({'2':'Abuelos','1':'Padres y tíos','0':'Tu generación','-1':'Hijos y sobrinos','-2':'Nietos'})[String(g)]||('Gen '+g);
+
+  el.innerHTML=`
+  <div class="fam-tools">
+    <button class="tool-btn" onclick="famFit()">⛶ Ajustar</button>
+    <button class="tool-btn" onclick="famZoom(1.45)">＋</button>
+    <button class="tool-btn" onclick="famZoom(0.69)">－</button>
+    <button class="tool-btn ${famAff?'on':''}" id="aff-btn" onclick="famToggleAff(!famAff)">⇄ Alianzas y choques</button>
+    <button class="tool-btn" onclick="famOpenForm()">+ Añadir</button>
+  </div>
+  <div id="cy"></div>
+  <div class="fam-hint">Pellizca o usa ＋ para acercar · arrastra para mover · toca un nodo para ver su ficha</div>
+  <div class="fam-legend">
+    ${Object.entries(LADOS).map(([k,v])=>`<span class="li"><i style="background:var(${v.v})"></i>${v.n}</span>`).join('')}
+    <span class="li"><i style="background:var(--jade-9);height:2px;border-radius:0"></i>alianza</span>
+    <span class="li"><i style="background:var(--ruby-9);height:2px;border-radius:0"></i>choque</span>
+  </div>`;
+
+  // formulario + lista de miembros
+  const list=document.getElementById('fam-members');
+  list.innerHTML=`
+    <div class="eyebrow">✦ Miembros · ${nodes.length}</div>
+    ${nodes.length?`<div class="prof-list">${profiles.map((p,i)=>{
+      const r=relOf(p),an=memAnim(p),L=LADOS[r.s];
+      return `<div class="prof-card${i===activeIdx?' on':''}">
+        <div class="prof-av" style="border-color:var(${L.v})">${escapeHtml((p.name||'?').trim()[0]||'?').toUpperCase()}</div>
+        <div class="prof-body" onclick="famSel='${p.id}';famPanel();document.getElementById('fam-panel').scrollIntoView({behavior:'smooth',block:'center'})">
+          <div class="prof-name">${escapeHtml(p.name)} ${i===activeIdx?'<span class="chip gold" style="font-size:.52rem">calendario</span>':''}</div>
+          <div class="prof-meta">${r.n} · ${hasDate(p)?`${String(p.bd).padStart(2,'0')}/${String(p.bm).padStart(2,'0')}/${p.by} · LP${p.lp} ${AEMOJI[an]}`:'sin fecha'}</div>
+        </div>
+        <button class="icon-btn" title="Eliminar" onclick="deleteProfile(${i},event)">×</button>
+      </div>`}).join('')}</div>`
+    :`<p class="muted">Aún no hay nadie. Empieza por ti y luego añade a quien quieras: todo es opcional.</p>`}
+    <button class="btn ghost" id="fam-add" onclick="famOpenForm()">+ Añadir persona</button>
+    <div id="fam-form" hidden style="margin-top:var(--size-3)">
+      <hr class="dv">
+      <div class="form-grid">
+        <div class="field full"><label for="bn">Nombre</label>
+          <input type="text" id="bn" placeholder="Nombre" maxlength="18" autocomplete="off"></div>
+        <div class="field full"><label for="brel">Parentesco</label>
+          <select id="brel">${relOpts}</select></div>
+      </div>
+      <label class="check"><input type="checkbox" id="no-date" onchange="famSyncDate()"> No sé su fecha de nacimiento</label>
+      <div class="form-grid" id="date-grid" style="margin-top:var(--size-2)">
+        <div class="field"><label for="bd">Día</label><select id="bd"></select></div>
+        <div class="field"><label for="bm">Mes</label><select id="bm"></select></div>
+        <div class="field yr"><label for="by">Año</label><select id="by"></select></div>
+      </div>
+      <div style="display:flex;gap:var(--size-2);align-items:center;margin-top:var(--size-2)">
+        <button class="btn" onclick="saveProfile()">Guardar</button>
+        <button class="btn ghost" onclick="famCloseForm()">Cancelar</button>
+      </div>
+      <div id="form-err" class="err" hidden></div>
+    </div>`;
+
+  // conjuntos
+  const S=document.getElementById('fam-sets');
+  const chipSet=(t,arr,cls)=>`<div class="set-row"><b class="${cls||''}">${t}</b>
+    <span class="set-n">${arr.length}</span>
+    <span class="set-m">${arr.length?arr.map(x=>escapeHtml(x.p.name)).join(', '):'—'}</span></div>`;
+  S.innerHTML=`<div class="eyebrow">∩ Teoría de conjuntos</div>
+    <p class="muted" style="margin-bottom:var(--size-3)">Estar en el mismo trine chino es una relación de equivalencia, así que parte a tu familia en clases que no se traslapan. Los demás conjuntos son particiones por linaje, generación y consanguinidad.</p>
+    <div class="eyebrow">◈ Partición por trine chino${conD.length<nodes.length?` · solo ${conD.length} de ${nodes.length} con fecha`:''}</div>
+    ${porTrine.map((t,i)=>chipSet(TRN[i],t,miTrine===i?'ok':'')).join('')}
+    <div class="eyebrow" style="margin-top:var(--size-4)">◈ Partición por linaje</div>
+    ${Object.keys(LADOS).filter(k=>(porLado[k]||[]).length).map(k=>chipSet(LADOS[k].n,porLado[k])).join('')}
+    <div class="eyebrow" style="margin-top:var(--size-4)">◈ Partición por generación</div>
+    ${Object.keys(porGen).sort((a,b)=>b-a).map(g=>chipSet(genN(g),porGen[g])).join('')}
+    <div class="eyebrow" style="margin-top:var(--size-4)">◈ Sangre y política</div>
+    ${chipSet('Consanguíneos',sangre)}${chipSet('Por vínculo',politica)}
+    ${yo&&hasDate(yo.p)?`
+      <div class="eyebrow" style="margin-top:var(--size-4)">◈ Intersecciones contigo</div>
+      ${chipSet('Tu trine ∩ familia',enMiTrine,'ok')}
+      ${chipSet('Tu opuesto ∩ familia',miOpuesto,'bad')}
+      ${chipSet('Tu trine ∩ sangre',enMiTrine.filter(x=>x.r.b),'ok')}`:''}`;
+
+  // grafo
+  const G=document.getElementById('fam-graph');
+  setTimeout(()=>{
+    famDraw();
+    const M=famMetrics();
+    if(!M){G.innerHTML='';return}
+    const nom=id=>{const x=nodes.find(n=>n.id===id);return x?escapeHtml(x.p.name):id};
+    G.innerHTML=`<div class="eyebrow">⌗ Teoría de grafos</div>
+      <div class="cd-grid">
+        <div class="cd"><div class="cd-lbl">Nodos y aristas</div><div class="cd-val">${M.n} · ${M.m}</div>
+          <div class="cd-sub">densidad ${(M.dens*100).toFixed(0)}% del grafo completo</div></div>
+        <div class="cd ${M.comps>1?'bad':'good'}"><div class="cd-lbl">Componentes conexas</div><div class="cd-val">${M.comps}</div>
+          <div class="cd-sub">${M.comps>1?'hay ramas sueltas: añade el familiar que las une':'todo el árbol está conectado'}</div></div>
+        <div class="cd"><div class="cd-lbl">Más conectado</div><div class="cd-val" style="font-size:1.1rem">${M.grados[0]?nom(M.grados[0].id):'—'}</div>
+          <div class="cd-sub">grado ${M.grados[0]?M.grados[0].d:0}</div></div>
+      </div>
+      <div class="eyebrow" style="margin-top:var(--size-4)">◈ Vértices de articulación</div>
+      <p class="muted">${M.cut.length
+        ? `Si estas personas salieran del grafo, la familia se partiría en pedazos: <b style="color:var(--gold)">${M.cut.map(nom).join(', ')}</b>. Son quienes sostienen la conexión entre ramas.`
+        : 'Ninguno: no hay una sola persona cuya salida desconecte el árbol.'}</p>
+      ${M.puente&&M.puente.b>0?`<p class="muted" style="margin-top:.5rem">El mayor puente entre ramas es <b style="color:var(--gold)">${nom(M.puente.id)}</b> (intermediación ${(M.puente.b*100).toFixed(0)}%): por ahí pasa la mayoría de los caminos entre parientes.</p>`:''}
+      <div class="eyebrow" style="margin-top:var(--size-4)">◈ Grafo de afinidad</div>
+      <p class="muted">${M.alianzas} alianza${M.alianzas===1?'':'s'} y ${M.conflictos} choque${M.conflictos===1?'':'s'} entre los ${conD.length} miembros con fecha, de ${conD.length*(conD.length-1)/2} pares posibles del grafo completo. En el dibujo solo se trazan las 8 más fuertes de cada tipo para que se pueda leer.</p>`;
+  },30);
+
+  // aliados y conflictos
+  const A=document.getElementById('fam-aff');
+  const aff=famAffinity(nodes);
+  const al=aff.filter(x=>x.k==='alianza').slice(0,4),co=aff.filter(x=>x.k==='conflicto').slice(0,4);
+  A.innerHTML=`<div class="eyebrow">⇄ Aliados y conflictos</div>
+    ${conD.length<2?`<p class="muted">Necesito al menos dos miembros con fecha de nacimiento para calcular esto.</p>`:`
+    <div class="bd-grid">
+      <div><div class="glabel" style="color:var(--pos)">✦ ALIANZAS</div>
+        ${al.length?al.map(x=>`<div class="syn-line"><b class="ok">${x.sc}</b><span>${escapeHtml(x.a.p.name)} · ${escapeHtml(x.b.p.name)}</span></div>`).join(''):'<p class="muted">Ninguna fuerte.</p>'}</div>
+      <div><div class="glabel" style="color:var(--neg)">✕ CHOQUES</div>
+        ${co.length?co.map(x=>`<div class="syn-line"><b class="bad">${x.sc}</b><span>${escapeHtml(x.a.p.name)} · ${escapeHtml(x.b.p.name)}</span></div>`).join(''):'<p class="muted">Ninguno fuerte.</p>'}</div>
+    </div>`}`;
+}
+function renderProfiles(){famRender()}
 
 // ═══ ORQUESTADOR ═══════════════════════════════════════════
 function renderAll(){

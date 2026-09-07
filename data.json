@@ -1,5 +1,5 @@
 {
- "version": 4,
+ "version": 5,
  "generado": "corpus GG33 · reglas combinatorias",
  "dia": {
   "1": {
@@ -6103,6 +6103,691 @@
    "b": [
     1,
     5
+   ]
+  }
+ },
+ "parentescos": {
+  "yo": {
+   "n": "Yo",
+   "g": 0,
+   "s": "x",
+   "b": 1,
+   "a": []
+  },
+  "pareja": {
+   "n": "Pareja / esposo(a)",
+   "g": 0,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "yo",
+     "parejaDe"
+    ]
+   ]
+  },
+  "ex": {
+   "n": "Ex pareja",
+   "g": 0,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "padre": {
+   "n": "Padre",
+   "g": 1,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "yo",
+     "padreDe"
+    ]
+   ]
+  },
+  "madre": {
+   "n": "Madre",
+   "g": 1,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "yo",
+     "padreDe"
+    ]
+   ]
+  },
+  "padrastro": {
+   "n": "Padrastro",
+   "g": 1,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "madre",
+     "parejaDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "madrastra": {
+   "n": "Madrastra",
+   "g": 1,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "padre",
+     "parejaDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "hermano": {
+   "n": "Hermano",
+   "g": 0,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "padre",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "hermanoDe"
+    ]
+   ]
+  },
+  "hermana": {
+   "n": "Hermana",
+   "g": 0,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "padre",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "hermanoDe"
+    ]
+   ]
+  },
+  "medioh": {
+   "n": "Medio hermano(a)",
+   "g": 0,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "padre",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "hermanoDe"
+    ]
+   ]
+  },
+  "abuelop": {
+   "n": "Abuelo paterno",
+   "g": 2,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "padre",
+     "padreDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "abuelap": {
+   "n": "Abuela paterna",
+   "g": 2,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "padre",
+     "padreDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "abuelom": {
+   "n": "Abuelo materno",
+   "g": 2,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "madre",
+     "padreDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "abuelam": {
+   "n": "Abuela materna",
+   "g": 2,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "madre",
+     "padreDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "tiop": {
+   "n": "Tío paterno",
+   "g": 1,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "abuelop",
+     "hijoDe"
+    ],
+    [
+     "abuelap",
+     "hijoDe"
+    ],
+    [
+     "padre",
+     "hermanoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "tiap": {
+   "n": "Tía paterna",
+   "g": 1,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "abuelop",
+     "hijoDe"
+    ],
+    [
+     "abuelap",
+     "hijoDe"
+    ],
+    [
+     "padre",
+     "hermanoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "tiom": {
+   "n": "Tío materno",
+   "g": 1,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "abuelom",
+     "hijoDe"
+    ],
+    [
+     "abuelam",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "hermanoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "tiam": {
+   "n": "Tía materna",
+   "g": 1,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "abuelom",
+     "hijoDe"
+    ],
+    [
+     "abuelam",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "hermanoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "primop": {
+   "n": "Primo paterno",
+   "g": 0,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "tiop",
+     "hijoDe"
+    ],
+    [
+     "tiap",
+     "hijoDe"
+    ],
+    [
+     "abuelop",
+     "hijoDe"
+    ],
+    [
+     "padre",
+     "vinculoCon"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "primap": {
+   "n": "Prima paterna",
+   "g": 0,
+   "s": "p",
+   "b": 1,
+   "a": [
+    [
+     "tiop",
+     "hijoDe"
+    ],
+    [
+     "tiap",
+     "hijoDe"
+    ],
+    [
+     "abuelop",
+     "hijoDe"
+    ],
+    [
+     "padre",
+     "vinculoCon"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "primom": {
+   "n": "Primo materno",
+   "g": 0,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "tiom",
+     "hijoDe"
+    ],
+    [
+     "tiam",
+     "hijoDe"
+    ],
+    [
+     "abuelom",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "vinculoCon"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "primam": {
+   "n": "Prima materna",
+   "g": 0,
+   "s": "m",
+   "b": 1,
+   "a": [
+    [
+     "tiom",
+     "hijoDe"
+    ],
+    [
+     "tiam",
+     "hijoDe"
+    ],
+    [
+     "abuelom",
+     "hijoDe"
+    ],
+    [
+     "madre",
+     "vinculoCon"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "hijo": {
+   "n": "Hijo",
+   "g": -1,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "yo",
+     "hijoDe"
+    ]
+   ]
+  },
+  "hija": {
+   "n": "Hija",
+   "g": -1,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "yo",
+     "hijoDe"
+    ]
+   ]
+  },
+  "sobrino": {
+   "n": "Sobrino",
+   "g": -1,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "hermano",
+     "hijoDe"
+    ],
+    [
+     "hermana",
+     "hijoDe"
+    ],
+    [
+     "medioh",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "sobrina": {
+   "n": "Sobrina",
+   "g": -1,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "hermano",
+     "hijoDe"
+    ],
+    [
+     "hermana",
+     "hijoDe"
+    ],
+    [
+     "medioh",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "nieto": {
+   "n": "Nieto",
+   "g": -2,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "hijo",
+     "hijoDe"
+    ],
+    [
+     "hija",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "nieta": {
+   "n": "Nieta",
+   "g": -2,
+   "s": "x",
+   "b": 1,
+   "a": [
+    [
+     "hijo",
+     "hijoDe"
+    ],
+    [
+     "hija",
+     "hijoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "suegro": {
+   "n": "Suegro",
+   "g": 1,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "pareja",
+     "padreDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "suegra": {
+   "n": "Suegra",
+   "g": 1,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "pareja",
+     "padreDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "cunado": {
+   "n": "Cuñado",
+   "g": 0,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "pareja",
+     "hermanoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "cunada": {
+   "n": "Cuñada",
+   "g": 0,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "pareja",
+     "hermanoDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "yerno": {
+   "n": "Yerno",
+   "g": -1,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "hija",
+     "parejaDe"
+    ],
+    [
+     "hijo",
+     "parejaDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "nuera": {
+   "n": "Nuera",
+   "g": -1,
+   "s": "c",
+   "b": 0,
+   "a": [
+    [
+     "hijo",
+     "parejaDe"
+    ],
+    [
+     "hija",
+     "parejaDe"
+    ],
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "compadre": {
+   "n": "Compadre / comadre",
+   "g": 0,
+   "s": "f",
+   "b": 0,
+   "a": [
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "amigo": {
+   "n": "Amigo(a) cercano",
+   "g": 0,
+   "s": "f",
+   "b": 0,
+   "a": [
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "socio": {
+   "n": "Socio(a)",
+   "g": 0,
+   "s": "f",
+   "b": 0,
+   "a": [
+    [
+     "yo",
+     "vinculoCon"
+    ]
+   ]
+  },
+  "otro": {
+   "n": "Otro",
+   "g": 0,
+   "s": "f",
+   "b": 0,
+   "a": [
+    [
+     "yo",
+     "vinculoCon"
+    ]
    ]
   }
  }
