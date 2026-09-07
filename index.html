@@ -404,6 +404,53 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 .alert.acc{border-color:var(--accent-line);background:var(--accent-bg);color:var(--accent)}
 .alert.pos{border-color:var(--pos-line);background:var(--pos-bg);color:var(--pos)}
 .alert-t{font-family:var(--font-display);font-size:.98rem;color:var(--text);margin-top:.2rem}
+
+/* ── PLANIFICADOR · árbol de decisión ── */
+.search{display:flex;align-items:center;gap:.55rem;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:var(--radius-3);padding:0 .75rem;margin-bottom:var(--size-3)}
+.search span{color:var(--text-3);font-size:1rem}
+.search input{flex:1;background:none;border:none;outline:none;padding:.7rem 0;font-size:.95rem;min-height:44px}
+.search input::-webkit-search-cancel-button{filter:invert(.6)}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--size-2)}
+@media(max-width:520px){.cat-grid{grid-template-columns:1fr}}
+.cat-card{display:flex;align-items:center;gap:.6rem;padding:.7rem .8rem;border-radius:var(--radius-3);
+  background:var(--surface-2);border:1px solid var(--line-soft);text-align:left;
+  transition:all .18s var(--ease-3);min-height:58px}
+.cat-card:hover{border-color:var(--gold-line);transform:translateY(-1px)}
+.cat-card i{font-style:normal;font-size:1.35rem;line-height:1;flex-shrink:0}
+.cat-card>div{flex:1;min-width:0}
+.cat-card b{display:block;font-weight:400;font-size:.92rem;color:var(--text);line-height:1.2}
+.cat-card span{font-family:var(--font-mono);font-size:.53rem;letter-spacing:.04em;color:var(--text-3);
+  display:block;margin-top:.15rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cat-card em{font-family:var(--font-mono);font-style:normal;font-size:.62rem;color:var(--mauve-8);flex-shrink:0}
+.act-list{display:flex;flex-direction:column;gap:.35rem}
+.act{display:flex;align-items:center;gap:.6rem;padding:.6rem .7rem;border-radius:var(--radius-3);
+  background:var(--surface-2);border:1px solid var(--line-soft);text-align:left;
+  transition:all .18s var(--ease-3);min-height:50px}
+.act:hover{border-color:var(--gold-line)}
+.act.on{background:var(--gold-bg);border-color:var(--gold-line)}
+.act i{font-style:normal;font-size:1.15rem;line-height:1;flex-shrink:0}
+.act-b{flex:1;min-width:0}
+.act-n{font-size:.92rem;color:var(--text);line-height:1.25}
+.act.on .act-n{color:var(--gold)}
+.act-m{font-family:var(--font-mono);font-size:.52rem;letter-spacing:.05em;color:var(--text-3);
+  text-transform:uppercase;margin-top:.1rem}
+.act-ts{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.ts-alta{background:var(--gold-solid)}
+.ts-media{background:var(--mauve-8)}
+.ts-baja{background:var(--mauve-6)}
+.act-head{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:var(--size-3);
+  padding-bottom:var(--size-3);border-bottom:1px solid var(--line-soft)}
+.act-head i{font-style:normal;font-size:1.8rem;line-height:1;flex-shrink:0}
+.act-head>div{flex:1;min-width:0}
+.act-title{font-family:var(--font-display);font-size:1.05rem;color:var(--moon);line-height:1.25}
+.game-box{background:linear-gradient(160deg,var(--violet-2),var(--mauve-2));
+  border:1px solid var(--accent-line);border-radius:var(--radius-3);padding:.95rem;margin-bottom:var(--size-3)}
+.game-box .gplain{margin-top:.35rem}
+.game-str{margin-top:.7rem;padding-top:.7rem;border-top:1px solid var(--line-soft);
+  font-size:.88rem;line-height:1.5;color:var(--text)}
+.game-str b{font-family:var(--font-mono);font-size:.52rem;letter-spacing:.14em;color:var(--accent);
+  display:block;margin-bottom:.2rem}
 </style>
 </head>
 <body>
@@ -458,11 +505,7 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 
   <!-- ══ PLANIFICADOR ══ -->
   <section class="view" id="view-plan">
-    <div class="card">
-      <div class="eyebrow">◈ ¿Cuándo hago qué?</div>
-      <p class="muted" style="margin-bottom:var(--size-3)">Elige lo que quieres hacer y te digo los mejores días de los próximos 90, según tu lifepath, tu animal y tus números personales.</p>
-      <div class="intent-grid" id="intent-grid"></div>
-    </div>
+    <div id="plan-picker"></div>
     <div id="plan-result"></div>
   </section>
 
@@ -1027,12 +1070,45 @@ const INTENTS={
 };
 function intentScore(date,key,u){
   const base=dayScore(date,u); if(!base)return null;
-  const I=INTENTS[key]; let s=base.s;const why=[];
-  if(I.good.includes(base.primary)){s+=4;why.push(`#${base.primary} favorece "${I.n.toLowerCase()}"`)}
-  if(I.bad.includes(base.primary)){s-=4;why.push(`#${base.primary} va en contra de esto`)}
-  if(I.pd.includes(base.pd)){s+=3;why.push(`tu día personal ${base.pd} es el ideal para esto`)}
-  if(I.bad.includes(base.pd)){s-=2;why.push(`tu día personal ${base.pd} no acompaña`)}
-  return{...base,s,why:[...why,...base.why]};
+  const P=actProfile(key);
+  if(!P){                                   // catálogo viejo, por si data.json no cargó
+    const I=INTENTS[key]; if(!I)return base;
+    let s=base.s;const why=[];
+    if(I.good.includes(base.primary)){s+=4;why.push(`#${base.primary} favorece esto`)}
+    if(I.bad.includes(base.primary)){s-=4;why.push(`#${base.primary} va en contra de esto`)}
+    if(I.pd.includes(base.pd)){s+=3;why.push(`tu día personal ${base.pd} es el ideal`)}
+    return{...base,s,why:[...why,...base.why]};
+  }
+  let s=base.s;const why=[];
+  const n=P.n.toLowerCase();
+  if(P.good.includes(base.primary)){s+=4;why.push(`el #${base.primary} favorece ${n}`)}
+  if(P.bad.includes(base.primary)){s-=4;why.push(`el #${base.primary} va en contra de ${n}`)}
+  if(P.pdOk.includes(base.pd)){s+=3;why.push(`tu día personal ${base.pd} es el ideal para esto`)}
+  if(P.bad.includes(base.pd)){s-=2;why.push(`tu día personal ${base.pd} no acompaña`)}
+  // el peso del zodiaco depende del tipo de juego: en los de azar pesa más, en los repetidos menos
+  const extra=Math.round((P.wAnim-1)*3);
+  if(extra!==0){
+    const f=fingerprint(date,u);
+    if(f.clash){s-=extra;if(extra>0)why.push(`el choque animal pesa más en un juego de tipo "${P.g.corto.toLowerCase()}"`)}
+    else if(f.trine==='friend'){s+=extra;if(extra>0)why.push('tu trine cuenta doble en este tipo de juego')}
+  }
+  // afinidad por etiqueta: es lo que diferencia dos actividades del mismo tipo de juego
+  const TA=DATA.tagAfin||{};let tb=0;const tw=[];
+  for(const t of (P.tags||[])){
+    const a=TA[t];if(!a)continue;
+    if(a.g.includes(base.primary)){tb+=1.2;tw.push(t)}
+    if(a.b.includes(base.primary)){tb-=1.2}
+    if(a.g.includes(base.pd)){tb+=0.8;if(!tw.includes(t))tw.push(t)}
+    if(a.b.includes(base.pd)){tb-=0.8}
+  }
+  tb=Math.max(-5,Math.min(5,tb));
+  // se intercala en segundo lugar para que la razón no sea siempre la misma frase
+  if(Math.abs(tb)>=1)why.splice(1,0,tb>0?`encaja con el perfil de la actividad (${tw.slice(0,2).join(', ')})`
+                                       :`choca con el perfil de la actividad (${P.tags.slice(0,2).join(', ')})`);
+  s+=tb;
+  // la sensibilidad al timing comprime o amplifica la diferencia entre días
+  const k={alta:1.15,media:1,baja:.75}[P.ts]||1;
+  return{...base,s:Math.round(s*k),why:[...why,...base.why]};
 }
 function planDays(key,days,u){
   const out=[];
@@ -1281,32 +1357,108 @@ function renderDetail(){
   <div class="card">${guideHtml(date)}</div>`;
 }
 
-// ═══ VISTA PLANIFICADOR ════════════════════════════════════
-function pickIntent(k){intent=intent===k?null:k;saveStore();renderPlan()}
-function renderPlan(){
-  const grid=document.getElementById('intent-grid');
-  grid.innerHTML=Object.entries(INTENTS).map(([k,v])=>
-    `<button class="intent${intent===k?' on':''}" onclick="pickIntent('${k}')"><i>${v.e}</i><b>${v.n}</b></button>`).join('');
+// ═══ VISTA PLANIFICADOR · árbol de decisión ════════════════
+let planCat=null,planQ='';
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function actProfile(id){
+  if(!DATA||!DATA.actividades)return null;
+  const a=DATA.actividades[id];if(!a)return null;
+  const g=DATA.juegos[a.game]||{good:[],bad:[],pd:[],wAnim:1};
+  return{id,...a,g,good:a.good||g.good,bad:a.bad||g.bad,pdOk:a.pd||g.pd,
+    wAnim:g.wAnim||1,cat:a.cat,catN:(DATA.categorias[a.cat]||{}).n||a.cat};
+}
+const TS_LBL={alta:'el día pesa mucho',media:'el día pesa algo',baja:'el día pesa poco'};
+const TS_CLS={alta:'gold',media:'',baja:''};
+
+function pickIntent(k){
+  intent=(intent===k)?null:k; saveStore(); renderPlan();
+  if(intent)setTimeout(()=>document.getElementById('plan-result').scrollIntoView({behavior:'smooth',block:'start'}),60);
+}
+function planGoCat(c){planCat=c;planQ='';renderPlan()}
+function planBack(){planCat=null;planQ='';renderPlan()}
+function planSearch(v){planQ=v;renderPlan(true)}
+
+function actRow(id){
+  const P=actProfile(id);if(!P)return'';
+  return `<button class="act${intent===id?' on':''}" onclick="pickIntent('${id}')">
+    <i>${P.e}</i>
+    <div class="act-b"><div class="act-n">${P.n}</div>
+      <div class="act-m">${P.g.corto} · ${TS_LBL[P.ts]}</div></div>
+    <span class="act-ts ts-${P.ts}"></span></button>`;
+}
+function renderPlan(keepFocus){
+  const pick=document.getElementById('plan-picker');
   const el=document.getElementById('plan-result');
+  if(!DATA||!DATA.actividades){
+    pick.innerHTML='<div class="card"><p class="muted">Cargando el catálogo de actividades…</p></div>';
+    el.innerHTML='';return;
+  }
+  if(intent&&!DATA.actividades[intent]){intent=null;saveStore()}
+  const ids=Object.keys(DATA.actividades);
+  const q=norm(planQ.trim());
+  let body='';
+  if(q.length>=2){
+    const hits=ids.filter(i=>{const a=DATA.actividades[i];
+      return norm(a.n).includes(q)||a.tags.some(t=>norm(t).includes(q))||
+             norm((DATA.categorias[a.cat]||{}).n||'').includes(q)});
+    body=hits.length
+      ? `<div class="act-list">${hits.slice(0,30).map(actRow).join('')}</div>`
+      : `<p class="muted">Nada con “${escapeHtml(planQ)}”. Prueba con “dinero”, “casa”, “negociar”, “cerrar”…</p>`;
+  }else if(planCat){
+    const c=DATA.categorias[planCat];
+    body=`<button class="btn ghost" onclick="planBack()">‹ Todas las categorías</button>
+      <div class="eyebrow" style="margin-top:var(--size-3)">${c.e} ${c.n}</div>
+      <div class="act-list">${ids.filter(i=>DATA.actividades[i].cat===planCat).map(actRow).join('')}</div>`;
+  }else{
+    const counts={};ids.forEach(i=>{const c=DATA.actividades[i].cat;counts[c]=(counts[c]||0)+1});
+    body=`<div class="eyebrow">◈ ¿De qué se trata?</div>
+      <div class="cat-grid">${Object.entries(DATA.categorias).map(([k,c])=>
+        `<button class="cat-card" onclick="planGoCat('${k}')">
+          <i>${c.e}</i><div><b>${c.n}</b><span>${c.d}</span></div>
+          <em>${counts[k]||0}</em></button>`).join('')}</div>
+      <div class="eyebrow" style="margin-top:var(--size-4)">✦ Las más buscadas</div>
+      <div class="act-list">${(DATA.populares||[]).map(actRow).join('')}</div>`;
+  }
+  pick.innerHTML=`<div class="card">
+    <div class="search"><span>⌕</span><input id="plan-q" type="search" placeholder="Buscar actividad: aumento, mudanza, examen…"
+      value="${escapeHtml(planQ)}" oninput="planSearch(this.value)" autocomplete="off"></div>
+    ${body}</div>`;
+  if(keepFocus){const i=document.getElementById('plan-q');if(i){i.focus();i.setSelectionRange(i.value.length,i.value.length)}}
+
   if(!user){el.innerHTML=onboardingHtml();return}
-  if(!intent){el.innerHTML=`<div class="card"><p class="muted">Elige una intención arriba y reviso los próximos 90 días por ti.</p></div>`;return}
-  const I=INTENTS[intent],list=planDays(intent,90);
+  if(!intent){el.innerHTML=`<div class="card"><p class="muted">Elige una actividad y reviso los próximos 90 días contra tu lifepath, tus números personales y tus animales.</p></div>`;return}
+
+  const P=actProfile(intent),list=planDays(intent,90);
   const row=(x,cls)=>`<button class="row-item ${cls}" onclick="jumpTo(${x.date.getFullYear()},${x.date.getMonth()},${x.date.getDate()})">
       <div class="row-day">${x.date.getDate()}</div>
       <div class="row-info">
         <div class="row-meta">${MONTHS_ES[x.date.getMonth()].toUpperCase()}${x.date.getFullYear()!==today.getFullYear()?' '+x.date.getFullYear():''} · #${x.primary} · DÍA PERSONAL ${x.pd} · ${AEMOJI[x.da]}</div>
         <div class="row-why">${x.why.slice(0,2).join(' · ')}</div>
       </div><div class="row-score">${x.s>0?'+':''}${x.s}</div></button>`;
-  const best=list.slice(0,5),worst=list.slice(-3).reverse();
   el.innerHTML=`<div class="card">
-    <div class="eyebrow">${I.e} ${I.n} · próximos 90 días</div>
-    <div class="plan-note">${I.tip}</div>
-    <div class="glabel" style="color:var(--pos)">✦ TUS MEJORES FECHAS</div>
-    ${best.map(x=>row(x,'row-good')).join('')}
+    <div class="act-head">
+      <i>${P.e}</i>
+      <div><div class="act-title">${P.n}</div>
+        <div class="chips" style="margin-top:.35rem">
+          <span class="chip">${(DATA.categorias[P.cat]||{}).e||''} ${P.catN}</span>
+          <span class="chip acc">◈ ${P.g.n}</span>
+          <span class="chip ${TS_CLS[P.ts]}">⏱ ${TS_LBL[P.ts]}</span>
+        </div></div>
+      <button class="icon-btn" onclick="pickIntent('${intent}')" title="Quitar">×</button>
+    </div>
+    <div class="game-box">
+      <div class="glabel" style="color:var(--accent)">TEORÍA DE JUEGOS · ${P.g.corto.toUpperCase()}</div>
+      <p class="gplain">${P.g.txt}</p>
+      <div class="game-str"><b>ESTRATEGIA</b> ${P.g.estrategia}</div>
+    </div>
+    ${P.tip?`<div class="plan-note">${P.tip}</div>`:''}
+    ${P.ts==='baja'?`<p class="muted" style="margin-bottom:var(--size-3)">Honestamente: en esta actividad el día influye poco. Úsalo como desempate, no como excusa para posponer.</p>`:''}
+    <div class="glabel" style="color:var(--pos)">✦ TUS MEJORES FECHAS · PRÓXIMOS 90 DÍAS</div>
+    ${list.slice(0,5).map(x=>row(x,'row-good')).join('')}
     <hr class="dv">
     <div class="glabel" style="color:var(--neg)">✕ EVITA ESTAS</div>
-    ${worst.map(x=>row(x,'row-bad')).join('')}
-    <p class="credit" style="margin-top:var(--size-3);text-align:left">CALCULADO PARA ${escapeHtml(user.name).toUpperCase()} · LP${user.lp} · ${ANIMALS[user.anim].toUpperCase()}</p>
+    ${list.slice(-3).reverse().map(x=>row(x,'row-bad')).join('')}
+    <p class="credit" style="margin-top:var(--size-3);text-align:left">CALCULADO PARA ${escapeHtml(user.name).toUpperCase()} · LP${user.lp} · ${ANIMALS[user.anim].toUpperCase()} · ${P.g.n.toUpperCase()}</p>
   </div>`;
 }
 

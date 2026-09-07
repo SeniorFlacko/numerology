@@ -1,5 +1,5 @@
 /* GG33 · service worker — app shell offline */
-const V='gg33-v3';
+const V='gg33-v4';
 const SHELL=['./','./index.html','./manifest.webmanifest','./data.json',
   './icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/icon-180.png'];
 

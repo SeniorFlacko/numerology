@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 4,
  "generado": "corpus GG33 · reglas combinatorias",
  "dia": {
   "1": {
@@ -3368,6 +3368,2742 @@
    "medio": "Tienes tiempo antes de tu año enemigo. Úsalo para construir el colchón (dinero, salud, relaciones) que te va a sostener cuando toque.",
    "lejos": "Tu año enemigo queda lejos en el ciclo. Es momento de expandir, no de protegerte.",
    "dentro": "Estás dentro de tu año enemigo. La estrategia del año es aguantar bien, no conquistar."
+  }
+ },
+ "juegos": {
+  "dist": {
+   "n": "Negociación distributiva",
+   "corto": "Suma cero",
+   "txt": "Lo que uno gana el otro lo pierde. El resultado no depende de la suerte sino de tu posición relativa: quién tiene más información, más alternativas y menos prisa. El timing importa mucho porque tu energía se lee como fuerza o como duda.",
+   "estrategia": "Llega con tu mejor alternativa lista y no reveles tu límite primero.",
+   "good": [
+    8,
+    4,
+    22
+   ],
+   "bad": [
+    5,
+    7,
+    2
+   ],
+   "pd": [
+    8,
+    4
+   ],
+   "wAnim": 1.0
+  },
+  "coord": {
+   "n": "Juego de coordinación",
+   "corto": "Ambos ganan si se alinean",
+   "txt": "No hay rival: hay dos personas que quieren lo mismo pero no logran sincronizarse. El problema no es ganar, es que ambos elijan el mismo punto. La energía diplomática vale más que la energía de fuerza.",
+   "estrategia": "Propón tú el punto de encuentro y hazlo fácil de aceptar.",
+   "good": [
+    2,
+    6,
+    3
+   ],
+   "bad": [
+    1,
+    7,
+    8
+   ],
+   "pd": [
+    2,
+    6
+   ],
+   "wAnim": 1.0
+  },
+  "signal": {
+   "n": "Señalización",
+   "corto": "Te están evaluando",
+   "txt": "Mandas una señal costosa de lo que vales a alguien que no puede verificarlo directamente. Lo que se juzga no es solo el contenido: es la seguridad con que lo dices. Por eso los días de energía visible y comunicativa rinden tanto aquí.",
+   "estrategia": "La señal tiene que costarte algo para que sea creíble: prepárate más de lo necesario.",
+   "good": [
+    1,
+    3,
+    11
+   ],
+   "bad": [
+    7,
+    4,
+    9
+   ],
+   "pd": [
+    1,
+    3
+   ],
+   "wAnim": 1.0
+  },
+  "commit": {
+   "n": "Dispositivo de compromiso",
+   "corto": "Te atas a propósito",
+   "txt": "Te amarras voluntariamente para que tu promesa sea creíble, para ti o para otro. Firmar, casarte, empezar una dieta: el valor está en que cerraste la puerta de salida. Necesitas energía de estructura, no de cambio.",
+   "estrategia": "Hazlo público o ponle costo de salida: un compromiso sin costo no es compromiso.",
+   "good": [
+    4,
+    8,
+    22
+   ],
+   "bad": [
+    5,
+    3,
+    9
+   ],
+   "pd": [
+    4,
+    8
+   ],
+   "wAnim": 1.1
+  },
+  "nature": {
+   "n": "Juego contra la naturaleza",
+   "corto": "No hay rival, hay azar",
+   "txt": "Nadie está jugando contra ti: el resultado depende de variables que no controlas. Aquí no se gana con estrategia sino administrando exposición. Es el tipo de juego donde el choque animal pesa más, porque es puro riesgo de entorno.",
+   "estrategia": "No optimices el resultado, limita el peor escenario.",
+   "good": [
+    5,
+    1,
+    6
+   ],
+   "bad": [
+    8,
+    7
+   ],
+   "pd": [
+    5,
+    1
+   ],
+   "wAnim": 1.6
+  },
+  "repeat": {
+   "n": "Juego repetido",
+   "corto": "La reputación pesa más que hoy",
+   "txt": "Vas a volver a jugar con esta misma persona muchas veces. Ganar hoy a costa del vínculo es perder mañana. Aquí conviene la energía de servicio y consistencia, no la de conquista.",
+   "estrategia": "Cede algo hoy que valga poco para ti y mucho para el otro: eso se cobra después.",
+   "good": [
+    6,
+    2,
+    33
+   ],
+   "bad": [
+    8,
+    1,
+    5
+   ],
+   "pd": [
+    6,
+    2
+   ],
+   "wAnim": 0.8
+  },
+  "attrit": {
+   "n": "Guerra de desgaste",
+   "corto": "Gana el que aguanta",
+   "txt": "Nadie gana rápido: gana el que tolera más tiempo el costo. El tiempo es el arma, no el argumento. Los días de disciplina y paciencia valen más que los días brillantes.",
+   "estrategia": "Baja tu costo de esperar antes de subir tu presión.",
+   "good": [
+    4,
+    7,
+    9
+   ],
+   "bad": [
+    3,
+    5,
+    11
+   ],
+   "pd": [
+    4,
+    7
+   ],
+   "wAnim": 0.9
+  },
+  "explore": {
+   "n": "Exploración de información",
+   "corto": "Primero informarte",
+   "txt": "Todavía no estás decidiendo: estás comprando información para decidir mejor después. El error clásico es cerrar antes de tiempo. Necesitas la energía introspectiva y analítica, no la de acción.",
+   "estrategia": "Define de antemano qué dato te haría cambiar de opinión.",
+   "good": [
+    7,
+    4,
+    11
+   ],
+   "bad": [
+    3,
+    5,
+    1
+   ],
+   "pd": [
+    7,
+    4
+   ],
+   "wAnim": 0.7
+  },
+  "exit": {
+   "n": "Salida",
+   "corto": "Terminar un juego",
+   "txt": "Estás cerrando algo que ya no te conviene seguir jugando. El costo hundido no se recupera y el error es quedarte por lo que ya invertiste. La energía de cierre te ayuda; la de arranque te sabotea.",
+   "estrategia": "Decide por lo que viene, no por lo que ya gastaste.",
+   "good": [
+    9,
+    7
+   ],
+   "bad": [
+    1,
+    5,
+    6
+   ],
+   "pd": [
+    9,
+    7
+   ],
+   "wAnim": 1.0
+  },
+  "entry": {
+   "n": "Entrada",
+   "corto": "Abrir un juego nuevo",
+   "txt": "Estás abriendo algo donde la ventaja del primer movimiento existe. Lo que importa es arrancar con impulso real y no con un arranque tibio que te deja a mitad. La energía de inicio manda.",
+   "estrategia": "Arranca con el compromiso más grande que puedas sostener, no con el más chico.",
+   "good": [
+    1,
+    3,
+    22,
+    5
+   ],
+   "bad": [
+    9,
+    4,
+    7
+   ],
+   "pd": [
+    1,
+    3
+   ],
+   "wAnim": 1.2
+  }
+ },
+ "categorias": {
+  "dinero": {
+   "n": "Dinero",
+   "e": "💰",
+   "d": "Cobrar, negociar, invertir, deudas"
+  },
+  "carrera": {
+   "n": "Carrera y empleo",
+   "e": "🎯",
+   "d": "Entrevistas, ascensos, renuncias"
+  },
+  "negocio": {
+   "n": "Negocio y proyectos",
+   "e": "🚀",
+   "d": "Lanzar, socios, contratos, ventas"
+  },
+  "legal": {
+   "n": "Trámites y legal",
+   "e": "🏛️",
+   "d": "Notaría, impuestos, gobierno, seguros"
+  },
+  "casa": {
+   "n": "Casa y mudanza",
+   "e": "🏡",
+   "d": "Comprar, rentar, obra, orden"
+  },
+  "salud": {
+   "n": "Salud y cuerpo",
+   "e": "🩺",
+   "d": "Consultas, cirugías, hábitos"
+  },
+  "familia": {
+   "n": "Familia y pareja",
+   "e": "❤️",
+   "d": "Citas, acuerdos, rupturas, cuidados"
+  },
+  "social": {
+   "n": "Social y amistades",
+   "e": "🎉",
+   "d": "Fiestas, networking, favores"
+  },
+  "estudio": {
+   "n": "Estudio",
+   "e": "📚",
+   "d": "Exámenes, cursos, certificaciones"
+  },
+  "viaje": {
+   "n": "Viajes y logística",
+   "e": "✈️",
+   "d": "Viajes, visas, mudanzas de ciudad"
+  },
+  "digital": {
+   "n": "Exposición y medios",
+   "e": "📣",
+   "d": "Publicar, grabar, campañas"
+  },
+  "interno": {
+   "n": "Descanso y personal",
+   "e": "🌙",
+   "d": "Retiro, cierres emocionales, hábitos"
+  },
+  "compras": {
+   "n": "Compras grandes",
+   "e": "🛒",
+   "d": "Coche, equipo, servicios recurrentes"
+  }
+ },
+ "actividades": {
+  "pedir-aumento": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "alta",
+   "e": "💰",
+   "n": "Pedir un aumento",
+   "tags": [
+    "sueldo",
+    "jefe",
+    "negociar",
+    "trabajo"
+   ],
+   "tip": "Tu mejor carta es tener otra oferta real o al menos saber cuánto cuesta reemplazarte."
+  },
+  "negociar-oferta": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🤝",
+   "n": "Negociar una oferta de trabajo",
+   "tags": [
+    "sueldo",
+    "contratación",
+    "negociar"
+   ],
+   "tip": "El primer número que digas ancla toda la negociación; que no lo digas tú si puedes evitarlo."
+  },
+  "cobrar-deuda": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "alta",
+   "e": "📞",
+   "n": "Cobrar una deuda personal",
+   "tags": [
+    "deuda",
+    "dinero",
+    "incómodo"
+   ]
+  },
+  "pedir-prestamo": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🏦",
+   "n": "Pedir un préstamo o crédito",
+   "tags": [
+    "banco",
+    "crédito",
+    "deuda"
+   ]
+  },
+  "renegociar-deuda": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "alta",
+   "e": "♻️",
+   "n": "Renegociar una deuda",
+   "tags": [
+    "banco",
+    "deuda",
+    "acuerdo"
+   ]
+  },
+  "pagar-deudas": {
+   "cat": "dinero",
+   "game": "commit",
+   "ts": "baja",
+   "e": "💳",
+   "n": "Ponerte al corriente con tus deudas",
+   "tags": [
+    "deuda",
+    "disciplina"
+   ]
+  },
+  "presupuesto": {
+   "cat": "dinero",
+   "game": "explore",
+   "ts": "baja",
+   "e": "📊",
+   "n": "Sentarte a hacer el presupuesto",
+   "tags": [
+    "finanzas",
+    "planear",
+    "orden"
+   ]
+  },
+  "invertir": {
+   "cat": "dinero",
+   "game": "nature",
+   "ts": "alta",
+   "e": "📈",
+   "n": "Entrar a una inversión",
+   "tags": [
+    "inversión",
+    "riesgo",
+    "dinero"
+   ],
+   "tip": "Nadie está jugando contra ti: define cuánto puedes perder antes de calcular cuánto puedes ganar."
+  },
+  "salir-inversion": {
+   "cat": "dinero",
+   "game": "exit",
+   "ts": "alta",
+   "e": "📉",
+   "n": "Salir de una inversión",
+   "tags": [
+    "inversión",
+    "vender",
+    "cerrar"
+   ]
+  },
+  "subir-precios": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🏷️",
+   "n": "Subir tus precios o tarifas",
+   "tags": [
+    "freelance",
+    "negocio",
+    "dinero"
+   ]
+  },
+  "cotizar": {
+   "cat": "dinero",
+   "game": "explore",
+   "ts": "media",
+   "e": "🧾",
+   "n": "Pedir cotizaciones y comparar",
+   "tags": [
+    "comparar",
+    "comprar",
+    "investigar"
+   ]
+  },
+  "cobrar-factura": {
+   "cat": "dinero",
+   "game": "dist",
+   "ts": "media",
+   "e": "📨",
+   "n": "Cobrar una factura atrasada",
+   "tags": [
+    "freelance",
+    "cliente",
+    "dinero"
+   ]
+  },
+  "entrevista": {
+   "cat": "carrera",
+   "game": "signal",
+   "ts": "alta",
+   "e": "🎯",
+   "n": "Ir a una entrevista de trabajo",
+   "tags": [
+    "empleo",
+    "evaluación",
+    "nervios"
+   ],
+   "tip": "Te están comprando confianza, no currículum: el día en que te sientes seguro vale más que el día perfecto."
+  },
+  "enviar-cv": {
+   "cat": "carrera",
+   "game": "signal",
+   "ts": "media",
+   "e": "📄",
+   "n": "Mandar solicitudes y CV",
+   "tags": [
+    "empleo",
+    "buscar",
+    "masivo"
+   ]
+  },
+  "renunciar": {
+   "cat": "carrera",
+   "game": "exit",
+   "ts": "alta",
+   "e": "🚪",
+   "n": "Renunciar a tu trabajo",
+   "tags": [
+    "empleo",
+    "cerrar",
+    "valentía"
+   ],
+   "tip": "Decide por lo que viene, no por los años que ya le diste."
+  },
+  "pedir-ascenso": {
+   "cat": "carrera",
+   "game": "dist",
+   "ts": "alta",
+   "e": "📈",
+   "n": "Pedir un ascenso o cambio de puesto",
+   "tags": [
+    "empleo",
+    "jefe",
+    "negociar"
+   ]
+  },
+  "primer-dia": {
+   "cat": "carrera",
+   "game": "entry",
+   "ts": "media",
+   "e": "🌅",
+   "n": "Arrancar en un trabajo nuevo",
+   "tags": [
+    "empleo",
+    "empezar",
+    "primera impresión"
+   ]
+  },
+  "evaluacion": {
+   "cat": "carrera",
+   "game": "signal",
+   "ts": "alta",
+   "e": "📝",
+   "n": "Evaluación de desempeño",
+   "tags": [
+    "empleo",
+    "jefe",
+    "evaluación"
+   ]
+  },
+  "hablar-jefe": {
+   "cat": "carrera",
+   "game": "coord",
+   "ts": "media",
+   "e": "💬",
+   "n": "Conversación difícil con tu jefe",
+   "tags": [
+    "empleo",
+    "conflicto",
+    "acuerdo"
+   ]
+  },
+  "despedir": {
+   "cat": "carrera",
+   "game": "exit",
+   "ts": "alta",
+   "e": "✂️",
+   "n": "Despedir o cortar con alguien del equipo",
+   "tags": [
+    "empleo",
+    "cerrar",
+    "liderazgo"
+   ]
+  },
+  "contratar": {
+   "cat": "carrera",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🧑‍💼",
+   "n": "Contratar a alguien",
+   "tags": [
+    "equipo",
+    "decisión",
+    "compromiso"
+   ]
+  },
+  "negociar-horario": {
+   "cat": "carrera",
+   "game": "dist",
+   "ts": "media",
+   "e": "🏠",
+   "n": "Negociar home office u horario",
+   "tags": [
+    "empleo",
+    "jefe",
+    "flexibilidad"
+   ]
+  },
+  "lanzar-producto": {
+   "cat": "negocio",
+   "game": "entry",
+   "ts": "alta",
+   "e": "🚀",
+   "n": "Lanzar un producto o servicio",
+   "tags": [
+    "negocio",
+    "empezar",
+    "público"
+   ]
+  },
+  "abrir-negocio": {
+   "cat": "negocio",
+   "game": "entry",
+   "ts": "alta",
+   "e": "🏪",
+   "n": "Abrir un negocio",
+   "tags": [
+    "negocio",
+    "empezar",
+    "riesgo"
+   ]
+  },
+  "cerrar-negocio": {
+   "cat": "negocio",
+   "game": "exit",
+   "ts": "alta",
+   "e": "🔒",
+   "n": "Cerrar un negocio",
+   "tags": [
+    "negocio",
+    "cerrar",
+    "pérdida"
+   ]
+  },
+  "buscar-socio": {
+   "cat": "negocio",
+   "game": "coord",
+   "ts": "alta",
+   "e": "🤝",
+   "n": "Cerrar con un socio",
+   "tags": [
+    "negocio",
+    "sociedad",
+    "acuerdo"
+   ]
+  },
+  "pitch-inversion": {
+   "cat": "negocio",
+   "game": "signal",
+   "ts": "alta",
+   "e": "🎤",
+   "n": "Presentar a un inversionista",
+   "tags": [
+    "negocio",
+    "pitch",
+    "dinero"
+   ]
+  },
+  "firmar-contrato": {
+   "cat": "negocio",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🖋️",
+   "n": "Firmar un contrato",
+   "tags": [
+    "legal",
+    "compromiso",
+    "negocio"
+   ],
+   "tip": "Antes de firmar, pregúntate cómo sales: un compromiso sin salida clara es el más caro."
+  },
+  "cerrar-venta": {
+   "cat": "negocio",
+   "game": "dist",
+   "ts": "alta",
+   "e": "💼",
+   "n": "Cerrar una venta grande",
+   "tags": [
+    "ventas",
+    "cliente",
+    "dinero"
+   ]
+  },
+  "junta-equipo": {
+   "cat": "negocio",
+   "game": "coord",
+   "ts": "media",
+   "e": "👥",
+   "n": "Junta de equipo o planeación",
+   "tags": [
+    "equipo",
+    "reunión",
+    "alinear"
+   ]
+  },
+  "plan-anual": {
+   "cat": "negocio",
+   "game": "commit",
+   "ts": "media",
+   "e": "🗓️",
+   "n": "Hacer el plan del año",
+   "tags": [
+    "planear",
+    "metas",
+    "disciplina"
+   ]
+  },
+  "cambiar-proveedor": {
+   "cat": "negocio",
+   "game": "exit",
+   "ts": "media",
+   "e": "🔁",
+   "n": "Cambiar de proveedor",
+   "tags": [
+    "negocio",
+    "cerrar",
+    "comparar"
+   ]
+  },
+  "auditoria": {
+   "cat": "negocio",
+   "game": "attrit",
+   "ts": "media",
+   "e": "🔍",
+   "n": "Auditoría o revisión a fondo",
+   "tags": [
+    "revisar",
+    "números",
+    "paciencia"
+   ]
+  },
+  "firmar-escritura": {
+   "cat": "legal",
+   "game": "commit",
+   "ts": "alta",
+   "e": "📜",
+   "n": "Firmar escrituras",
+   "tags": [
+    "notaría",
+    "casa",
+    "compromiso"
+   ]
+  },
+  "tramite-gobierno": {
+   "cat": "legal",
+   "game": "attrit",
+   "ts": "media",
+   "e": "🏛️",
+   "n": "Trámite de gobierno",
+   "tags": [
+    "burocracia",
+    "fila",
+    "paciencia"
+   ],
+   "tip": "Aquí gana el que aguanta la fila y el papeleo, no el que tiene la razón."
+  },
+  "declarar-impuestos": {
+   "cat": "legal",
+   "game": "attrit",
+   "ts": "media",
+   "e": "🧮",
+   "n": "Declarar impuestos",
+   "tags": [
+    "sat",
+    "dinero",
+    "papeleo"
+   ]
+  },
+  "demanda": {
+   "cat": "legal",
+   "game": "attrit",
+   "ts": "alta",
+   "e": "⚖️",
+   "n": "Meter o pelear una demanda",
+   "tags": [
+    "legal",
+    "conflicto",
+    "largo plazo"
+   ]
+  },
+  "mediacion": {
+   "cat": "legal",
+   "game": "coord",
+   "ts": "alta",
+   "e": "🕊️",
+   "n": "Mediación o acuerdo legal",
+   "tags": [
+    "legal",
+    "acuerdo",
+    "conflicto"
+   ]
+  },
+  "testamento": {
+   "cat": "legal",
+   "game": "commit",
+   "ts": "media",
+   "e": "🗝️",
+   "n": "Hacer testamento o poder notarial",
+   "tags": [
+    "notaría",
+    "familia",
+    "futuro"
+   ]
+  },
+  "renovar-documentos": {
+   "cat": "legal",
+   "game": "attrit",
+   "ts": "baja",
+   "e": "🪪",
+   "n": "Renovar pasaporte, licencia o INE",
+   "tags": [
+    "burocracia",
+    "papeleo"
+   ]
+  },
+  "seguro": {
+   "cat": "legal",
+   "game": "commit",
+   "ts": "media",
+   "e": "🛡️",
+   "n": "Contratar o cambiar un seguro",
+   "tags": [
+    "protección",
+    "dinero",
+    "futuro"
+   ]
+  },
+  "mudarte": {
+   "cat": "casa",
+   "game": "nature",
+   "ts": "alta",
+   "e": "📦",
+   "n": "Mudarte de casa",
+   "tags": [
+    "casa",
+    "logística",
+    "caos"
+   ]
+  },
+  "firmar-renta": {
+   "cat": "casa",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🔑",
+   "n": "Firmar contrato de renta",
+   "tags": [
+    "casa",
+    "contrato",
+    "compromiso"
+   ]
+  },
+  "comprar-casa": {
+   "cat": "casa",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🏡",
+   "n": "Comprar casa o terreno",
+   "tags": [
+    "casa",
+    "dinero",
+    "patrimonio"
+   ]
+  },
+  "vender-casa": {
+   "cat": "casa",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🏚️",
+   "n": "Vender una propiedad",
+   "tags": [
+    "casa",
+    "dinero",
+    "negociar"
+   ]
+  },
+  "empezar-obra": {
+   "cat": "casa",
+   "game": "entry",
+   "ts": "alta",
+   "e": "🧱",
+   "n": "Arrancar una obra o remodelación",
+   "tags": [
+    "construcción",
+    "casa",
+    "empezar"
+   ]
+  },
+  "entregar-obra": {
+   "cat": "casa",
+   "game": "commit",
+   "ts": "alta",
+   "e": "✅",
+   "n": "Entregar o recibir una obra",
+   "tags": [
+    "construcción",
+    "cerrar",
+    "revisar"
+   ]
+  },
+  "limpieza-profunda": {
+   "cat": "casa",
+   "game": "explore",
+   "ts": "baja",
+   "e": "🧹",
+   "n": "Limpieza y orden profundo",
+   "tags": [
+    "casa",
+    "orden",
+    "soltar"
+   ]
+  },
+  "reparacion": {
+   "cat": "casa",
+   "game": "attrit",
+   "ts": "baja",
+   "e": "🔧",
+   "n": "Reparaciones pendientes",
+   "tags": [
+    "casa",
+    "mantenimiento",
+    "pendientes"
+   ]
+  },
+  "contratar-obra": {
+   "cat": "casa",
+   "game": "dist",
+   "ts": "alta",
+   "e": "👷",
+   "n": "Contratar y negociar con un maestro de obra",
+   "tags": [
+    "construcción",
+    "negociar",
+    "presupuesto"
+   ]
+  },
+  "cita-medica": {
+   "cat": "salud",
+   "game": "explore",
+   "ts": "media",
+   "e": "🩺",
+   "n": "Consulta o chequeo médico",
+   "tags": [
+    "salud",
+    "doctor",
+    "revisar"
+   ]
+  },
+  "estudios-medicos": {
+   "cat": "salud",
+   "game": "explore",
+   "ts": "media",
+   "e": "🧪",
+   "n": "Hacerte estudios o análisis",
+   "tags": [
+    "salud",
+    "laboratorio",
+    "información"
+   ]
+  },
+  "cirugia": {
+   "cat": "salud",
+   "game": "nature",
+   "ts": "alta",
+   "e": "🏥",
+   "n": "Cirugía o procedimiento",
+   "tags": [
+    "salud",
+    "riesgo",
+    "hospital"
+   ],
+   "tip": "Aquí no hay estrategia que valga: lo único que controlas es la preparación y con quién te operas."
+  },
+  "dentista": {
+   "cat": "salud",
+   "game": "attrit",
+   "ts": "baja",
+   "e": "🦷",
+   "n": "Ir al dentista",
+   "tags": [
+    "salud",
+    "pendiente",
+    "incómodo"
+   ]
+  },
+  "empezar-dieta": {
+   "cat": "salud",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🥗",
+   "n": "Empezar dieta o plan de alimentación",
+   "tags": [
+    "salud",
+    "hábito",
+    "disciplina"
+   ],
+   "tip": "El día que arrancas importa porque el hábito nace del primer compromiso, no del décimo."
+  },
+  "empezar-ejercicio": {
+   "cat": "salud",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🏃",
+   "n": "Empezar rutina de ejercicio",
+   "tags": [
+    "salud",
+    "hábito",
+    "disciplina"
+   ]
+  },
+  "dejar-habito": {
+   "cat": "salud",
+   "game": "exit",
+   "ts": "alta",
+   "e": "🚭",
+   "n": "Dejar un hábito",
+   "tags": [
+    "salud",
+    "cerrar",
+    "voluntad"
+   ]
+  },
+  "terapia": {
+   "cat": "salud",
+   "game": "repeat",
+   "ts": "media",
+   "e": "🛋️",
+   "n": "Empezar terapia o acompañamiento",
+   "tags": [
+    "salud",
+    "proceso",
+    "constancia"
+   ]
+  },
+  "descanso": {
+   "cat": "salud",
+   "game": "nature",
+   "ts": "baja",
+   "e": "😴",
+   "n": "Día de descanso real",
+   "tags": [
+    "descanso",
+    "recuperar",
+    "pausa"
+   ]
+  },
+  "primera-cita": {
+   "cat": "familia",
+   "game": "signal",
+   "ts": "alta",
+   "e": "🌹",
+   "n": "Primera cita",
+   "tags": [
+    "amor",
+    "impresión",
+    "nervios"
+   ]
+  },
+  "pedir-matrimonio": {
+   "cat": "familia",
+   "game": "signal",
+   "ts": "alta",
+   "e": "💍",
+   "n": "Pedir matrimonio",
+   "tags": [
+    "amor",
+    "compromiso",
+    "momento"
+   ]
+  },
+  "boda": {
+   "cat": "familia",
+   "game": "commit",
+   "ts": "alta",
+   "e": "💒",
+   "n": "Boda o unión",
+   "tags": [
+    "amor",
+    "compromiso",
+    "familia"
+   ]
+  },
+  "reconciliar": {
+   "cat": "familia",
+   "game": "coord",
+   "ts": "alta",
+   "e": "🕊️",
+   "n": "Reconciliar con alguien",
+   "tags": [
+    "conflicto",
+    "perdón",
+    "acuerdo"
+   ],
+   "tip": "No busques tener razón: busca que ambos elijan el mismo punto de salida."
+  },
+  "conversacion-dificil": {
+   "cat": "familia",
+   "game": "coord",
+   "ts": "alta",
+   "e": "😤",
+   "n": "Conversación difícil en casa",
+   "tags": [
+    "conflicto",
+    "pareja",
+    "acuerdo"
+   ]
+  },
+  "terminar-relacion": {
+   "cat": "familia",
+   "game": "exit",
+   "ts": "alta",
+   "e": "💔",
+   "n": "Terminar una relación",
+   "tags": [
+    "amor",
+    "cerrar",
+    "dolor"
+   ]
+  },
+  "presentar-familia": {
+   "cat": "familia",
+   "game": "signal",
+   "ts": "media",
+   "e": "👨‍👩‍👧",
+   "n": "Presentar a alguien con tu familia",
+   "tags": [
+    "amor",
+    "familia",
+    "impresión"
+   ]
+  },
+  "buscar-embarazo": {
+   "cat": "familia",
+   "game": "nature",
+   "ts": "alta",
+   "e": "🤰",
+   "n": "Buscar embarazo",
+   "tags": [
+    "familia",
+    "hijos",
+    "biología"
+   ]
+  },
+  "hablar-hijos": {
+   "cat": "familia",
+   "game": "repeat",
+   "ts": "media",
+   "e": "🧒",
+   "n": "Conversación seria con tus hijos",
+   "tags": [
+    "hijos",
+    "educar",
+    "vínculo"
+   ]
+  },
+  "cuidar-mayor": {
+   "cat": "familia",
+   "game": "repeat",
+   "ts": "media",
+   "e": "👵",
+   "n": "Organizar el cuidado de un adulto mayor",
+   "tags": [
+    "familia",
+    "cuidados",
+    "acuerdo"
+   ]
+  },
+  "reunion-familiar": {
+   "cat": "familia",
+   "game": "coord",
+   "ts": "baja",
+   "e": "🍽️",
+   "n": "Reunión o comida familiar",
+   "tags": [
+    "familia",
+    "convivir",
+    "organizar"
+   ]
+  },
+  "fiesta": {
+   "cat": "social",
+   "game": "coord",
+   "ts": "baja",
+   "e": "🎉",
+   "n": "Organizar una fiesta o reunión",
+   "tags": [
+    "amigos",
+    "organizar",
+    "convivir"
+   ]
+  },
+  "networking": {
+   "cat": "social",
+   "game": "signal",
+   "ts": "media",
+   "e": "🍸",
+   "n": "Evento de networking",
+   "tags": [
+    "contactos",
+    "negocio",
+    "impresión"
+   ]
+  },
+  "pedir-favor": {
+   "cat": "social",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🙏",
+   "n": "Pedir un favor importante",
+   "tags": [
+    "amigos",
+    "pedir",
+    "incómodo"
+   ],
+   "tip": "Un favor gasta capital social: pídelo el día en que la gente está más dispuesta a decir que sí."
+  },
+  "reconectar": {
+   "cat": "social",
+   "game": "coord",
+   "ts": "media",
+   "e": "📱",
+   "n": "Reconectar con alguien que perdiste",
+   "tags": [
+    "amigos",
+    "vínculo",
+    "retomar"
+   ]
+  },
+  "cortar-amistad": {
+   "cat": "social",
+   "game": "exit",
+   "ts": "media",
+   "e": "🚫",
+   "n": "Cortar con alguien tóxico",
+   "tags": [
+    "amigos",
+    "cerrar",
+    "límites"
+   ]
+  },
+  "examen": {
+   "cat": "estudio",
+   "game": "signal",
+   "ts": "alta",
+   "e": "📚",
+   "n": "Presentar un examen",
+   "tags": [
+    "escuela",
+    "evaluación",
+    "nervios"
+   ]
+  },
+  "empezar-curso": {
+   "cat": "estudio",
+   "game": "entry",
+   "ts": "media",
+   "e": "🎓",
+   "n": "Empezar un curso o carrera",
+   "tags": [
+    "escuela",
+    "empezar",
+    "aprender"
+   ]
+  },
+  "estudiar-fondo": {
+   "cat": "estudio",
+   "game": "explore",
+   "ts": "media",
+   "e": "🔬",
+   "n": "Sesión de estudio profundo",
+   "tags": [
+    "escuela",
+    "concentración",
+    "aprender"
+   ]
+  },
+  "titularte": {
+   "cat": "estudio",
+   "game": "commit",
+   "ts": "alta",
+   "e": "🎓",
+   "n": "Titularte o certificarte",
+   "tags": [
+    "escuela",
+    "cerrar",
+    "logro"
+   ]
+  },
+  "aprender-habilidad": {
+   "cat": "estudio",
+   "game": "repeat",
+   "ts": "baja",
+   "e": "🛠️",
+   "n": "Empezar a practicar una habilidad nueva",
+   "tags": [
+    "aprender",
+    "constancia",
+    "hábito"
+   ]
+  },
+  "viaje-placer": {
+   "cat": "viaje",
+   "game": "nature",
+   "ts": "media",
+   "e": "✈️",
+   "n": "Viaje de placer",
+   "tags": [
+    "viaje",
+    "descanso",
+    "logística"
+   ]
+  },
+  "viaje-trabajo": {
+   "cat": "viaje",
+   "game": "signal",
+   "ts": "alta",
+   "e": "💼",
+   "n": "Viaje de trabajo",
+   "tags": [
+    "viaje",
+    "negocio",
+    "impresión"
+   ]
+  },
+  "comprar-boletos": {
+   "cat": "viaje",
+   "game": "dist",
+   "ts": "media",
+   "e": "🎫",
+   "n": "Comprar boletos o reservar",
+   "tags": [
+    "viaje",
+    "precio",
+    "comparar"
+   ]
+  },
+  "tramite-visa": {
+   "cat": "viaje",
+   "game": "attrit",
+   "ts": "alta",
+   "e": "🛂",
+   "n": "Trámite de visa o migración",
+   "tags": [
+    "viaje",
+    "burocracia",
+    "espera"
+   ]
+  },
+  "mudanza-ciudad": {
+   "cat": "viaje",
+   "game": "entry",
+   "ts": "alta",
+   "e": "🌎",
+   "n": "Mudarte de ciudad o país",
+   "tags": [
+    "viaje",
+    "empezar",
+    "riesgo"
+   ]
+  },
+  "publicar": {
+   "cat": "digital",
+   "game": "signal",
+   "ts": "alta",
+   "e": "📣",
+   "n": "Publicar algo tuyo",
+   "tags": [
+    "redes",
+    "exponerte",
+    "creativo"
+   ]
+  },
+  "lanzar-web": {
+   "cat": "digital",
+   "game": "entry",
+   "ts": "alta",
+   "e": "🌐",
+   "n": "Lanzar un sitio o app",
+   "tags": [
+    "producto",
+    "empezar",
+    "técnico"
+   ]
+  },
+  "grabar": {
+   "cat": "digital",
+   "game": "signal",
+   "ts": "media",
+   "e": "🎥",
+   "n": "Grabar video o podcast",
+   "tags": [
+    "contenido",
+    "voz",
+    "creativo"
+   ]
+  },
+  "campana": {
+   "cat": "digital",
+   "game": "signal",
+   "ts": "alta",
+   "e": "📢",
+   "n": "Arrancar una campaña de anuncios",
+   "tags": [
+    "marketing",
+    "dinero",
+    "público"
+   ]
+  },
+  "limpieza-digital": {
+   "cat": "digital",
+   "game": "exit",
+   "ts": "baja",
+   "e": "🧽",
+   "n": "Limpieza digital: cuentas y suscripciones",
+   "tags": [
+    "orden",
+    "cerrar",
+    "dinero"
+   ]
+  },
+  "meditar": {
+   "cat": "interno",
+   "game": "explore",
+   "ts": "baja",
+   "e": "🧘",
+   "n": "Retiro o práctica espiritual",
+   "tags": [
+    "espiritual",
+    "silencio",
+    "interior"
+   ]
+  },
+  "planear-vida": {
+   "cat": "interno",
+   "game": "explore",
+   "ts": "alta",
+   "e": "🗺️",
+   "n": "Sentarte a replantear tu vida",
+   "tags": [
+    "decisión",
+    "futuro",
+    "claridad"
+   ]
+  },
+  "perdonar": {
+   "cat": "interno",
+   "game": "exit",
+   "ts": "alta",
+   "e": "🤍",
+   "n": "Cerrar un tema emocional viejo",
+   "tags": [
+    "perdón",
+    "soltar",
+    "interior"
+   ]
+  },
+  "ayunar": {
+   "cat": "interno",
+   "game": "commit",
+   "ts": "media",
+   "e": "🌙",
+   "n": "Ayuno o desintoxicación",
+   "tags": [
+    "cuerpo",
+    "disciplina",
+    "reset"
+   ]
+  },
+  "escribir-diario": {
+   "cat": "interno",
+   "game": "repeat",
+   "ts": "baja",
+   "e": "📓",
+   "n": "Empezar un diario",
+   "tags": [
+    "escribir",
+    "constancia",
+    "interior"
+   ]
+  },
+  "comprar-coche": {
+   "cat": "compras",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🚗",
+   "n": "Comprar coche",
+   "tags": [
+    "coche",
+    "dinero",
+    "negociar"
+   ]
+  },
+  "vender-coche": {
+   "cat": "compras",
+   "game": "dist",
+   "ts": "alta",
+   "e": "🔑",
+   "n": "Vender coche",
+   "tags": [
+    "coche",
+    "dinero",
+    "negociar"
+   ]
+  },
+  "compra-grande": {
+   "cat": "compras",
+   "game": "dist",
+   "ts": "media",
+   "e": "🛒",
+   "n": "Compra grande: mueble o electrónico",
+   "tags": [
+    "comprar",
+    "dinero",
+    "comparar"
+   ]
+  },
+  "cambiar-equipo": {
+   "cat": "compras",
+   "game": "nature",
+   "ts": "baja",
+   "e": "📱",
+   "n": "Cambiar de teléfono o computadora",
+   "tags": [
+    "comprar",
+    "tecnología"
+   ]
+  },
+  "suscribirte": {
+   "cat": "compras",
+   "game": "commit",
+   "ts": "baja",
+   "e": "🔄",
+   "n": "Contratar un servicio recurrente",
+   "tags": [
+    "dinero",
+    "compromiso",
+    "mensual"
+   ]
+  }
+ },
+ "populares": [
+  "pedir-aumento",
+  "entrevista",
+  "firmar-contrato",
+  "comprar-coche",
+  "reconciliar",
+  "empezar-dieta",
+  "viaje-placer",
+  "publicar"
+ ],
+ "tagAfin": {
+  "dinero": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "cerrar": {
+   "g": [
+    9,
+    7
+   ],
+   "b": [
+    1
+   ]
+  },
+  "negocio": {
+   "g": [
+    8,
+    4,
+    22
+   ],
+   "b": [
+    7
+   ]
+  },
+  "empleo": {
+   "g": [
+    1,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "casa": {
+   "g": [
+    6,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "salud": {
+   "g": [
+    4,
+    6
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "negociar": {
+   "g": [
+    8,
+    22
+   ],
+   "b": [
+    2,
+    7
+   ]
+  },
+  "acuerdo": {
+   "g": [
+    2,
+    6
+   ],
+   "b": [
+    1,
+    8
+   ]
+  },
+  "empezar": {
+   "g": [
+    1,
+    3
+   ],
+   "b": [
+    9,
+    7
+   ]
+  },
+  "compromiso": {
+   "g": [
+    4,
+    8
+   ],
+   "b": [
+    5,
+    3
+   ]
+  },
+  "familia": {
+   "g": [
+    6,
+    33,
+    2
+   ],
+   "b": [
+    7,
+    8
+   ]
+  },
+  "disciplina": {
+   "g": [
+    4,
+    22
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "conflicto": {
+   "g": [
+    2,
+    7
+   ],
+   "b": [
+    1,
+    11
+   ]
+  },
+  "amor": {
+   "g": [
+    6,
+    2,
+    33
+   ],
+   "b": [
+    7,
+    8
+   ]
+  },
+  "viaje": {
+   "g": [
+    5,
+    3
+   ],
+   "b": [
+    4,
+    6
+   ]
+  },
+  "jefe": {
+   "g": [
+    1,
+    8
+   ],
+   "b": [
+    2
+   ]
+  },
+  "deuda": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "riesgo": {
+   "g": [
+    5,
+    1
+   ],
+   "b": [
+    8,
+    7
+   ]
+  },
+  "comparar": {
+   "g": [
+    7,
+    4
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "impresión": {
+   "g": [
+    1,
+    3,
+    11
+   ],
+   "b": [
+    7,
+    4
+   ]
+  },
+  "amigos": {
+   "g": [
+    3,
+    2,
+    6
+   ],
+   "b": [
+    7
+   ]
+  },
+  "escuela": {
+   "g": [
+    7,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "incómodo": {
+   "g": [
+    1,
+    8
+   ],
+   "b": [
+    2
+   ]
+  },
+  "orden": {
+   "g": [
+    4
+   ],
+   "b": [
+    5,
+    3
+   ]
+  },
+  "comprar": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "evaluación": {
+   "g": [
+    1,
+    4
+   ],
+   "b": [
+    9
+   ]
+  },
+  "nervios": {
+   "g": [
+    11,
+    2
+   ],
+   "b": [
+    8
+   ]
+  },
+  "legal": {
+   "g": [
+    4,
+    8
+   ],
+   "b": [
+    5,
+    3
+   ]
+  },
+  "revisar": {
+   "g": [
+    7,
+    4
+   ],
+   "b": [
+    3
+   ]
+  },
+  "burocracia": {
+   "g": [
+    4,
+    7
+   ],
+   "b": [
+    3,
+    5,
+    11
+   ]
+  },
+  "futuro": {
+   "g": [
+    22,
+    9
+   ],
+   "b": [
+    5
+   ]
+  },
+  "construcción": {
+   "g": [
+    4,
+    22
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "hábito": {
+   "g": [
+    4,
+    1
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "constancia": {
+   "g": [
+    4,
+    6
+   ],
+   "b": [
+    5
+   ]
+  },
+  "aprender": {
+   "g": [
+    7,
+    3
+   ],
+   "b": [
+    8
+   ]
+  },
+  "interior": {
+   "g": [
+    7,
+    11
+   ],
+   "b": [
+    1,
+    8
+   ]
+  },
+  "sueldo": {
+   "g": [
+    8
+   ],
+   "b": [
+    5
+   ]
+  },
+  "banco": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "planear": {
+   "g": [
+    4,
+    22
+   ],
+   "b": [
+    5
+   ]
+  },
+  "inversión": {
+   "g": [
+    8,
+    5
+   ],
+   "b": [
+    2
+   ]
+  },
+  "freelance": {
+   "g": [
+    3,
+    8
+   ],
+   "b": [
+    4
+   ]
+  },
+  "cliente": {
+   "g": [
+    8,
+    6
+   ],
+   "b": [
+    7
+   ]
+  },
+  "equipo": {
+   "g": [
+    2,
+    6,
+    3
+   ],
+   "b": [
+    7,
+    1
+   ]
+  },
+  "decisión": {
+   "g": [
+    1,
+    8
+   ],
+   "b": [
+    2,
+    5
+   ]
+  },
+  "público": {
+   "g": [
+    3,
+    1,
+    11
+   ],
+   "b": [
+    7
+   ]
+  },
+  "paciencia": {
+   "g": [
+    4,
+    7,
+    9
+   ],
+   "b": [
+    1,
+    5
+   ]
+  },
+  "notaría": {
+   "g": [
+    4,
+    8
+   ],
+   "b": [
+    5
+   ]
+  },
+  "papeleo": {
+   "g": [
+    4
+   ],
+   "b": [
+    3,
+    11
+   ]
+  },
+  "logística": {
+   "g": [
+    4,
+    5
+   ],
+   "b": [
+    11
+   ]
+  },
+  "soltar": {
+   "g": [
+    9,
+    7
+   ],
+   "b": [
+    1,
+    4
+   ]
+  },
+  "descanso": {
+   "g": [
+    7,
+    2
+   ],
+   "b": [
+    1,
+    8
+   ]
+  },
+  "perdón": {
+   "g": [
+    9,
+    33,
+    2
+   ],
+   "b": [
+    1,
+    8
+   ]
+  },
+  "hijos": {
+   "g": [
+    6,
+    3,
+    33
+   ],
+   "b": [
+    7,
+    8
+   ]
+  },
+  "vínculo": {
+   "g": [
+    6,
+    2
+   ],
+   "b": [
+    7
+   ]
+  },
+  "convivir": {
+   "g": [
+    3,
+    6,
+    2
+   ],
+   "b": [
+    7
+   ]
+  },
+  "organizar": {
+   "g": [
+    4,
+    6
+   ],
+   "b": [
+    5
+   ]
+  },
+  "creativo": {
+   "g": [
+    3,
+    11,
+    33
+   ],
+   "b": [
+    4,
+    8
+   ]
+  },
+  "coche": {
+   "g": [
+    8,
+    5,
+    4
+   ],
+   "b": [
+    7
+   ]
+  },
+  "valentía": {
+   "g": [
+    1,
+    22
+   ],
+   "b": [
+    2,
+    7
+   ]
+  },
+  "liderazgo": {
+   "g": [
+    1,
+    8,
+    22
+   ],
+   "b": [
+    2
+   ]
+  },
+  "pérdida": {
+   "g": [
+    9,
+    7
+   ],
+   "b": [
+    1
+   ]
+  },
+  "sociedad": {
+   "g": [
+    2,
+    6
+   ],
+   "b": [
+    1,
+    7
+   ]
+  },
+  "pitch": {
+   "g": [
+    3,
+    1,
+    11
+   ],
+   "b": [
+    7,
+    4
+   ]
+  },
+  "ventas": {
+   "g": [
+    8,
+    3
+   ],
+   "b": [
+    7
+   ]
+  },
+  "metas": {
+   "g": [
+    1,
+    22,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "números": {
+   "g": [
+    4,
+    8,
+    7
+   ],
+   "b": [
+    3
+   ]
+  },
+  "protección": {
+   "g": [
+    4,
+    6
+   ],
+   "b": [
+    5
+   ]
+  },
+  "caos": {
+   "g": [
+    5,
+    11
+   ],
+   "b": [
+    4,
+    6
+   ]
+  },
+  "patrimonio": {
+   "g": [
+    4,
+    8,
+    6
+   ],
+   "b": [
+    5
+   ]
+  },
+  "información": {
+   "g": [
+    7,
+    11,
+    4
+   ],
+   "b": [
+    3
+   ]
+  },
+  "hospital": {
+   "g": [
+    6,
+    4
+   ],
+   "b": [
+    5,
+    3
+   ]
+  },
+  "voluntad": {
+   "g": [
+    1,
+    4,
+    22
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "proceso": {
+   "g": [
+    6,
+    7,
+    2
+   ],
+   "b": [
+    1,
+    5
+   ]
+  },
+  "pareja": {
+   "g": [
+    6,
+    2,
+    33
+   ],
+   "b": [
+    7,
+    1
+   ]
+  },
+  "dolor": {
+   "g": [
+    9,
+    7,
+    2
+   ],
+   "b": [
+    1,
+    5
+   ]
+  },
+  "educar": {
+   "g": [
+    6,
+    3,
+    33
+   ],
+   "b": [
+    8
+   ]
+  },
+  "cuidados": {
+   "g": [
+    6,
+    33,
+    2
+   ],
+   "b": [
+    8,
+    1
+   ]
+  },
+  "contactos": {
+   "g": [
+    3,
+    1
+   ],
+   "b": [
+    7
+   ]
+  },
+  "pedir": {
+   "g": [
+    2,
+    8
+   ],
+   "b": [
+    1,
+    7
+   ]
+  },
+  "límites": {
+   "g": [
+    1,
+    9,
+    4
+   ],
+   "b": [
+    2,
+    6
+   ]
+  },
+  "concentración": {
+   "g": [
+    7,
+    4
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "logro": {
+   "g": [
+    1,
+    8,
+    22
+   ],
+   "b": [
+    7
+   ]
+  },
+  "precio": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    3
+   ]
+  },
+  "espera": {
+   "g": [
+    7,
+    4,
+    9
+   ],
+   "b": [
+    1,
+    5
+   ]
+  },
+  "redes": {
+   "g": [
+    3,
+    11,
+    1
+   ],
+   "b": [
+    7
+   ]
+  },
+  "exponerte": {
+   "g": [
+    3,
+    1,
+    11
+   ],
+   "b": [
+    7,
+    4
+   ]
+  },
+  "producto": {
+   "g": [
+    1,
+    22,
+    3
+   ],
+   "b": [
+    9
+   ]
+  },
+  "técnico": {
+   "g": [
+    4,
+    7,
+    22
+   ],
+   "b": [
+    3
+   ]
+  },
+  "contenido": {
+   "g": [
+    3,
+    11
+   ],
+   "b": [
+    4
+   ]
+  },
+  "voz": {
+   "g": [
+    3,
+    11
+   ],
+   "b": [
+    7
+   ]
+  },
+  "marketing": {
+   "g": [
+    3,
+    8,
+    1
+   ],
+   "b": [
+    7
+   ]
+  },
+  "espiritual": {
+   "g": [
+    7,
+    11,
+    33
+   ],
+   "b": [
+    8,
+    1
+   ]
+  },
+  "silencio": {
+   "g": [
+    7,
+    2
+   ],
+   "b": [
+    1,
+    3
+   ]
+  },
+  "claridad": {
+   "g": [
+    7,
+    9,
+    11
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "cuerpo": {
+   "g": [
+    4,
+    1,
+    6
+   ],
+   "b": [
+    3
+   ]
+  },
+  "reset": {
+   "g": [
+    9,
+    1,
+    7
+   ],
+   "b": [
+    8
+   ]
+  },
+  "escribir": {
+   "g": [
+    3,
+    7,
+    11
+   ],
+   "b": [
+    8
+   ]
+  },
+  "tecnología": {
+   "g": [
+    5,
+    4,
+    22
+   ],
+   "b": [
+    6
+   ]
+  },
+  "mensual": {
+   "g": [
+    4,
+    6
+   ],
+   "b": [
+    5
+   ]
+  },
+  "momento": {
+   "g": [
+    11,
+    1,
+    3
+   ],
+   "b": [
+    4
+   ]
+  },
+  "vender": {
+   "g": [
+    8,
+    3
+   ],
+   "b": [
+    7
+   ]
+  },
+  "investigar": {
+   "g": [
+    7,
+    4,
+    11
+   ],
+   "b": [
+    3
+   ]
+  },
+  "buscar": {
+   "g": [
+    5,
+    1,
+    3
+   ],
+   "b": [
+    4
+   ]
+  },
+  "masivo": {
+   "g": [
+    3,
+    5,
+    1
+   ],
+   "b": [
+    7
+   ]
+  },
+  "trabajo": {
+   "g": [
+    4,
+    8,
+    1
+   ],
+   "b": [
+    3
+   ]
+  },
+  "contratación": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "crédito": {
+   "g": [
+    8,
+    4
+   ],
+   "b": [
+    5
+   ]
+  },
+  "finanzas": {
+   "g": [
+    4,
+    8,
+    7
+   ],
+   "b": [
+    3
+   ]
+  },
+  "primera impresión": {
+   "g": [
+    1,
+    3,
+    11
+   ],
+   "b": [
+    7
+   ]
+  },
+  "flexibilidad": {
+   "g": [
+    5,
+    2
+   ],
+   "b": [
+    4
+   ]
+  },
+  "reunión": {
+   "g": [
+    2,
+    6,
+    3
+   ],
+   "b": [
+    7
+   ]
+  },
+  "alinear": {
+   "g": [
+    2,
+    6
+   ],
+   "b": [
+    1
+   ]
+  },
+  "fila": {
+   "g": [
+    4,
+    7
+   ],
+   "b": [
+    5,
+    11
+   ]
+  },
+  "sat": {
+   "g": [
+    4,
+    8
+   ],
+   "b": [
+    3
+   ]
+  },
+  "largo plazo": {
+   "g": [
+    4,
+    22,
+    9
+   ],
+   "b": [
+    5
+   ]
+  },
+  "contrato": {
+   "g": [
+    4,
+    8
+   ],
+   "b": [
+    5,
+    3
+   ]
+  },
+  "mantenimiento": {
+   "g": [
+    4,
+    6
+   ],
+   "b": [
+    3
+   ]
+  },
+  "pendientes": {
+   "g": [
+    4,
+    9
+   ],
+   "b": [
+    5
+   ]
+  },
+  "pendiente": {
+   "g": [
+    4,
+    9
+   ],
+   "b": [
+    5
+   ]
+  },
+  "presupuesto": {
+   "g": [
+    4,
+    8
+   ],
+   "b": [
+    3,
+    5
+   ]
+  },
+  "doctor": {
+   "g": [
+    7,
+    4,
+    6
+   ],
+   "b": [
+    5
+   ]
+  },
+  "laboratorio": {
+   "g": [
+    7,
+    4
+   ],
+   "b": [
+    3
+   ]
+  },
+  "biología": {
+   "g": [
+    6,
+    2,
+    5
+   ],
+   "b": [
+    8
+   ]
+  },
+  "retomar": {
+   "g": [
+    2,
+    6,
+    9
+   ],
+   "b": [
+    1
+   ]
+  },
+  "recuperar": {
+   "g": [
+    7,
+    2,
+    6
+   ],
+   "b": [
+    1,
+    8
+   ]
+  },
+  "pausa": {
+   "g": [
+    7,
+    2
+   ],
+   "b": [
+    1,
+    5
+   ]
   }
  }
 }
