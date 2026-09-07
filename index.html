@@ -122,12 +122,12 @@ button{cursor:pointer;background:none;border:none}
 hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 
 /* ── TAB BAR ── */
-.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);
   padding-bottom:env(safe-area-inset-bottom);height:var(--tabbar);
   background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px) saturate(1.4);
   -webkit-backdrop-filter:blur(14px) saturate(1.4);border-top:1px solid var(--line-soft)}
 .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
-  color:var(--text-3);font-family:var(--font-mono);font-size:.56rem;letter-spacing:.1em;
+  color:var(--text-3);font-family:var(--font-mono);font-size:.5rem;letter-spacing:.06em;
   text-transform:uppercase;transition:color .18s var(--ease-3);position:relative}
 .tab i{font-style:normal;font-size:1.05rem;line-height:1;filter:grayscale(1) opacity(.55);transition:filter .18s}
 .tab.on{color:var(--gold)}
@@ -363,6 +363,47 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
   opacity:0;pointer-events:none;transition:all .3s var(--ease-out-3);box-shadow:var(--shadow-3);max-width:90vw}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── MOTOR DE CONTENIDO ── */
+.dolist li .src,.dontlist li .src{display:inline-block;margin-left:.45rem;font-family:var(--font-mono);
+  font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mauve-8);
+  border:1px solid var(--line-soft);border-radius:var(--radius-round);padding:.05rem .4rem;vertical-align:middle}
+.fp{font-family:var(--font-mono);font-size:.5rem;letter-spacing:.06em;color:var(--mauve-8);
+  margin-top:var(--size-3);word-break:break-word;line-height:1.6}
+
+/* ── RADAR DEL AÑO ── */
+.yr-hero{border-color:var(--line)}
+.yr-hero.neg{border-color:var(--neg-line);background:linear-gradient(160deg,var(--ruby-2),var(--mauve-2))}
+.yr-hero.pos{border-color:var(--pos-line);background:linear-gradient(160deg,var(--jade-2),var(--mauve-2))}
+.yr-hero.acc{border-color:var(--accent-line);background:linear-gradient(160deg,var(--violet-2),var(--mauve-2))}
+.yr-big{display:flex;align-items:center;gap:var(--size-3);margin-top:var(--size-2)}
+.yr-big>:first-child{font-size:2.6rem;line-height:1;flex-shrink:0}
+.yr-title{font-family:var(--font-display);font-size:1.05rem;color:var(--moon);line-height:1.3;margin-bottom:.2rem}
+.cd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--size-2)}
+@media(max-width:640px){.cd-grid{grid-template-columns:1fr}}
+.cd{background:var(--surface-2);border:1px solid var(--line-soft);border-radius:var(--radius-3);padding:.85rem}
+.cd.bad{border-color:var(--neg-line);background:var(--neg-bg)}
+.cd.good{border-color:var(--pos-line);background:var(--pos-bg)}
+.cd-lbl{font-family:var(--font-mono);font-size:.53rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:.35rem}
+.cd-val{font-family:var(--font-display);font-size:1.5rem;color:var(--moon);line-height:1}
+.cd-sub{font-size:.8rem;color:var(--text-2);margin-top:.3rem;line-height:1.4}
+.yr-table{display:flex;flex-direction:column;gap:3px}
+.yr-row{display:grid;grid-template-columns:3.2rem 1fr 2.6rem auto;gap:var(--size-2);align-items:center;
+  padding:.45rem .6rem;border-radius:var(--radius-3);background:var(--surface-2);border:1px solid transparent}
+.yr-row.good{border-color:var(--pos-line)}
+.yr-row.bad{border-color:var(--neg-line)}
+.yr-row.now{background:var(--surface-3);box-shadow:inset 2px 0 0 var(--gold-solid)}
+.yr-y{font-family:var(--font-mono);font-size:.75rem;color:var(--text-2)}
+.yr-a{font-size:.88rem;color:var(--text)}
+.yr-c{font-family:var(--font-mono);font-size:.55rem;color:var(--text-3);text-align:right}
+@media(max-width:420px){.yr-row{grid-template-columns:2.9rem 1fr auto}.yr-c{display:none}}
+
+/* ── ALERTA ── */
+.alert{display:block;border-width:1px;border-style:solid}
+.alert.neg{border-color:var(--neg-line);background:var(--neg-bg);color:var(--neg)}
+.alert.acc{border-color:var(--accent-line);background:var(--accent-bg);color:var(--accent)}
+.alert.pos{border-color:var(--pos-line);background:var(--pos-bg);color:var(--pos)}
+.alert-t{font-family:var(--font-display);font-size:.98rem;color:var(--text);margin-top:.2rem}
 </style>
 </head>
 <body>
@@ -408,6 +449,11 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
       <div class="li" style="color:var(--pos)"><span>◈</span>Animal amigo</div>
       <div class="li" style="color:var(--neg)"><span>✕</span>Animal enemigo</div>
     </div>
+  </section>
+
+  <!-- ══ AÑO CHINO ══ -->
+  <section class="view" id="view-anio">
+    <div id="anio-body"></div>
   </section>
 
   <!-- ══ PLANIFICADOR ══ -->
@@ -463,6 +509,7 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 <nav class="tabbar">
   <button class="tab on" data-tab="hoy"  onclick="go('hoy')"><i>☉</i>Hoy</button>
   <button class="tab"     data-tab="cal" onclick="go('cal')"><i>▦</i>Calendario</button>
+  <button class="tab"     data-tab="anio" onclick="go('anio')"><i>🐉</i>Año</button>
   <button class="tab"     data-tab="plan" onclick="go('plan')"><i>◈</i>Planificar</button>
   <button class="tab"     data-tab="perfil" onclick="go('perfil')"><i>✦</i>Perfiles</button>
 </nav>
@@ -1057,10 +1104,11 @@ function guideHtml(date){
     ${userHtml}
     <hr class="dv">
     <div class="do-dont">
-      <div><div class="glabel" style="color:var(--pos)">✦ Hazlo hoy</div><ul class="dolist">${g.do.map(i=>`<li>${i}</li>`).join('')}</ul></div>
-      <div><div class="glabel" style="color:var(--neg)">✕ Evita hoy</div><ul class="dontlist">${g.dont.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+      <div><div class="glabel" style="color:var(--pos)">✦ Hazlo hoy</div><ul class="dolist">${actionList(date,'do')}</ul></div>
+      <div><div class="glabel" style="color:var(--neg)">✕ Evita hoy</div><ul class="dontlist">${actionList(date,'dont')}</ul></div>
     </div>
     <div class="affbox"><div class="afflabel">AFIRMACIÓN DEL DÍA</div><div class="afftext">"${g.affirmation}"</div></div>
+    <div class="fp">HUELLA DEL DÍA · ${fpCode(fingerprint(date))}</div>
   </div>`;
 }
 
@@ -1107,6 +1155,7 @@ function renderHoy(){
       <div class="scoreval">${sc.s>0?'+':''}${sc.s} ${scoreLabel(sc.s)}</div>
     </div>
   </div>
+  ${anioAlertHtml()}
   <div class="card">
     <div class="eyebrow">◈ Próximos días</div>
     <div class="next3">${n3}</div>
@@ -1318,10 +1367,199 @@ function renderSyn(){
         <div class="row-score">${x.s>0?'+':''}${x.s}</div></button>`).join('')}`;
 }
 
+
+// ═══ BASE DE DATOS EXTERNA (data.json) ═════════════════════
+let DATA=null;
+async function loadData(){
+  try{
+    const r=await fetch('data.json',{cache:'no-cache'});
+    if(r.ok){DATA=await r.json();return true}
+  }catch(e){}
+  return false;
+}
+
+// ═══ HUELLA DEL DÍA ════════════════════════════════════════
+const SOULPAIR={0:1,1:0};   // Rata y Buey: el único par de almas gemelas del zodiaco
+function fingerprint(date,u){
+  u=u||user;
+  const{primary,secondary}=calcDay(date);
+  const da=dayAnim(date),ma=monthAnim(date.getMonth()),ya=yearAnim(date.getFullYear());
+  const f={day:primary,sec:secondary,weekday:date.getDay(),
+    master:isMaster(primary),
+    moon:isFM(date)?'full':isNM(date)?'new':'none',
+    trine:'neutral',mtrine:'neutral',ytrine:'neutral',rel:'neutral',clash:false};
+  if(u){
+    f.trine=animCompat(u.anim,da);
+    f.mtrine=animCompat(u.anim,ma);
+    f.ytrine=yearRel(u,date.getFullYear())==='soul'?'soul':animCompat(u.anim,ya);
+    f.clash=(A_ENEMY[u.anim]||[]).includes(da);
+    f.rel=numCompat(u.lp,primary);
+    f.lp=u.lp;
+    f.pd=personalDay(u,date);f.pm=personalMonth(u,date);f.py=personalYear(u,date);
+  }
+  return f;
+}
+function fpCode(f){
+  const S={friend:'ami',enemy:'ene',same:'igual',neutral:'neu',soul:'alma'};
+  return `D${f.day}·S${f.sec}`+(f.pd!==undefined?`·DP${f.pd}·MP${f.pm}·AP${f.py}`:'')
+    +`·día:${S[f.trine]}·mes:${S[f.mtrine]}·año:${S[f.ytrine]}·lp:${S[f.rel]}`
+    +(f.clash?'·CHOQUE':'')+(f.master?'·M':'')+(f.moon!=='none'?(f.moon==='full'?'·🌕':'·🌑'):'');
+}
+function hash32(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+
+function whenMatches(when,f){
+  for(const k in when){
+    const v=when[k];
+    if(typeof v==='boolean'){if(f[k]!==v)return false;continue}
+    if(f[k]===undefined)return false;
+    if(!v.includes(f[k]))return false;
+  }
+  return true;
+}
+const FAM_LBL={day:'energía del día',pd:'día personal',pm:'mes personal',py:'año personal',
+  trine:'animal del día',mtrine:'animal del mes',ytrine:'animal del año',clash:'choque animal',
+  rel:'tu lifepath',moon:'luna',master:'nº maestro',combo:'combinación',sec:'secundario'};
+
+function pickActions(date,type,n,u){
+  u=u||user;
+  if(!DATA||!DATA.acciones)return null;
+  const f=fingerprint(date,u);
+  const seed=`${date.getFullYear()}-${date.getMonth()}-${date.getDate()}|${u?`${u.by}${u.bm}${u.bd}`:'x'}`;
+  const cands=DATA.acciones
+    .filter(a=>a.t===type&&whenMatches(a.when,f))
+    .map(a=>({...a,sc:a.w+Object.keys(a.when).length*2+(hash32(seed+a.id)%1000)/1000}))
+    .sort((a,b)=>b.sc-a.sc);
+  const out=[],fams=new Set();
+  for(const c of cands){if(out.length>=n)break;if(fams.has(c.f))continue;fams.add(c.f);out.push(c)}
+  for(const c of cands){if(out.length>=n)break;if(!out.includes(c))out.push(c)}
+  return out;
+}
+function actionList(date,type,cls,u){
+  const picked=pickActions(date,type,3,u);
+  if(!picked||!picked.length){
+    const g=GUIDE[calcDay(date).primary]||GUIDE[1];
+    return (type==='do'?g.do:g.dont).map(i=>`<li>${i}</li>`).join('');
+  }
+  return picked.map(a=>`<li>${a.txt}<span class="src">${FAM_LBL[a.f]||a.f}</span></li>`).join('');
+}
+
+// ═══ RADAR DEL AÑO CHINO ═══════════════════════════════════
+function yearRel(u,y){
+  const ya=yearAnim(y);
+  if(ya===u.anim)return'propio';
+  if((A_ENEMY[u.anim]||[]).includes(ya))return'enemigo';
+  if(SOULPAIR[u.anim]===ya)return'soul';
+  if((A_FRIEND[u.anim]||[]).includes(ya))return'trine';
+  return'neutral';
+}
+function cnyDate(y){
+  const t=DATA&&DATA.anio&&DATA.anio.cny&&DATA.anio.cny[String(y)];
+  if(!t)return null;
+  const[m,d]=t.split('-').map(Number);
+  return new Date(y,m-1,d);
+}
+function cnyLabel(y){
+  const d=cnyDate(y);
+  return d?`${d.getDate()} ${MONTHS_ES[d.getMonth()].slice(0,3).toLowerCase()}`:'~feb';
+}
+function nextYearOf(u,rel,from){
+  for(let i=0;i<13;i++){const y=from+i;if(yearRel(u,y)===rel)return y}
+  return null;
+}
+function faltan(y){
+  const start=cnyDate(y)||new Date(y,1,4);
+  const ms=start-TODAY0;
+  if(ms<=0)return null;
+  const dias=Math.round(ms/864e5);
+  const a=Math.floor(dias/365),m=Math.round((dias%365)/30.4);
+  if(a<=0)return `${dias} días`;
+  return `${a} año${a>1?'s':''}${m?` y ${m} mes${m>1?'es':''}`:''}`;
+}
+const REL_CLS={soul:'pos',trine:'pos',propio:'acc',enemigo:'neg',neutral:''};
+const REL_ICON={soul:'◈',trine:'✦',propio:'◎',enemigo:'✕',neutral:'·'};
+
+function renderAnio(){
+  const el=document.getElementById('anio-body');
+  if(!user){el.innerHTML=onboardingHtml();return}
+  if(!DATA||!DATA.anio){el.innerHTML='<div class="card"><p class="muted">Cargando la base de datos…</p></div>';return}
+  const Y=today.getFullYear(),rel=yearRel(user,Y),E=DATA.anio.estados[rel];
+  const ya=yearAnim(Y);
+  const enemyYear=nextYearOf(user,'enemigo',rel==='enemigo'?Y+1:Y);
+  const ownYear=nextYearOf(user,'propio',rel==='propio'?Y+1:Y);
+  const trineYear=nextYearOf(user,'trine',Y);
+  const f=faltan(enemyYear);
+  const avisoKey=rel==='enemigo'?'dentro':!f?'lejos':(enemyYear-Y<=1?'cerca':(enemyYear-Y<=4?'medio':'lejos'));
+  const enemyAnim=A_ENEMY[user.anim][0];
+
+  const rows=[];
+  for(let i=0;i<12;i++){
+    const y=Y+i,r=yearRel(user,y),a=yearAnim(y);
+    rows.push(`<div class="yr-row ${r==='enemigo'?'bad':r==='trine'||r==='soul'?'good':''}${y===Y?' now':''}">
+      <div class="yr-y">${y}</div>
+      <div class="yr-a">${AEMOJI[a]} ${ANIMALS[a]}</div>
+      <div class="yr-c">${cnyLabel(y)}</div>
+      <div class="chip ${REL_CLS[r]}" style="font-size:.54rem">${REL_ICON[r]} ${DATA.anio.estados[r].label}</div>
+    </div>`);
+  }
+  el.innerHTML=`
+  <div class="card yr-hero ${REL_CLS[rel]||''}">
+    <div class="eyebrow">${REL_ICON[rel]} ${E.label} · ${Y}</div>
+    <div class="yr-big">${AEMOJI[ya]}<div><div class="yr-title">${E.titulo}</div>
+      <div class="prof-meta">Tú eres ${AEMOJI[user.anim]} ${ANIMALS[user.anim]} · ${Y} es año del ${ANIMALS[ya]}${cnyDate(Y)?` (arrancó el ${cnyLabel(Y)})`:''}</div></div></div>
+    <p class="gplain" style="margin-top:var(--size-3)">${E.texto}</p>
+    <div class="do-dont" style="margin-top:var(--size-4)">
+      <div><div class="glabel" style="color:var(--pos)">✦ ESTE AÑO SÍ</div>
+        <ul class="dolist">${E.do.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+      <div><div class="glabel" style="color:var(--neg)">✕ ESTE AÑO NO</div>
+        <ul class="dontlist">${E.dont.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">⏳ Cuenta regresiva</div>
+    <div class="cd-grid">
+      <div class="cd ${rel==='enemigo'?'bad':''}">
+        <div class="cd-lbl">Tu año enemigo · ${AEMOJI[enemyAnim]} ${ANIMALS[enemyAnim]}</div>
+        <div class="cd-val">${rel==='enemigo'?'ESTÁS DENTRO':enemyYear}</div>
+        <div class="cd-sub">${rel==='enemigo'?`termina con el año nuevo chino de ${Y+1} (${cnyLabel(Y+1)})`:`empieza el ${cnyLabel(enemyYear)} · faltan ${f}`}</div>
+      </div>
+      <div class="cd">
+        <div class="cd-lbl">Tu propio año · ${AEMOJI[user.anim]} ${ANIMALS[user.anim]}</div>
+        <div class="cd-val">${rel==='propio'?'ESTÁS DENTRO':ownYear}</div>
+        <div class="cd-sub">${rel==='propio'?'año espejo en curso':`en ${faltan(ownYear)||'—'}`}</div>
+      </div>
+      <div class="cd good">
+        <div class="cd-lbl">Próximo año de trine</div>
+        <div class="cd-val">${trineYear||'—'}</div>
+        <div class="cd-sub">${trineYear===Y?'es este año, aprovéchalo':trineYear?`${AEMOJI[yearAnim(trineYear)]} ${ANIMALS[yearAnim(trineYear)]} · en ${faltan(trineYear)||'—'}`:'—'}</div>
+      </div>
+    </div>
+    <div class="plan-note" style="margin-top:var(--size-3)">${DATA.anio.aviso[avisoKey]}</div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">◈ Tu ciclo de 12 años</div>
+    <div class="yr-table">${rows.join('')}</div>
+    <p class="credit" style="text-align:left;margin-top:var(--size-3)">EL AÑO CHINO ARRANCA CON EL AÑO NUEVO CHINO, NO EL 1 DE ENERO. SI NACISTE ENTRE ENERO Y MEDIADOS DE FEBRERO, TU ANIMAL PUEDE SER EL DEL AÑO ANTERIOR.</p>
+  </div>`;
+}
+function anioAlertHtml(){
+  if(!user||!DATA||!DATA.anio)return '';
+  const Y=today.getFullYear(),rel=yearRel(user,Y);
+  if(rel!=='enemigo'&&rel!=='propio'&&rel!=='soul')return '';
+  const E=DATA.anio.estados[rel];
+  return `<button class="card alert ${REL_CLS[rel]}" onclick="go('anio')" style="width:100%;text-align:left">
+    <div class="eyebrow" style="color:inherit">${REL_ICON[rel]} ${E.label} · ${Y}</div>
+    <div class="alert-t">${E.titulo}</div>
+    <div class="muted" style="margin-top:.25rem">${E.do[0]} →</div>
+  </button>`;
+}
+
 // ═══ ORQUESTADOR ═══════════════════════════════════════════
 function renderAll(){
   if(tab==='hoy')renderHoy();
   if(tab==='cal'){renderCalendar();renderBest();renderDetail()}
+  if(tab==='anio')renderAnio();
   if(tab==='plan')renderPlan();
   if(tab==='perfil')renderProfiles();
   document.getElementById('who-btn').textContent=user?user.name.trim()[0].toUpperCase():'✦';
@@ -1362,7 +1600,8 @@ if('serviceWorker' in navigator){
 
 // ═══ INIT ══════════════════════════════════════════════════
 loadStore();syncUser();
-go(user?'hoy':'hoy');
+go('hoy');
+loadData().then(ok=>{if(ok)renderAll()});
 updatePwaStatus();
 document.addEventListener('keydown',e=>{
   if(/INPUT|SELECT|TEXTAREA/.test(e.target.tagName))return;

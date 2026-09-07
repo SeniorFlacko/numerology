@@ -1,0 +1,3373 @@
+{
+ "version": 3,
+ "generado": "corpus GG33 · reglas combinatorias",
+ "dia": {
+  "1": {
+   "vibe": "El guerrero despierta — el día pide acción, iniciativa y voluntad sin disculpas.",
+   "description": "El 1 trae energía de liderazgo puro: es momento de tomar decisiones, empezar proyectos y no esperar permiso de nadie. La energía masculina del 1 favorece la competencia sana y el enfoque en un solo objetivo. Cuidado con la arrogancia — el liderazgo verdadero incluye escuchar.",
+   "affirmation": "Soy líder nato, actúo con decisión y abro caminos donde antes no los había."
+  },
+  "2": {
+   "vibe": "El día susurra en lugar de gritar — la diplomacia y la escucha son las armas más poderosas hoy.",
+   "description": "El 2 es energía femenina, suave y dual. Este día favorece la mediación, las alianzas y ver ambos lados de cualquier conflicto. Es un día ideal para colaborar, no para actuar solo. La sensibilidad está elevada — tanto la tuya como la de los demás.",
+   "affirmation": "Mi suavidad es mi fortaleza, creo puentes donde otros ven muros."
+  },
+  "3": {
+   "vibe": "La creatividad desborda como río en temporada de lluvias — exprésate sin censura hoy.",
+   "description": "El 3 es el niño cósmico: juguetón, creativo y comunicador nato. Este día favorece el arte, la escritura, el humor y toda forma de expresión. La energía del 3 puede dispersarse fácilmente — necesitas disciplina para que tanta creatividad produzca algo real.",
+   "affirmation": "Mi creatividad es un regalo al mundo; hoy la libero con disciplina y amor."
+  },
+  "4": {
+   "vibe": "Los cimientos se construyen en días como este — trabaja con método, ladrillo por ladrillo.",
+   "description": "El 4 es el trabajador más disciplinado del zodiaco numerológico. Hoy el universo premia el esfuerzo constante, el orden y la construcción sistemática. Es un día excelente para organizar, planificar a largo plazo y hacer el trabajo que nadie más quiere hacer. El 4 no brillará en fiestas — brilla en los resultados.",
+   "affirmation": "Construyo mi realidad paso a paso; cada acción disciplinada hoy es riqueza mañana."
+  },
+  "5": {
+   "vibe": "El viento cambia de dirección y tú puedes surfear esa ola o ser arrastrado por ella.",
+   "description": "El 5 es el número del cambio, la libertad y la aventura. Hoy el universo favorece lo inesperado, los giros de guión y las nuevas experiencias. Es un mal día para rutinas rígidas y un excelente día para adaptarte, moverte y explorar. El riesgo calculado vale la pena hoy.",
+   "affirmation": "El cambio es mi aliado; me adapto con gracia y atraigo oportunidades nuevas."
+  },
+  "6": {
+   "vibe": "El hogar, el amor y la responsabilidad se vuelven sagrados — cuida lo que construiste.",
+   "description": "El 6 vibra con energía familiar, de servicio y de amor responsable. Hoy es día de cuidar relaciones cercanas, atender el hogar y cumplir compromisos con quienes dependen de ti. La energía del 6 recompensa la lealtad y el sacrificio genuino. No es día para el ego — es día para el nosotros.",
+   "affirmation": "Soy pilar de amor y responsabilidad; mi hogar y mi gente florecen con mi presencia."
+  },
+  "7": {
+   "vibe": "El silencio habla más fuerte que cualquier ruido — retírate hacia adentro y escucha.",
+   "description": "El 7 es el número del solitario brillante, la introspección y la verdad oculta. Hoy la energía favorece el estudio profundo, la meditación, la investigación y estar consigo mismo. No es día para socializar en exceso ni para decisiones impulsivas. Es día para ir al fondo de las cosas.",
+   "affirmation": "En mi solitud encuentro sabiduría; soy un canal de verdad e intuición profunda."
+  },
+  "8": {
+   "vibe": "El poder circula hoy como corriente eléctrica — úsalo con intención o te quema.",
+   "description": "El 8 es el número del dinero, el poder y el karma. Lo que siembras hoy regresa amplificado — para bien o para mal. Es un día ideal para negociaciones, decisiones financieras y ejercer autoridad. El 8 no perdona la deshonestidad; el karma del 8 actúa rápido.",
+   "affirmation": "El poder fluye a través de mí con integridad; lo que siembro hoy, lo cosecho con abundancia."
+  },
+  "9": {
+   "vibe": "Un ciclo llega a su conclusión natural — suelta lo que ya cumplió su propósito.",
+   "description": "El 9 es el número de la completud, el fin de ciclos y la manifestación. Hoy el universo pide que cierres lo que está abierto, que perdones lo que pesa y que te prepares para un nuevo comienzo. Es también el día más poderoso para la ley de atracción — visualiza con claridad lo que deseas crear.",
+   "affirmation": "Cierro con gratitud lo que fue, y abro mis manos para recibir lo que viene."
+  },
+  "11": {
+   "vibe": "La antena cósmica está en su frecuencia máxima — lo que sientes hoy es una señal, no un ruido.",
+   "description": "El 11 es el maestro emocional, el número de la intuición elevada y la sensibilidad extrema. Hoy las emociones están amplificadas y los mensajes del universo llegan con fuerza. Es un día poderoso para el arte, la espiritualidad y la conexión con algo más grande que tú. Maneja la intensidad con conciencia.",
+   "affirmation": "Soy un canal de luz y sabiduría; mi sensibilidad es mi superpoder, no mi debilidad."
+  },
+  "22": {
+   "vibe": "El arquitecto del destino tiene el plano en mano — hoy se construye a escala monumental.",
+   "description": "El 22 es el Constructor Maestro, el número más poderoso para materializar sueños a gran escala. Hoy la energía favorece los planes ambiciosos, las visiones de largo plazo y el trabajo que deja legado. El 22 exige disciplina del 4 y visión del 11 — es la combinación más poderosa del sistema.",
+   "affirmation": "Soy constructor de mundos; mi visión es grande, mis acciones son precisas, mi legado es eterno."
+  },
+  "33": {
+   "vibe": "El amor universal pulsa hoy con una frecuencia que puede sanar lo que parecía roto.",
+   "description": "El 33 es el número maestro más alto — el Cristo Cósmico, el maestro de maestros. Hoy la energía es de servicio elevado, amor incondicional y enseñanza. Es un día para dar sin esperar nada, para inspirar con el ejemplo y para conectar con la dimensión más espiritual de tu existencia.",
+   "affirmation": "Soy amor en acción; mi presencia eleva todo lo que toca y mi luz guía sin imponer."
+  }
+ },
+ "sec": {
+  "1": "El secundario 1 añade un impulso extra de iniciativa — actúa hoy, no mañana.",
+  "2": "El secundario 2 suaviza la energía principal con intuición femenina y diplomacia.",
+  "3": "El secundario 3 inyecta creatividad y comunicación — exprésate con libertad.",
+  "4": "El secundario 4 pide estructura y método — organiza antes de ejecutar.",
+  "5": "El secundario 5 trae un toque de imprevisibilidad — mantente flexible ante cambios.",
+  "6": "El secundario 6 ancla la energía en el amor, la familia y las responsabilidades.",
+  "7": "El secundario 7 profundiza la introspección — confía en tu intuición sobre el ruido externo.",
+  "8": "El secundario 8 activa el karma financiero — sé consciente de lo que das y recibes.",
+  "9": "El secundario 9 cierra subciclos — suelta lo que ya no sirve para hacer espacio.",
+  "11": "El secundario 11 eleva la sensibilidad emocional — escucha los mensajes sutiles del día.",
+  "22": "El secundario 22 amplifica el poder constructivo — piensa en grande, ejecuta con precisión.",
+  "33": "El secundario 33 baña todo con amor incondicional — sirve desde el corazón hoy."
+ },
+ "compat": {
+  "soul": "🌟 Día de alma gemela para tu lifepath — las energías se amplifican mutuamente. Aprovecha al máximo.",
+  "friend": "✦ Día amigo para tu energía — fluye con naturalidad, el universo está de tu lado.",
+  "enemy": "⚡ Día de tensión con tu lifepath — úsala como combustible, no como obstáculo. Mantén calma.",
+  "neutral": "◎ Día neutro para tu lifepath — ni viento a favor ni en contra. Depende de ti la dirección."
+ },
+ "animCompat": {
+  "friend": "Los animales del día y el tuyo son aliados — la energía animal fluye a tu favor hoy.",
+  "enemy": "Tu animal y el del día se oponen energéticamente — navega con precaución y paciencia.",
+  "same": "Compartes animal con el día — tu energía está en casa, usa esa familiaridad.",
+  "neutral": "Los animales son neutrales entre sí — la energía es libre para moldearse."
+ },
+ "luna": {
+  "full": "🌕 Luna Llena activa: toda energía se intensifica al doble. Lo bueno brilla más, lo difícil pesa más. Actúa con conciencia plena."
+ },
+ "py": {
+  "1": {
+   "t": "Año de siembra",
+   "d": "Arranca un ciclo de 9 años. Lo que plantes ahora marca la década: proyectos nuevos, identidad nueva, decisiones tomadas por ti y no por otros."
+  },
+  "2": {
+   "t": "Año de alianzas",
+   "d": "Año lento a propósito. Lo sembrado se cocina en silencio: sociedades, pareja, paciencia. Forzar este año casi siempre sale caro."
+  },
+  "3": {
+   "t": "Año de expresión",
+   "d": "Se te abre la voz: creatividad, visibilidad, gente nueva. El riesgo es dispersarte en diez frentes; elige un canal y explótalo."
+  },
+  "4": {
+   "t": "Año de cimientos",
+   "d": "Trabajo duro y estructura. Poco glamour, mucho resultado. Es el año de construir el sistema, no de improvisar ni de esperar suerte."
+  },
+  "5": {
+   "t": "Año de cambio",
+   "d": "Movimiento, viajes y giros inesperados. Lo rígido se rompe solo. Tu ventaja este año es adaptarte rápido, no defender el plan viejo."
+  },
+  "6": {
+   "t": "Año de hogar y responsabilidad",
+   "d": "Familia, casa, compromisos y cuidado de otros. Se te pide presencia. También es el año donde el amor tiende a formalizarse."
+  },
+  "7": {
+   "t": "Año de retiro y estudio",
+   "d": "Año hacia adentro: análisis, estudio, espiritualidad. Malo para forzar dinero, excelente para entender el porqué de lo que haces."
+  },
+  "8": {
+   "t": "Año de cosecha y poder",
+   "d": "Dinero, autoridad y karma acelerado. Se materializa lo construido. Sé impecable: este año lo que haces regresa rápido, bueno o malo."
+  },
+  "9": {
+   "t": "Año de cierre",
+   "d": "Termina el ciclo de 9. Sueltas gente, trabajos y versiones tuyas. No arranques algo enorme: limpia el terreno para el 1 que viene."
+  },
+  "11": {
+   "t": "Año de despertar",
+   "d": "Versión intensa del 2: intuición al máximo y señales por todos lados. Alto voltaje emocional con alto potencial espiritual."
+  },
+  "22": {
+   "t": "Año de construcción maestra",
+   "d": "Versión intensa del 4: puedes materializar algo de escala grande. Exige disciplina brutal y visión de largo plazo."
+  },
+  "33": {
+   "t": "Año de servicio",
+   "d": "Versión intensa del 6: enseñar, sanar, dar. El año pide poner tu talento al servicio de algo más grande que tú."
+  }
+ },
+ "pm": {
+  "1": "Mes de arrancar: inicia, decide, toma el volante.",
+  "2": "Mes de pausa y acuerdos: escucha más de lo que hablas.",
+  "3": "Mes social y creativo: muéstrate, comunica, publica.",
+  "4": "Mes de orden: sistemas, rutinas, papeleo y disciplina.",
+  "5": "Mes de movimiento: flexibilidad, viajes e imprevistos.",
+  "6": "Mes de casa y compromisos: cuida a los tuyos.",
+  "7": "Mes de análisis: estudia, revisa números, retírate un poco.",
+  "8": "Mes de dinero y decisiones fuertes: negocia y cobra.",
+  "9": "Mes de cierre: termina pendientes, suelta, limpia.",
+  "11": "Mes de alta sensibilidad: la intuición manda sobre la lógica.",
+  "22": "Mes de construir en grande: plan largo con pasos reales.",
+  "33": "Mes de servir y enseñar: da sin pasar factura."
+ },
+ "pd": {
+  "1": "Arranca. Tu día para decidir sin pedir permiso.",
+  "2": "Coopera. Hoy avanzas acompañado, no solo.",
+  "3": "Comunica. Tu día para expresarte y socializar.",
+  "4": "Ordena. Tu día de trabajo de fondo y detalle.",
+  "5": "Muévete. Tu día para lo nuevo y lo inesperado.",
+  "6": "Cuida. Tu día para casa, familia y compromisos.",
+  "7": "Retírate. Tu día para pensar, estudiar y callar.",
+  "8": "Cobra. Tu día para dinero, negociación y autoridad.",
+  "9": "Cierra. Tu día para terminar y soltar.",
+  "11": "Escucha. Tu día de intuición y sensibilidad alta.",
+  "22": "Construye. Tu día para mover una pieza grande.",
+  "33": "Sirve. Tu día para dar y enseñar."
+ },
+ "lp": {
+  "1": {
+   "name": "El Líder",
+   "e": "👑",
+   "soul": [
+    9
+   ],
+   "friend": [
+    3
+   ],
+   "enemy": [
+    4,
+    6,
+    11
+   ],
+   "desc": "Energía masculina, competitivo, líder natural. Alma gemela: 9. Amigo: 3. Enemigos: 4, 6, 11."
+  },
+  "2": {
+   "name": "La Novia",
+   "e": "🌙",
+   "soul": [
+    1,
+    9,
+    10,
+    18,
+    19,
+    27,
+    28
+   ],
+   "friend": [],
+   "enemy": [],
+   "desc": "Energía femenina, diplomático, pacífico. Todos son soulmates del 2."
+  },
+  "3": {
+   "name": "El Niño",
+   "e": "🎨",
+   "soul": [
+    3
+   ],
+   "friend": [
+    1,
+    2
+   ],
+   "enemy": [
+    7
+   ],
+   "desc": "Creativo, comunicador, necesita disciplina. Amigos: 1, 2. Enemigo: 7."
+  },
+  "4": {
+   "name": "El Trabajador",
+   "e": "🔨",
+   "soul": [
+    8
+   ],
+   "friend": [
+    3
+   ],
+   "enemy": [
+    1,
+    9
+   ],
+   "desc": "El más trabajador, constructor, número real de la riqueza. Alma: 8. Enemigos: 1, 9."
+  },
+  "5": {
+   "name": "El Viajero",
+   "e": "🌍",
+   "soul": [
+    11
+   ],
+   "friend": [
+    7,
+    33
+   ],
+   "enemy": [
+    8
+   ],
+   "desc": "Cambio, libertad, conquistador. Alma: 11. Amigos: 7, 33. Enemigo: 8."
+  },
+  "6": {
+   "name": "El Hogareño",
+   "e": "🏡",
+   "soul": [
+    33
+   ],
+   "friend": [
+    8
+   ],
+   "enemy": [
+    7
+   ],
+   "desc": "Familia, responsable, amante de animales. Alma: 33. Amigo: 8. Enemigo: 7."
+  },
+  "7": {
+   "name": "El Solitario",
+   "e": "🔮",
+   "soul": [],
+   "friend": [
+    5,
+    9
+   ],
+   "enemy": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8,
+    11,
+    22,
+    33
+   ],
+   "desc": "Lobo solitario, extremadamente inteligente. Amigos: 5, 9. El número más odiado."
+  },
+  "8": {
+   "name": "El Dinero",
+   "e": "💰",
+   "soul": [
+    4
+   ],
+   "friend": [
+    6
+   ],
+   "enemy": [
+    5
+   ],
+   "desc": "Poder, karma, dinero, ups y downs. Alma: 4. Amigo: 6. Enemigo: 5."
+  },
+  "9": {
+   "name": "El Secreto",
+   "e": "🌟",
+   "soul": [
+    1
+   ],
+   "friend": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "enemy": [
+    11,
+    22,
+    33
+   ],
+   "desc": "Completud, manifestación, número de la realidad. Alma: 1. Enemigos: 11, 22, 33."
+  },
+  "11": {
+   "name": "El Maestro Emocional",
+   "e": "⚡",
+   "soul": [
+    5
+   ],
+   "friend": [],
+   "enemy": [
+    9
+   ],
+   "desc": "Número maestro, altamente emocional y atlético. Alma: 5. Enemigo: 9."
+  },
+  "22": {
+   "name": "El Constructor Maestro",
+   "e": "🏛️",
+   "soul": [],
+   "friend": [],
+   "enemy": [
+    9
+   ],
+   "desc": "Número maestro, construye a gran escala. Enemigo: 9."
+  },
+  "33": {
+   "name": "El Cristo Cósmico",
+   "e": "✨",
+   "soul": [
+    6
+   ],
+   "friend": [
+    5
+   ],
+   "enemy": [
+    9
+   ],
+   "desc": "El número maestro más alto. Alma: 6. Amigo: 5. Enemigo: 9."
+  }
+ },
+ "acciones": [
+  {
+   "id": "a0",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "Toma una decisión que has estado postergando sin dudar más"
+  },
+  {
+   "id": "a1",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "Inicia ese proyecto, conversación o cambio que requiere valentía"
+  },
+  {
+   "id": "a2",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "Posicionate como líder en tu trabajo, familia o círculo social"
+  },
+  {
+   "id": "a3",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "Evita debates y peleas innecesarias — el 1 puede volverse agresivo"
+  },
+  {
+   "id": "a4",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "No te disperses en múltiples tareas; el 1 es de mente única"
+  },
+  {
+   "id": "a5",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "No ignores las necesidades emocionales de quienes te rodean"
+  },
+  {
+   "id": "a6",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "Escucha activamente antes de hablar — el 2 entiende ambas partes"
+  },
+  {
+   "id": "a7",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "Fortalece relaciones importantes con gestos de paz y diplomacia"
+  },
+  {
+   "id": "a8",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "Trabaja en equipo; hoy el uno más uno vale más que dos"
+  },
+  {
+   "id": "a9",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "No uses la fuerza ni la confrontación directa — el 2 falla en violencia"
+  },
+  {
+   "id": "a10",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "No tomes decisiones unilaterales que afecten a otros sin consultar"
+  },
+  {
+   "id": "a11",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "Evita aislarte; el 2 necesita conexión para florecer"
+  },
+  {
+   "id": "a12",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "Expresa una idea creativa que guardas — escribe, dibuja, canta, habla"
+  },
+  {
+   "id": "a13",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "Conéctate con amigos o familia con ligereza y humor genuino"
+  },
+  {
+   "id": "a14",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "Usa tu don de comunicación para inspirar o enseñar a alguien"
+  },
+  {
+   "id": "a15",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "No te comprometas con más de lo que puedes cumplir — el 3 sobreestima"
+  },
+  {
+   "id": "a16",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "Evita las indulgencias excesivas en comida, redes o entretenimiento"
+  },
+  {
+   "id": "a17",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "No pospongas tareas bajo el pretexto de esperar 'inspiración'"
+  },
+  {
+   "id": "a18",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "Organiza un espacio, proyecto o rutina que lleva tiempo desorganizado"
+  },
+  {
+   "id": "a19",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "Trabaja en algo que requiere concentración profunda sin interrupciones"
+  },
+  {
+   "id": "a20",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "Haz una lista concreta con pasos y ejecútalos en orden"
+  },
+  {
+   "id": "a21",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "No improvises — el 4 necesita estructura y orden para rendir"
+  },
+  {
+   "id": "a22",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "Evita gastos impulsivos; el 4 construye riqueza con disciplina"
+  },
+  {
+   "id": "a23",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "No te quedes atascado en el trabajo hasta olvidar descansar y relajarte"
+  },
+  {
+   "id": "a24",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "Di que sí a algo nuevo o diferente que te saca de tu zona de confort"
+  },
+  {
+   "id": "a25",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "Muévete físicamente — viaja, camina por un lugar desconocido, explora"
+  },
+  {
+   "id": "a26",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "Conecta con personas distintas a tu círculo habitual"
+  },
+  {
+   "id": "a27",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "No te aferres a planes fijos — la rigidez choca con la energía del 5"
+  },
+  {
+   "id": "a28",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "Evita el exceso: el 5 puede caer en libertinaje sin límites"
+  },
+  {
+   "id": "a29",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "No tomes decisiones financieras grandes hoy — el 5 es volátil con el dinero"
+  },
+  {
+   "id": "a30",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "Dedica tiempo de calidad a tu familia o personas más cercanas"
+  },
+  {
+   "id": "a31",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "Cumple una responsabilidad que has estado evitando"
+  },
+  {
+   "id": "a32",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "Crea o mejora algo en tu hogar que genere bienestar para todos"
+  },
+  {
+   "id": "a33",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "No descuides tus obligaciones por placeres pasajeros hoy"
+  },
+  {
+   "id": "a34",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "Evita los chismes y el drama ajeno — el 6 se contamina fácilmente"
+  },
+  {
+   "id": "a35",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "No te pierdas en el trabajo olvidando que el 6 prioriza lo humano"
+  },
+  {
+   "id": "a36",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "Dedica tiempo a leer, estudiar o investigar algo que te apasiona profundamente"
+  },
+  {
+   "id": "a37",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "Medita, reflexiona o escribe en tu diario — el 7 revela verdades en silencio"
+  },
+  {
+   "id": "a38",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "Confía en tu intuición hoy por encima de la opinión de los demás"
+  },
+  {
+   "id": "a39",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "Evita el ruido social innecesario — reuniones vacías drenan al 7"
+  },
+  {
+   "id": "a40",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "No compartas tus planes con todo el mundo; el 7 necesita privacidad"
+  },
+  {
+   "id": "a41",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "Evita el alcohol o sustancias — el 7 ya tiende a la evasión"
+  },
+  {
+   "id": "a42",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "Toma acción concreta en temas de dinero, negocios o inversiones"
+  },
+  {
+   "id": "a43",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "Ejerce tu autoridad con justicia — el 8 recompensa el liderazgo ético"
+  },
+  {
+   "id": "a44",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "Cierra ciclos kármicos: perdona una deuda emocional o resuelve un conflicto pendiente"
+  },
+  {
+   "id": "a45",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "No actúes con deshonestidad hoy — el karma del 8 regresa inmediato"
+  },
+  {
+   "id": "a46",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "Evita confrontaciones de poder innecesarias; elige tus batallas con sabiduría"
+  },
+  {
+   "id": "a47",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "No tomes decisiones financieras por miedo o por ego — actúa desde la claridad"
+  },
+  {
+   "id": "a48",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "Cierra un proyecto, conversación o ciclo emocional que lleva tiempo pendiente"
+  },
+  {
+   "id": "a49",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "Practica el perdón — a otros y a ti mismo — el 9 libera cuando suelta"
+  },
+  {
+   "id": "a50",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "Visualiza con detalle lo que quieres manifestar en el próximo ciclo"
+  },
+  {
+   "id": "a51",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "No te aferres a lo que el universo ya está cerrando — fluye con el 9"
+  },
+  {
+   "id": "a52",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "Evita iniciar proyectos nuevos grandes hoy — primero cierra, luego abre"
+  },
+  {
+   "id": "a53",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "No cargues rencores; el 9 que no perdona bloquea su propia manifestación"
+  },
+  {
+   "id": "a54",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "Pon atención a tus sueños, corazonadas e intuiciones — son mensajes reales"
+  },
+  {
+   "id": "a55",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "Canaliza la intensidad emocional hacia el arte, la música o la escritura"
+  },
+  {
+   "id": "a56",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "Medita o reza — el 11 tiene acceso directo a frecuencias superiores"
+  },
+  {
+   "id": "a57",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "No reprimas las emociones — el 11 bloqueado se convierte en ansiedad"
+  },
+  {
+   "id": "a58",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "Evita el drama emocional y las reacciones exageradas ante provocaciones menores"
+  },
+  {
+   "id": "a59",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "No tomes decisiones importantes solo desde la emoción — busca también la razón"
+  },
+  {
+   "id": "a60",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "Trabaja en tu proyecto o visión más ambiciosa — hoy el universo apoya lo grande"
+  },
+  {
+   "id": "a61",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "Diseña un plan de largo plazo con pasos concretos y fechas reales"
+  },
+  {
+   "id": "a62",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "Conecta con personas que piensan en grande y comparten tu visión"
+  },
+  {
+   "id": "a63",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "No desperdicies este día en trivialidades — el 22 pide altura de miras"
+  },
+  {
+   "id": "a64",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "Evita el perfeccionismo paralizante; avanza aunque no esté todo listo"
+  },
+  {
+   "id": "a65",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "No actúes solo por ego; el 22 construye para el bien colectivo, no personal"
+  },
+  {
+   "id": "a66",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "Haz un acto de servicio genuino sin esperar reconocimiento ni recompensa"
+  },
+  {
+   "id": "a67",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "Comparte conocimiento o sabiduría con alguien que lo necesita de verdad"
+  },
+  {
+   "id": "a68",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "Conéctate con tu práctica espiritual más profunda — meditación, oración, gratitud"
+  },
+  {
+   "id": "a69",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "No uses tu energía en conflictos mundanos — el 33 está por encima de eso"
+  },
+  {
+   "id": "a70",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "Evita el martirio: servir no significa destruirte a ti mismo por los demás"
+  },
+  {
+   "id": "a71",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "No ignores tu propia necesidad espiritual en el afán de ayudar a todos"
+  },
+  {
+   "id": "a72",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "Pon tu nombre en algo hoy: firma, propón, levanta la mano antes que nadie."
+  },
+  {
+   "id": "a73",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     1
+    ]
+   },
+   "txt": "No pidas permiso para algo que ya sabes que vas a hacer; el 1 castiga la duda."
+  },
+  {
+   "id": "a74",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "Deja que otro tenga la razón hoy aunque puedas ganar la discusión."
+  },
+  {
+   "id": "a75",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     2
+    ]
+   },
+   "txt": "No fuerces una respuesta hoy: lo que se apura en 2 se rompe."
+  },
+  {
+   "id": "a76",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "Manda ese mensaje que llevas días redactando en la cabeza."
+  },
+  {
+   "id": "a77",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     3
+    ]
+   },
+   "txt": "No prometas más de lo que puedes entregar: el 3 firma cheques que el 4 tiene que pagar."
+  },
+  {
+   "id": "a78",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "Haz la parte aburrida: la carpeta, el respaldo, la lista, el papeleo."
+  },
+  {
+   "id": "a79",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     4
+    ]
+   },
+   "txt": "No busques atajos hoy; en 4 el atajo se paga doble más adelante."
+  },
+  {
+   "id": "a80",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "Cambia una rutina a propósito, aunque sea el camino a casa."
+  },
+  {
+   "id": "a81",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     5
+    ]
+   },
+   "txt": "No firmes nada de largo plazo hoy: el 5 cambia de opinión mañana."
+  },
+  {
+   "id": "a82",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "Repara algo de tu casa o de tu gente que llevas meses posponiendo."
+  },
+  {
+   "id": "a83",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     6
+    ]
+   },
+   "txt": "No cargues con responsabilidades que no son tuyas por quedar bien."
+  },
+  {
+   "id": "a84",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "Apaga el teléfono dos horas y quédate contigo."
+  },
+  {
+   "id": "a85",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     7
+    ]
+   },
+   "txt": "No compartas tus planes hoy; el 7 protege lo que aún no está listo."
+  },
+  {
+   "id": "a86",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "Revisa números: cuentas, deudas, precios, lo que cobras."
+  },
+  {
+   "id": "a87",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     8
+    ]
+   },
+   "txt": "No presumas poder hoy; el 8 cobra el ego con intereses."
+  },
+  {
+   "id": "a88",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "Tira, borra o regala algo que llevas cargando sin usar."
+  },
+  {
+   "id": "a89",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     9
+    ]
+   },
+   "txt": "No arranques un proyecto grande hoy: nace con fecha de caducidad."
+  },
+  {
+   "id": "a90",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "Anota lo que soñaste o lo primero que te dio corazonada hoy."
+  },
+  {
+   "id": "a91",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     11
+    ]
+   },
+   "txt": "No respondas en caliente; en 11 la emoción se te va al doble."
+  },
+  {
+   "id": "a92",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "Dedica una hora a tu proyecto más grande, el que casi nunca tocas."
+  },
+  {
+   "id": "a93",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     22
+    ]
+   },
+   "txt": "No te pierdas en detalles pequeños: el 22 pide altura de miras."
+  },
+  {
+   "id": "a94",
+   "t": "do",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "Enseña algo que sabes a alguien que lo necesita, sin cobrar."
+  },
+  {
+   "id": "a95",
+   "t": "dont",
+   "w": 2,
+   "f": "day",
+   "when": {
+    "day": [
+     33
+    ]
+   },
+   "txt": "No te destruyas ayudando; el 33 sin límites se vuelve mártir."
+  },
+  {
+   "id": "a96",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     1
+    ]
+   },
+   "txt": "Tu día personal 1: hoy tú decides, no el comité. Empieza por lo que más pesa."
+  },
+  {
+   "id": "a97",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     1
+    ]
+   },
+   "txt": "Es tu día de arranque personal: mueve la primera pieza, aunque sea pequeña."
+  },
+  {
+   "id": "a98",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     1
+    ]
+   },
+   "txt": "No delegues hoy lo que solo tú puedes decidir."
+  },
+  {
+   "id": "a99",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     1
+    ]
+   },
+   "txt": "No te dejes arrastrar por la agenda de otro en tu día 1."
+  },
+  {
+   "id": "a100",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     2
+    ]
+   },
+   "txt": "Tu día personal 2 pide compañía: busca a la persona que te falta escuchar."
+  },
+  {
+   "id": "a101",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     2
+    ]
+   },
+   "txt": "Hoy negocia en vez de imponer; tu energía personal está en modo puente."
+  },
+  {
+   "id": "a102",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     2
+    ]
+   },
+   "txt": "No tomes decisiones solo hoy, tu día 2 se equivoca en solitario."
+  },
+  {
+   "id": "a103",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     2
+    ]
+   },
+   "txt": "No confrontes hoy: en tu día 2 la pelea te cuesta más a ti."
+  },
+  {
+   "id": "a104",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     3
+    ]
+   },
+   "txt": "Tu día personal 3: sal, habla, publica, muéstrate. Hoy tu voz llega."
+  },
+  {
+   "id": "a105",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     3
+    ]
+   },
+   "txt": "Haz algo con las manos y sin utilidad: dibuja, cocina, escribe por gusto."
+  },
+  {
+   "id": "a106",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     3
+    ]
+   },
+   "txt": "No dejes tres cosas a medias hoy; tu día 3 dispersa."
+  },
+  {
+   "id": "a107",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     3
+    ]
+   },
+   "txt": "No gastes por impulso en tu día 3, especialmente en cosas que se ven bonitas."
+  },
+  {
+   "id": "a108",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     4
+    ]
+   },
+   "txt": "Tu día personal 4: bloquea dos horas sin interrupciones y avanza lo pesado."
+  },
+  {
+   "id": "a109",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     4
+    ]
+   },
+   "txt": "Ordena hoy un espacio o un archivo que te está costando dinero mental."
+  },
+  {
+   "id": "a110",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     4
+    ]
+   },
+   "txt": "No improvises en tu día 4; hoy el plan le gana al talento."
+  },
+  {
+   "id": "a111",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     4
+    ]
+   },
+   "txt": "No trabajes hasta la madrugada: el 4 no sabe parar solo."
+  },
+  {
+   "id": "a112",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     5
+    ]
+   },
+   "txt": "Tu día personal 5: di que sí a lo inesperado, hoy sale bien."
+  },
+  {
+   "id": "a113",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     5
+    ]
+   },
+   "txt": "Muévete físicamente hoy; tu día 5 se pudre encerrado."
+  },
+  {
+   "id": "a114",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     5
+    ]
+   },
+   "txt": "No te aferres al plan de la mañana en tu día 5."
+  },
+  {
+   "id": "a115",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     5
+    ]
+   },
+   "txt": "No tomes decisiones de dinero grandes hoy, tu 5 es volátil."
+  },
+  {
+   "id": "a116",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     6
+    ]
+   },
+   "txt": "Tu día personal 6: dale tiempo real a tu casa y a los tuyos, sin pantalla."
+  },
+  {
+   "id": "a117",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     6
+    ]
+   },
+   "txt": "Cumple hoy esa responsabilidad chica que llevas semanas esquivando."
+  },
+  {
+   "id": "a118",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     6
+    ]
+   },
+   "txt": "No te metas en el drama de otro hoy; tu día 6 lo absorbe todo."
+  },
+  {
+   "id": "a119",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     6
+    ]
+   },
+   "txt": "No sacrifiques tu descanso por quedar bien en tu día 6."
+  },
+  {
+   "id": "a120",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     7
+    ]
+   },
+   "txt": "Tu día personal 7: estudia, investiga, lee algo difícil. Hoy entiendes más rápido."
+  },
+  {
+   "id": "a121",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     7
+    ]
+   },
+   "txt": "Escribe lo que estás pensando, sin mostrárselo a nadie todavía."
+  },
+  {
+   "id": "a122",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     7
+    ]
+   },
+   "txt": "No fuerces reuniones ni fiestas en tu día 7; te drenan."
+  },
+  {
+   "id": "a123",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     7
+    ]
+   },
+   "txt": "No busques respuestas afuera hoy; tu día 7 las tiene adentro."
+  },
+  {
+   "id": "a124",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     8
+    ]
+   },
+   "txt": "Tu día personal 8: cobra, negocia, pide el número que vale tu trabajo."
+  },
+  {
+   "id": "a125",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     8
+    ]
+   },
+   "txt": "Cierra hoy una cuenta pendiente, de dinero o de karma."
+  },
+  {
+   "id": "a126",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     8
+    ]
+   },
+   "txt": "No actúes con trampa hoy: en tu día 8 el karma regresa el mismo día."
+  },
+  {
+   "id": "a127",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     8
+    ]
+   },
+   "txt": "No entres en pulso de poder por ego en tu día 8; elige la batalla."
+  },
+  {
+   "id": "a128",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     9
+    ]
+   },
+   "txt": "Tu día personal 9: termina lo que lleva meses abierto."
+  },
+  {
+   "id": "a129",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     9
+    ]
+   },
+   "txt": "Perdona hoy algo, aunque sea en silencio y sin avisar."
+  },
+  {
+   "id": "a130",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     9
+    ]
+   },
+   "txt": "No empieces nada grande en tu día 9; primero limpia."
+  },
+  {
+   "id": "a131",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     9
+    ]
+   },
+   "txt": "No cargues rencor hoy; en tu 9 bloquea justo lo que quieres atraer."
+  },
+  {
+   "id": "a132",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     11
+    ]
+   },
+   "txt": "Tu día personal 11: hazle caso a la corazonada, hoy es información."
+  },
+  {
+   "id": "a133",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     11
+    ]
+   },
+   "txt": "Canaliza la intensidad en algo creativo antes de que se vuelva ansiedad."
+  },
+  {
+   "id": "a134",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     11
+    ]
+   },
+   "txt": "No decidas solo desde la emoción en tu día 11."
+  },
+  {
+   "id": "a135",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     11
+    ]
+   },
+   "txt": "No te tragues lo que sientes hoy; el 11 bloqueado se somatiza."
+  },
+  {
+   "id": "a136",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     22
+    ]
+   },
+   "txt": "Tu día personal 22: aterriza tu visión grande en pasos con fecha."
+  },
+  {
+   "id": "a137",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     22
+    ]
+   },
+   "txt": "Busca hoy a alguien que piense igual de grande que tú."
+  },
+  {
+   "id": "a138",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     22
+    ]
+   },
+   "txt": "No gastes tu día 22 en trivialidades y mensajes."
+  },
+  {
+   "id": "a139",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     22
+    ]
+   },
+   "txt": "No esperes a que esté perfecto; el 22 se paraliza en el detalle."
+  },
+  {
+   "id": "a140",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     33
+    ]
+   },
+   "txt": "Tu día personal 33: sirve sin factura, enseña sin condición."
+  },
+  {
+   "id": "a141",
+   "t": "do",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     33
+    ]
+   },
+   "txt": "Conéctate hoy con tu práctica espiritual, aunque sean diez minutos."
+  },
+  {
+   "id": "a142",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     33
+    ]
+   },
+   "txt": "No te metas en peleas mundanas en tu día 33; te queda chico."
+  },
+  {
+   "id": "a143",
+   "t": "dont",
+   "w": 3,
+   "f": "pd",
+   "when": {
+    "pd": [
+     33
+    ]
+   },
+   "txt": "No te olvides de ti hoy por atender a todos."
+  },
+  {
+   "id": "a144",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     1
+    ]
+   },
+   "txt": "Estás en mes personal 1: lo que arranques este mes marca el resto del ciclo."
+  },
+  {
+   "id": "a145",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     1
+    ]
+   },
+   "txt": "En mes personal 1 no esperes señales: la señal eres tú moviéndote."
+  },
+  {
+   "id": "a146",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     2
+    ]
+   },
+   "txt": "Mes personal 2: teje alianzas, este mes no se gana solo."
+  },
+  {
+   "id": "a147",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     2
+    ]
+   },
+   "txt": "En mes personal 2 no fuerces resultados; se cocinan lento."
+  },
+  {
+   "id": "a148",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     3
+    ]
+   },
+   "txt": "Mes personal 3: es tu mes para mostrarte y que te vean."
+  },
+  {
+   "id": "a149",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     3
+    ]
+   },
+   "txt": "En mes personal 3 cuida el gasto y las promesas fáciles."
+  },
+  {
+   "id": "a150",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     4
+    ]
+   },
+   "txt": "Mes personal 4: este mes es de sistema, no de inspiración."
+  },
+  {
+   "id": "a151",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     4
+    ]
+   },
+   "txt": "En mes personal 4 no improvises tu economía ni tu agenda."
+  },
+  {
+   "id": "a152",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     5
+    ]
+   },
+   "txt": "Mes personal 5: deja espacio en la agenda, este mes cambia solo."
+  },
+  {
+   "id": "a153",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     5
+    ]
+   },
+   "txt": "En mes personal 5 no ancles todo con compromisos rígidos."
+  },
+  {
+   "id": "a154",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     6
+    ]
+   },
+   "txt": "Mes personal 6: tu casa y tu gente piden presencia este mes."
+  },
+  {
+   "id": "a155",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     6
+    ]
+   },
+   "txt": "En mes personal 6 no te escondas en el trabajo."
+  },
+  {
+   "id": "a156",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     7
+    ]
+   },
+   "txt": "Mes personal 7: mes de revisar, estudiar y bajar el volumen."
+  },
+  {
+   "id": "a157",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     7
+    ]
+   },
+   "txt": "En mes personal 7 no fuerces ventas ni exposición."
+  },
+  {
+   "id": "a158",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     8
+    ]
+   },
+   "txt": "Mes personal 8: mes de cobrar, negociar y poner precio."
+  },
+  {
+   "id": "a159",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     8
+    ]
+   },
+   "txt": "En mes personal 8 no dejes cuentas sin revisar."
+  },
+  {
+   "id": "a160",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     9
+    ]
+   },
+   "txt": "Mes personal 9: cierra este mes lo que no va a llegar al siguiente ciclo."
+  },
+  {
+   "id": "a161",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     9
+    ]
+   },
+   "txt": "En mes personal 9 no arranques proyectos grandes."
+  },
+  {
+   "id": "a162",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     11
+    ]
+   },
+   "txt": "Mes personal 11: mes de señales fuertes, escribe lo que notes."
+  },
+  {
+   "id": "a163",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     11
+    ]
+   },
+   "txt": "En mes personal 11 no ignores el desgaste emocional."
+  },
+  {
+   "id": "a164",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     22
+    ]
+   },
+   "txt": "Mes personal 22: mes para mover la pieza grande de tu vida."
+  },
+  {
+   "id": "a165",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     22
+    ]
+   },
+   "txt": "En mes personal 22 no te conformes con lo urgente."
+  },
+  {
+   "id": "a166",
+   "t": "do",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     33
+    ]
+   },
+   "txt": "Mes personal 33: mes de dar, enseñar y sanar vínculos."
+  },
+  {
+   "id": "a167",
+   "t": "dont",
+   "w": 2,
+   "f": "pm",
+   "when": {
+    "pm": [
+     33
+    ]
+   },
+   "txt": "En mes personal 33 no confundas servir con desaparecer."
+  },
+  {
+   "id": "a168",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     1
+    ]
+   },
+   "txt": "Vas en año personal 1: hoy suma a lo que estás fundando, aunque sea poco."
+  },
+  {
+   "id": "a169",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     1
+    ]
+   },
+   "txt": "En año personal 1 no revivas lo que cerraste el año pasado."
+  },
+  {
+   "id": "a170",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     2
+    ]
+   },
+   "txt": "Año personal 2: hoy la paciencia rinde más que el empuje."
+  },
+  {
+   "id": "a171",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     2
+    ]
+   },
+   "txt": "En año personal 2 no interpretes la lentitud como fracaso."
+  },
+  {
+   "id": "a172",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     3
+    ]
+   },
+   "txt": "Año personal 3: aprovecha hoy para dejarte ver, es tu ventana."
+  },
+  {
+   "id": "a173",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     3
+    ]
+   },
+   "txt": "En año personal 3 no dejes que la dispersión se coma el año."
+  },
+  {
+   "id": "a174",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     4
+    ]
+   },
+   "txt": "Año personal 4: hoy pon un ladrillo más, este año se mide en ladrillos."
+  },
+  {
+   "id": "a175",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     4
+    ]
+   },
+   "txt": "En año personal 4 no busques resultados rápidos."
+  },
+  {
+   "id": "a176",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     5
+    ]
+   },
+   "txt": "Año personal 5: acepta hoy el movimiento, este año no se planea, se navega."
+  },
+  {
+   "id": "a177",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     5
+    ]
+   },
+   "txt": "En año personal 5 no te ates a nada que no puedas soltar."
+  },
+  {
+   "id": "a178",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     6
+    ]
+   },
+   "txt": "Año personal 6: hoy tus vínculos son la inversión, no la distracción."
+  },
+  {
+   "id": "a179",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     6
+    ]
+   },
+   "txt": "En año personal 6 no descuides tu salud por cuidar a otros."
+  },
+  {
+   "id": "a180",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     7
+    ]
+   },
+   "txt": "Año personal 7: usa hoy para entender, no para producir."
+  },
+  {
+   "id": "a181",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     7
+    ]
+   },
+   "txt": "En año personal 7 no midas tu valor en dinero, no es el año."
+  },
+  {
+   "id": "a182",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     8
+    ]
+   },
+   "txt": "Año personal 8: hoy cobra lo que construiste, es tu año de cosecha."
+  },
+  {
+   "id": "a183",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     8
+    ]
+   },
+   "txt": "En año personal 8 no seas descuidado con lo legal ni con lo fiscal."
+  },
+  {
+   "id": "a184",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     9
+    ]
+   },
+   "txt": "Año personal 9: hoy suelta un poco más, estás cerrando un ciclo de nueve."
+  },
+  {
+   "id": "a185",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     9
+    ]
+   },
+   "txt": "En año personal 9 no te ancles a lo que ya se está yendo."
+  },
+  {
+   "id": "a186",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     11
+    ]
+   },
+   "txt": "Año personal 11: hoy escucha las señales, este año habla en susurros."
+  },
+  {
+   "id": "a187",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     11
+    ]
+   },
+   "txt": "En año personal 11 no te satures: tu sistema está más sensible."
+  },
+  {
+   "id": "a188",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     22
+    ]
+   },
+   "txt": "Año personal 22: hoy avanza tu obra grande, este año la aguanta."
+  },
+  {
+   "id": "a189",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     22
+    ]
+   },
+   "txt": "En año personal 22 no pienses chiquito ni te rodees de gente que sí."
+  },
+  {
+   "id": "a190",
+   "t": "do",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     33
+    ]
+   },
+   "txt": "Año personal 33: hoy da algo tuyo, este año se paga en servicio."
+  },
+  {
+   "id": "a191",
+   "t": "dont",
+   "w": 2,
+   "f": "py",
+   "when": {
+    "py": [
+     33
+    ]
+   },
+   "txt": "En año personal 33 no te vacíes: primero llenas tú."
+  },
+  {
+   "id": "a192",
+   "t": "do",
+   "w": 4,
+   "f": "trine",
+   "when": {
+    "trine": [
+     "friend"
+    ]
+   },
+   "txt": "El animal del día es de tu trine: hoy pide favores, la gente te dice que sí."
+  },
+  {
+   "id": "a193",
+   "t": "do",
+   "w": 4,
+   "f": "trine",
+   "when": {
+    "trine": [
+     "friend"
+    ]
+   },
+   "txt": "Con tu trine activo hoy, es buen día para juntarte con tu gente y avanzar en equipo."
+  },
+  {
+   "id": "a194",
+   "t": "dont",
+   "w": 4,
+   "f": "trine",
+   "when": {
+    "trine": [
+     "friend"
+    ]
+   },
+   "txt": "No desperdicies un día de trine haciéndolo todo solo."
+  },
+  {
+   "id": "a195",
+   "t": "do",
+   "w": 5,
+   "f": "clash",
+   "when": {
+    "clash": true
+   },
+   "txt": "Choque directo de animales hoy: baja el ritmo, no pelees, no firmes."
+  },
+  {
+   "id": "a196",
+   "t": "do",
+   "w": 5,
+   "f": "clash",
+   "when": {
+    "clash": true
+   },
+   "txt": "Día de tu animal enemigo: úsalo para revisar y detectar fallas, no para lanzar."
+  },
+  {
+   "id": "a197",
+   "t": "dont",
+   "w": 5,
+   "f": "clash",
+   "when": {
+    "clash": true
+   },
+   "txt": "Hoy tu animal está enfrentado al del día: evita confrontaciones y decisiones irreversibles."
+  },
+  {
+   "id": "a198",
+   "t": "dont",
+   "w": 5,
+   "f": "clash",
+   "when": {
+    "clash": true
+   },
+   "txt": "No te expongas hoy ni pidas nada importante: la energía te va en contra de frente."
+  },
+  {
+   "id": "a199",
+   "t": "do",
+   "w": 3,
+   "f": "trine",
+   "when": {
+    "trine": [
+     "same"
+    ]
+   },
+   "txt": "Es el día de tu propio animal: te vas a sentir en casa, aprovecha para lo que te cuesta."
+  },
+  {
+   "id": "a200",
+   "t": "dont",
+   "w": 3,
+   "f": "trine",
+   "when": {
+    "trine": [
+     "same"
+    ]
+   },
+   "txt": "En tu propio día animal cuidado con el exceso de confianza."
+  },
+  {
+   "id": "a201",
+   "t": "do",
+   "w": 3,
+   "f": "mtrine",
+   "when": {
+    "mtrine": [
+     "enemy"
+    ]
+   },
+   "txt": "El animal del mes está en contra del tuyo: este mes avanza por los costados, no de frente."
+  },
+  {
+   "id": "a202",
+   "t": "dont",
+   "w": 3,
+   "f": "mtrine",
+   "when": {
+    "mtrine": [
+     "enemy"
+    ]
+   },
+   "txt": "No esperes que el mes te empuje: su animal se opone al tuyo, tú pones el motor."
+  },
+  {
+   "id": "a203",
+   "t": "do",
+   "w": 3,
+   "f": "mtrine",
+   "when": {
+    "mtrine": [
+     "friend"
+    ]
+   },
+   "txt": "El mes corre con tu trine: es un buen mes para pedir, mover y cerrar."
+  },
+  {
+   "id": "a204",
+   "t": "do",
+   "w": 4,
+   "f": "ytrine",
+   "when": {
+    "ytrine": [
+     "enemy"
+    ]
+   },
+   "txt": "Estás en tu año animal enemigo: hoy juega defensa, protege salud, dinero y contratos."
+  },
+  {
+   "id": "a205",
+   "t": "dont",
+   "w": 4,
+   "f": "ytrine",
+   "when": {
+    "ytrine": [
+     "enemy"
+    ]
+   },
+   "txt": "En año enemigo no hagas apuestas grandes; este año se sobrevive, no se conquista."
+  },
+  {
+   "id": "a206",
+   "t": "do",
+   "w": 4,
+   "f": "ytrine",
+   "when": {
+    "ytrine": [
+     "same"
+    ]
+   },
+   "txt": "Estás en tu propio año animal: año de espejo, todo lo tuyo se amplifica, bueno y malo."
+  },
+  {
+   "id": "a207",
+   "t": "do",
+   "w": 3,
+   "f": "ytrine",
+   "when": {
+    "ytrine": [
+     "friend"
+    ]
+   },
+   "txt": "Tu año corre con tu trine: aprovecha, no todos los años te empujan así."
+  },
+  {
+   "id": "a208",
+   "t": "do",
+   "w": 4,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "soul"
+    ]
+   },
+   "txt": "Hoy el número del día es alma gemela de tu lifepath: pide lo difícil, hoy se abre."
+  },
+  {
+   "id": "a209",
+   "t": "do",
+   "w": 4,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "soul"
+    ]
+   },
+   "txt": "Día de alma gemela numérica: lo que intentes hoy tiene el viento a favor."
+  },
+  {
+   "id": "a210",
+   "t": "dont",
+   "w": 4,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "soul"
+    ]
+   },
+   "txt": "No desperdicies un día de alma gemela en tareas que puede hacer cualquiera."
+  },
+  {
+   "id": "a211",
+   "t": "do",
+   "w": 3,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "friend"
+    ]
+   },
+   "txt": "El número del día es amigo de tu lifepath: día para avanzar sin pelear."
+  },
+  {
+   "id": "a212",
+   "t": "do",
+   "w": 4,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "enemy"
+    ]
+   },
+   "txt": "El número del día choca con tu lifepath: hoy no confrontes, observa y aguanta."
+  },
+  {
+   "id": "a213",
+   "t": "dont",
+   "w": 4,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "enemy"
+    ]
+   },
+   "txt": "Con el día en contra de tu lifepath, no tomes hoy la decisión que puede esperar."
+  },
+  {
+   "id": "a214",
+   "t": "dont",
+   "w": 3,
+   "f": "rel",
+   "when": {
+    "rel": [
+     "neutral"
+    ]
+   },
+   "txt": "No esperes que el día te empuje: hoy es neutro, el impulso lo pones tú."
+  },
+  {
+   "id": "a215",
+   "t": "do",
+   "w": 3,
+   "f": "moon",
+   "when": {
+    "moon": [
+     "full"
+    ]
+   },
+   "txt": "Luna llena: cierra, cobra, suelta. Lo que sostienes hoy pesa el doble."
+  },
+  {
+   "id": "a216",
+   "t": "dont",
+   "w": 3,
+   "f": "moon",
+   "when": {
+    "moon": [
+     "full"
+    ]
+   },
+   "txt": "En luna llena no discutas: todo lo dicho hoy se amplifica."
+  },
+  {
+   "id": "a217",
+   "t": "do",
+   "w": 3,
+   "f": "moon",
+   "when": {
+    "moon": [
+     "new"
+    ]
+   },
+   "txt": "Luna nueva: escribe hoy la intención del mes y guárdala."
+  },
+  {
+   "id": "a218",
+   "t": "dont",
+   "w": 3,
+   "f": "moon",
+   "when": {
+    "moon": [
+     "new"
+    ]
+   },
+   "txt": "En luna nueva no cierres, siembra: no es día de conclusiones."
+  },
+  {
+   "id": "a219",
+   "t": "do",
+   "w": 3,
+   "f": "master",
+   "when": {
+    "master": true
+   },
+   "txt": "Número maestro en el día: la energía está más alta de lo normal, úsala en algo que importe."
+  },
+  {
+   "id": "a220",
+   "t": "dont",
+   "w": 3,
+   "f": "master",
+   "when": {
+    "master": true
+   },
+   "txt": "Con número maestro no te distraigas: los días maestros no se repiten seguido."
+  },
+  {
+   "id": "a221",
+   "t": "do",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     8
+    ],
+    "pd": [
+     8
+    ]
+   },
+   "txt": "Doble 8, universal y personal: hoy es tu mejor día del mes para hablar de dinero."
+  },
+  {
+   "id": "a222",
+   "t": "do",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     9
+    ],
+    "pd": [
+     9
+    ]
+   },
+   "txt": "Doble 9: hoy cierras algo que llevas años arrastrando. Hazlo hoy o se va otro ciclo."
+  },
+  {
+   "id": "a223",
+   "t": "do",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     1
+    ],
+    "pd": [
+     1
+    ]
+   },
+   "txt": "Doble 1: arranque limpio. Lo que empiece hoy tiene raíz fuerte."
+  },
+  {
+   "id": "a224",
+   "t": "do",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     4
+    ],
+    "pd": [
+     8
+    ]
+   },
+   "txt": "El 4 del día con tu día personal 8: construir y cobrar en el mismo día. Aprovecha."
+  },
+  {
+   "id": "a225",
+   "t": "do",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     8
+    ],
+    "pd": [
+     4
+    ]
+   },
+   "txt": "Tu día personal 4 bajo un día 8: hoy el trabajo se convierte en dinero."
+  },
+  {
+   "id": "a226",
+   "t": "dont",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     7
+    ],
+    "pd": [
+     3
+    ]
+   },
+   "txt": "El día pide silencio y tu día personal pide voz: elige el silencio, mañana hablas."
+  },
+  {
+   "id": "a227",
+   "t": "dont",
+   "w": 6,
+   "f": "combo",
+   "when": {
+    "day": [
+     5
+    ],
+    "pd": [
+     4
+    ]
+   },
+   "txt": "El día empuja al cambio y tu día personal pide orden: no cambies el sistema hoy."
+  },
+  {
+   "id": "a228",
+   "t": "do",
+   "w": 5,
+   "f": "combo",
+   "when": {
+    "day": [
+     6
+    ],
+    "pd": [
+     6
+    ]
+   },
+   "txt": "Doble 6: hoy tu casa es el proyecto. Todo lo demás puede esperar."
+  },
+  {
+   "id": "a229",
+   "t": "do",
+   "w": 5,
+   "f": "combo",
+   "when": {
+    "rel": [
+     "soul"
+    ],
+    "trine": [
+     "friend"
+    ]
+   },
+   "txt": "Alma gemela numérica y trine animal el mismo día: es de los mejores días del año para ti."
+  },
+  {
+   "id": "a230",
+   "t": "dont",
+   "w": 5,
+   "f": "combo",
+   "when": {
+    "rel": [
+     "enemy"
+    ],
+    "clash": true
+   },
+   "txt": "Número enemigo y choque animal juntos: hoy no firmes, no pelees, no viajes lejos."
+  },
+  {
+   "id": "a231",
+   "t": "do",
+   "w": 5,
+   "f": "combo",
+   "when": {
+    "py": [
+     9
+    ],
+    "pd": [
+     9
+    ]
+   },
+   "txt": "Año personal 9 con día personal 9: hoy es un cierre dentro de un cierre. Suelta en grande."
+  },
+  {
+   "id": "a232",
+   "t": "do",
+   "w": 5,
+   "f": "combo",
+   "when": {
+    "py": [
+     1
+    ],
+    "pd": [
+     1
+    ]
+   },
+   "txt": "Año personal 1 con día personal 1: hoy es el arranque dentro del arranque, no lo desperdicies."
+  },
+  {
+   "id": "a233",
+   "t": "do",
+   "w": 4,
+   "f": "combo",
+   "when": {
+    "py": [
+     8
+    ],
+    "day": [
+     8
+    ]
+   },
+   "txt": "Tu año de cosecha con un día 8 universal: hoy es día de mover dinero de verdad."
+  },
+  {
+   "id": "a234",
+   "t": "do",
+   "w": 4,
+   "f": "combo",
+   "when": {
+    "py": [
+     4
+    ],
+    "pd": [
+     4
+    ]
+   },
+   "txt": "Año y día personal 4: hoy la disciplina rinde el doble."
+  },
+  {
+   "id": "a235",
+   "t": "dont",
+   "w": 4,
+   "f": "combo",
+   "when": {
+    "py": [
+     7
+    ],
+    "day": [
+     8
+    ]
+   },
+   "txt": "En tu año de retiro, un día 8 te va a tentar a forzar dinero: no es el año."
+  },
+  {
+   "id": "a236",
+   "t": "do",
+   "w": 4,
+   "f": "combo",
+   "when": {
+    "master": true,
+    "rel": [
+     "soul"
+    ]
+   },
+   "txt": "Maestro y alma gemela juntos: si tienes algo grande esperando, hoy es el día."
+  },
+  {
+   "id": "a237",
+   "t": "dont",
+   "w": 4,
+   "f": "combo",
+   "when": {
+    "moon": [
+     "full"
+    ],
+    "clash": true
+   },
+   "txt": "Luna llena con choque animal: la peor combinación para discutir. Hoy calla."
+  },
+  {
+   "id": "a238",
+   "t": "do",
+   "w": 4,
+   "f": "combo",
+   "when": {
+    "moon": [
+     "new"
+    ],
+    "pd": [
+     1
+    ]
+   },
+   "txt": "Luna nueva en tu día personal 1: siembra hoy lo que quieres cosechar todo el mes."
+  }
+ ],
+ "anio": {
+  "cny": {
+   "2020": "01-25",
+   "2021": "02-12",
+   "2022": "02-01",
+   "2023": "01-22",
+   "2024": "02-10",
+   "2025": "01-29",
+   "2026": "02-17",
+   "2027": "02-06",
+   "2028": "01-26",
+   "2029": "02-13",
+   "2030": "02-03",
+   "2031": "01-23",
+   "2032": "02-11",
+   "2033": "01-31",
+   "2034": "02-19",
+   "2035": "02-08",
+   "2036": "01-28",
+   "2037": "02-15"
+  },
+  "estados": {
+   "enemigo": {
+    "label": "Año enemigo",
+    "nivel": "alto",
+    "titulo": "Tu animal está enfrentado al del año",
+    "texto": "Es el año opuesto exacto al tuyo en la rueda de 12. En la tradición china es el año de mayor fricción de todo el ciclo: no significa desgracia, significa que nada te sale por empuje frontal. Lo que en otro año se resuelve empujando, este año se resuelve rodeando.",
+    "do": [
+     "Juega defensa: protege salud, contratos y dinero antes de buscar crecer",
+     "Avanza por los costados: alianzas, terceros, caminos indirectos",
+     "Cierra pendientes viejos en lugar de abrir frentes nuevos",
+     "Documenta todo por escrito: este año los malentendidos se vuelven conflictos"
+    ],
+    "dont": [
+     "No hagas la apuesta grande de tu vida este año",
+     "No confrontes de frente a quien tiene más poder que tú",
+     "No descuides revisiones de salud ni el mantenimiento de lo que ya tienes"
+    ]
+   },
+   "propio": {
+    "label": "Tu propio año",
+    "nivel": "medio",
+    "titulo": "Es el año de tu animal",
+    "texto": "En la tradición china tu propio año es un año espejo: todo lo tuyo se amplifica, lo bueno y lo que traes sin resolver. Suele ser un año de cambios de identidad más que de conquistas externas.",
+    "do": [
+     "Trabaja lo interno: hábitos, salud, la versión tuya que quieres estrenar",
+     "Aprovecha que te sientes 'en casa' para enfrentar lo que llevas evitando",
+     "Cierra ciclos personales: el año de tu animal es bisagra, no meseta"
+    ],
+    "dont": [
+     "No confundas comodidad con avance: tu propio año adormece",
+     "No tomes decisiones enormes desde el exceso de confianza"
+    ]
+   },
+   "trine": {
+    "label": "Año de tu trine",
+    "nivel": "bueno",
+    "titulo": "El año corre con tu trine",
+    "texto": "El animal del año es de tu triángulo de aliados. Es de los años que menos resistencia te ponen: la gente te dice que sí más fácil, las puertas ceden antes y el esfuerzo rinde más de lo normal.",
+    "do": [
+     "Pide: aumentos, sociedades, favores, oportunidades. Este año te dicen que sí",
+     "Lanza lo que tenías guardado esperando el momento",
+     "Rodéate de gente de tu trine: se potencian entre ustedes"
+    ],
+    "dont": [
+     "No lo desperdicies en mantenimiento: estos años no son todos los años",
+     "No confíes en que la inercia sola te lleve"
+    ]
+   },
+   "soul": {
+    "label": "Año de tu alma",
+    "nivel": "excelente",
+    "titulo": "Rata y Buey son las únicas almas gemelas del zodiaco",
+    "texto": "Tu animal y el del año forman el único par de almas gemelas de la rueda. Es el año de mayor sincronía posible: lo que decides encaja con lo que el año trae.",
+    "do": [
+     "Toma este año las decisiones importantes que has estado postergando",
+     "Formaliza lo que quieres que dure: sociedades, mudanzas, compromisos",
+     "Apuesta más fuerte de lo que apostarías en un año normal"
+    ],
+    "dont": [
+     "No lo dejes pasar en piloto automático",
+     "No esperes que el siguiente año se sienta igual"
+    ]
+   },
+   "neutral": {
+    "label": "Año neutro",
+    "nivel": "neutro",
+    "titulo": "Ni a favor ni en contra",
+    "texto": "El animal del año no es de tu trine ni tu opuesto. No hay viento a favor ni en contra: el resultado del año depende casi por completo de lo que tú pongas.",
+    "do": [
+     "Usa el año para construir sistema: es el mejor tipo de año para hábitos",
+     "Aprovecha la falta de ruido para hacer el trabajo aburrido que nadie hace",
+     "Prepara terreno para tu próximo año de trine"
+    ],
+    "dont": [
+     "No esperes señales externas: este año no las manda",
+     "No confundas 'tranquilo' con 'no pasa nada, no hago nada'"
+    ]
+   }
+  },
+  "aviso": {
+   "cerca": "Tu año enemigo empieza en menos de 12 meses. Es el mejor momento para dejar cerrado lo que no quieres tener abierto cuando llegue: contratos, deudas, temas de salud y conversaciones pendientes.",
+   "medio": "Tienes tiempo antes de tu año enemigo. Úsalo para construir el colchón (dinero, salud, relaciones) que te va a sostener cuando toque.",
+   "lejos": "Tu año enemigo queda lejos en el ciclo. Es momento de expandir, no de protegerte.",
+   "dentro": "Estás dentro de tu año enemigo. La estrategia del año es aguantar bien, no conquistar."
+  }
+ }
+}
