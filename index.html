@@ -497,6 +497,105 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
 .cat-y{font-family:var(--font-mono);font-size:.68rem;color:var(--text-2)}
 .cat-a{font-size:.85rem;color:var(--text)}
 .cat-d{grid-column:2;font-family:var(--font-mono);font-size:.53rem;color:var(--text-3);letter-spacing:.03em}
+
+/* ── FIRMA / DESBLOQUEO ── */
+.foot-sig{text-align:center;font-family:var(--font-mono);font-size:.56rem;color:var(--mauve-8);
+  letter-spacing:.1em;line-height:1.8;margin:var(--size-6) 0 var(--size-3);padding:var(--size-3) var(--size-2);
+  cursor:default;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;
+  border-radius:var(--radius-3);transition:color .3s var(--ease-3),text-shadow .3s var(--ease-3),background .3s var(--ease-3)}
+.foot-sig b{font-weight:400;color:var(--mauve-9)}
+.foot-sig.warm{color:var(--amber-8)}
+.foot-sig.warm b{color:var(--amber-11)}
+.foot-sig.hot{color:var(--gold);text-shadow:0 0 12px color-mix(in srgb,var(--gold-solid) 45%,transparent);
+  background:color-mix(in srgb,var(--gold-bg) 55%,transparent)}
+.foot-sig.hot b{color:var(--moon)}
+.foot-sig.done{color:var(--gold);text-shadow:0 0 18px var(--gold-solid);animation:sigpop .5s var(--ease-out-3)}
+@keyframes sigpop{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
+.sig-dots{display:flex;gap:3px;justify-content:center;margin-top:.5rem;height:4px}
+.sig-dots i{width:4px;height:4px;border-radius:50%;background:var(--mauve-7);transition:background .2s,transform .2s}
+.sig-dots i.on{background:var(--gold-solid);transform:scale(1.35)}
+.tabbar.vip{grid-template-columns:repeat(6,1fr)}
+.tab[hidden]{display:none!important}
+.tab.vip-tab{animation:in .4s var(--ease-out-3)}
+.tab.vip-tab i{filter:none;text-shadow:0 0 10px color-mix(in srgb,var(--accent-solid) 60%,transparent)}
+
+/* ── VIP · PAREJA ── */
+.vip-head{background:linear-gradient(160deg,var(--violet-2),var(--mauve-2) 62%);
+  border:1px solid var(--violet-6);border-radius:var(--radius-4);padding:var(--size-4);
+  margin-bottom:var(--size-3);box-shadow:var(--shadow-3)}
+.vip-tag{font-family:var(--font-mono);font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:var(--size-3);display:flex;align-items:center;gap:.45rem}
+.vip-duo{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--size-2);align-items:center;margin-bottom:var(--size-4)}
+.vip-who{text-align:center}
+.vip-who .nm{font-family:var(--font-display);font-size:1.02rem;color:var(--text);line-height:1.25;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vip-who .em{font-size:1.7rem;line-height:1.3}
+.vip-who .mt{font-family:var(--font-mono);font-size:.55rem;color:var(--text-3);letter-spacing:.05em;margin-top:.15rem}
+.vip-amp{font-family:var(--font-display);font-size:1.4rem;color:var(--violet-9)}
+.vip-gauge{display:flex;align-items:center;gap:var(--size-4);justify-content:center;flex-wrap:wrap}
+.vip-big{font-family:var(--font-display);font-size:3.4rem;line-height:.95;letter-spacing:-.02em}
+.vip-big small{font-size:1rem;color:var(--text-3);letter-spacing:0}
+.vip-verd{flex:1;min-width:190px}
+.vip-verd .t{font-family:var(--font-display);font-size:1.05rem;color:var(--text);margin-bottom:.25rem}
+.vip-verd .d{font-size:.85rem;color:var(--text-2);line-height:1.5}
+.vip-note{font-size:.78rem;color:var(--text-3);line-height:1.5;margin-top:var(--size-3);
+  padding-top:var(--size-3);border-top:1px solid var(--violet-6)}
+
+.vip-bar{display:grid;grid-template-columns:7.2rem 1fr 2.6rem;gap:.55rem;align-items:center;
+  padding:.42rem 0;border-bottom:1px solid var(--line-soft)}
+.vip-bar:last-child{border-bottom:none}
+.vip-bar .bl{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2)}
+.vip-bar .bt{position:relative;height:8px;background:var(--surface-2);border-radius:var(--radius-round);overflow:hidden}
+.vip-bar .bf{position:absolute;top:0;bottom:0;left:0;border-radius:var(--radius-round);transition:width .5s var(--ease-out-3)}
+.vip-bar .bv{font-family:var(--font-mono);font-size:.7rem;text-align:right}
+.vip-bar .bw{grid-column:1/-1;font-size:.78rem;color:var(--text-3);line-height:1.45;margin-top:-.1rem}
+
+.vip-wheel{display:block;margin:0 auto;max-width:100%;height:auto}
+.vip-legend{display:flex;gap:var(--size-3);justify-content:center;flex-wrap:wrap;margin-top:var(--size-2);
+  font-family:var(--font-mono);font-size:.55rem;letter-spacing:.06em;color:var(--text-3)}
+
+.vip-two{display:grid;grid-template-columns:1fr 1fr;gap:var(--size-3)}
+@media(max-width:560px){.vip-two{grid-template-columns:1fr}.cd-grid{grid-template-columns:1fr 1fr}}
+.vip-li{display:flex;gap:.5rem;align-items:flex-start;font-size:.86rem;color:var(--text-2);
+  line-height:1.5;padding:.4rem 0;border-bottom:1px solid var(--line-soft)}
+.vip-li:last-child{border-bottom:none}
+.vip-li i{font-style:normal;flex-shrink:0;width:1.1rem;text-align:center}
+
+.vip-sc{border:1px solid var(--line-soft);border-radius:var(--radius-3);padding:.8rem .9rem;
+  margin-bottom:.55rem;background:var(--surface-2)}
+.vip-sc-h{display:flex;align-items:baseline;gap:.5rem;margin-bottom:.35rem}
+.vip-sc-h .ic{font-size:1rem}
+.vip-sc-h .nm{font-family:var(--font-display);font-size:.96rem;color:var(--text);flex:1}
+.vip-sc-h .sc{font-family:var(--font-mono);font-size:.78rem}
+.vip-sc-g{font-family:var(--font-mono);font-size:.53rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-3);margin-bottom:.4rem}
+.vip-sc-t{font-size:.85rem;color:var(--text-2);line-height:1.5}
+.vip-sc-k{font-size:.82rem;color:var(--gold);line-height:1.5;margin-top:.4rem;
+  padding-left:.6rem;border-left:2px solid var(--gold-line)}
+.vip-sc.good{border-color:var(--pos-line)} .vip-sc.bad{border-color:var(--neg-line)}
+
+.vip-cur{display:flex;gap:.55rem;align-items:flex-start;padding:.55rem .7rem;background:var(--surface-2);
+  border:1px solid var(--line-soft);border-left:2px solid var(--accent-line);
+  border-radius:var(--radius-2);margin-bottom:.4rem;font-size:.86rem;color:var(--text-2);line-height:1.5}
+.vip-cur b{color:var(--accent);font-weight:400}
+
+.vip-rank{display:grid;grid-template-columns:1.6rem 1fr auto;gap:.6rem;align-items:center;
+  padding:.5rem .6rem;border-radius:var(--radius-2);border:1px solid var(--line-soft);
+  background:var(--surface-2);margin-bottom:.35rem;width:100%;text-align:left;
+  transition:border-color .18s,transform .18s}
+.vip-rank:hover{border-color:var(--gold-line);transform:translateX(2px)}
+.vip-rank.on{border-color:var(--gold-line);background:var(--gold-bg)}
+.vip-rank .pos{font-family:var(--font-display);font-size:.95rem;color:var(--text-3);text-align:center}
+.vip-rank .who{font-size:.87rem;color:var(--text);line-height:1.35}
+.vip-rank .who small{display:block;font-family:var(--font-mono);font-size:.55rem;color:var(--text-3);letter-spacing:.04em}
+.vip-rank .val{font-family:var(--font-mono);font-size:.95rem}
+
+.vip-phase{width:100%;height:auto;display:block}
+.vip-warn{background:var(--ruby-2);border:1px solid var(--neg-line);border-radius:var(--radius-3);
+  padding:.7rem .85rem;font-size:.83rem;color:var(--ruby-11);line-height:1.5;margin-bottom:var(--size-3)}
+.vip-toggle{display:flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.58rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);cursor:pointer;margin-top:.6rem}
+.vip-toggle input{accent-color:var(--gold-solid);width:14px;height:14px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -576,14 +675,26 @@ hr.dv{border:none;border-top:1px solid var(--line-soft);margin:var(--size-3) 0}
     </p>
   </section>
 
+  <!-- ══ VIP · PAREJA ══ -->
+  <section class="view" id="view-vip">
+    <div id="vip-body"></div>
+  </section>
+
+  <!-- ══ FIRMA (desbloqueo VIP: 10 toques) ══ -->
+  <div class="foot-sig" id="foot-sig" role="contentinfo">
+    Hecho por <b>Cristian Alemán</b> con <b>Claude</b><br>con ayuda de <b>GG33</b>
+    <div class="sig-dots" id="sig-dots"></div>
+  </div>
+
 </main>
 
-<nav class="tabbar">
+<nav class="tabbar" id="tabbar">
   <button class="tab on" data-tab="hoy"  onclick="go('hoy')"><i>☉</i>Hoy</button>
   <button class="tab"     data-tab="cal" onclick="go('cal')"><i>▦</i>Calendario</button>
   <button class="tab"     data-tab="anio" onclick="go('anio')"><i>🐉</i>Año</button>
   <button class="tab"     data-tab="plan" onclick="go('plan')"><i>◈</i>Planificar</button>
   <button class="tab"     data-tab="perfil" onclick="go('perfil')"><i>🌳</i>Familia</button>
+  <button class="tab vip-tab" data-tab="vip" id="vip-tab" onclick="go('vip')" hidden><i>◆</i>Pareja</button>
 </nav>
 
 <div class="toast" id="toast"></div>
@@ -2202,6 +2313,422 @@ function renderSyn(){
         <div class="row-score">${x.s>0?'+':''}${x.s}</div></button>`).join('')}`;
 }
 
+// ═══ VIP · DESBLOQUEO POR FIRMA ════════════════════════════
+const VIPK='gg33.vip.v1';
+let vipOn=false,vipA=-1,vipB=-1,vipBlood=false,vipRank=false;
+let sigN=0,sigT=null,sigHeld=false,sigHT=null;
+
+function vipApply(){
+  const t=document.getElementById('vip-tab'),bar=document.getElementById('tabbar');
+  if(t)t.hidden=!vipOn;
+  if(bar)bar.classList.toggle('vip',vipOn);
+}
+function vipSet(on){
+  vipOn=on;try{localStorage.setItem(VIPK,on?'1':'0')}catch(e){}
+  vipApply();
+  if(!on&&tab==='vip')go('perfil');
+}
+function sigPaint(){
+  const el=document.getElementById('foot-sig'),d=document.getElementById('sig-dots');
+  if(!el||!d)return;
+  el.classList.remove('warm','hot');
+  if(sigN>=8)el.classList.add('hot');else if(sigN>=5)el.classList.add('warm');
+  d.innerHTML=sigN>=5?Array.from({length:10},(_,i)=>`<i class="${i<sigN?'on':''}"></i>`).join(''):'';
+}
+function sigTap(){
+  if(sigHeld){sigHeld=false;return}
+  if(vipOn){go('vip');return}
+  sigN++;
+  clearTimeout(sigT);sigT=setTimeout(()=>{sigN=0;sigPaint()},1500);
+  if(sigN>=10){
+    clearTimeout(sigT);sigN=0;
+    const el=document.getElementById('foot-sig');
+    if(el){el.classList.remove('warm','hot');el.classList.add('done');setTimeout(()=>el.classList.remove('done'),600)}
+    if(navigator.vibrate)try{navigator.vibrate([12,60,12,60,30])}catch(e){}
+    vipSet(true);sigPaint();
+    toast('◆ Sección Pareja desbloqueada');
+    setTimeout(()=>go('vip'),340);
+    return;
+  }
+  sigPaint();
+}
+function sigDown(){
+  if(!vipOn)return;
+  clearTimeout(sigHT);
+  sigHT=setTimeout(()=>{
+    sigHeld=true;vipSet(false);
+    if(navigator.vibrate)try{navigator.vibrate(25)}catch(e){}
+    toast('Sección Pareja oculta de nuevo');
+  },1600);
+}
+function sigUp(){clearTimeout(sigHT)}
+
+// ═══ VIP · MOTOR DE COMPATIBILIDAD DE PAREJA ═══════════════
+// 六合 · las seis armonías secretas: (a+b) % 12 === 1
+function liuHe(a,b){return (a+b)%12===1}
+function ph9(n){while(n>9)n=dsum(n);return n}
+function phaseAt(u,y){return ph9(reduce(dsum(u.bd)+dsum(u.bm)+dsum(y)))}
+function isBloodPair(a,b){return relOf(a).b===1&&relOf(b).b===1}
+// para el ranking: solo pares plausibles como pareja — ni sangre ni salto de generación
+function vipPlausible(a,b){return !isBloodPair(a,b)&&Math.abs(relOf(a).g-relOf(b).g)<1}
+
+const VIPW=[{k:'lp',n:'Camino de vida',w:30},{k:'anim',n:'Animal chino',w:25},
+            {k:'elem',n:'Cinco elementos',w:20},{k:'pol',n:'Polaridad',w:10},
+            {k:'sync',n:'Sincronía de fase',w:10},{k:'dia',n:'Número de día',w:5}];
+
+const VIPESC=[
+  ['dist',  '💰','El dinero y quién cede'],
+  ['coord', '🗺','Planear juntos: viajes, fines de semana'],
+  ['signal','👁','Celos, indirectas y pruebas'],
+  ['commit','⛓','Mudarse, hijos, promesas grandes'],
+  ['nature','⛈','Crisis externas: trabajo, salud, familia'],
+  ['repeat','🏠','La convivencia diaria'],
+  ['attrit','⚔','La discusión que nadie cede'],
+  ['explore','🧭','Probar cosas nuevas juntos'],
+  ['exit',  '🚪','Si esto se termina'],
+  ['entry', '✨','Cómo empieza y cómo se reinicia']
+];
+
+function coupleReport(PA,PB){
+  const A={...PA,anim:animOfPerson(PA)},B={...PB,anim:animOfPerson(PB)};
+  const nA=PA.name,nB=PB.name;
+  const cyA=chineseYear(new Date(PA.by,PA.bm-1,PA.bd)),cyB=chineseYear(new Date(PB.by,PB.bm-1,PB.bd));
+  const eA=elemIdx(cyA),eB=elemIdx(cyB),pA=polarOf(cyA),pB=polarOf(cyB);
+  const dims=[],comun=[],choque=[],curios=[];
+
+  // ── 1 · CAMINO DE VIDA (bidireccional y asimétrico)
+  const MN={soul:100,friend:78,neutral:50,enemy:16};
+  const ab=numCompat(A.lp,B.lp),ba=numCompat(B.lp,A.lp);
+  const fwd=MN[ab],bwd=MN[ba],asym=Math.abs(fwd-bwd);
+  const L={soul:'alma gemela',friend:'amigo',enemy:'enemigo',neutral:'neutral'};
+  const sLp=Math.max(4,Math.round((fwd+bwd)/2-asym*0.14));
+  dims.push({k:'lp',s:sLp,
+    t:`Para el LP${A.lp} de ${nA}, el LP${B.lp} de ${nB} es <b>${L[ab]}</b>. En sentido contrario, para el LP${B.lp} de ${nB} el LP${A.lp} de ${nA} es <b>${L[ba]}</b>.`,
+    fix:asym>=28?`La relación no pesa igual desde los dos lados: hay ${asym} puntos de diferencia. Quien está en el lado bajo va a sentir que da más. Nómbrenlo en voz alta antes de que se vuelva reclamo.`:null});
+  if(asym>=28)choque.push(['⇄',`<b>Asimetría de ${asym} puntos.</b> ${fwd>bwd?nB:nA} vive la relación más cuesta arriba que ${fwd>bwd?nA:nB}. No es falta de amor, es distinta carga.`,
+    `Repartan explícitamente las tareas invisibles: quien inicia planes, quien repara después de pelear, quien sostiene el ánimo.`]);
+  else comun.push(['⇄',`La relación se siente <b>parecida desde los dos lados</b> (${asym} puntos de diferencia). Eso es raro y vale oro: nadie carga de más.`]);
+
+  // ── 2 · ANIMAL CHINO (con 六合)
+  const lh=liuHe(A.anim,B.anim),an=animCompat(A.anim,B.anim);
+  let sAn,tAn,fAn=null;
+  if(lh){sAn=100;tAn=`${AEMOJI[A.anim]} ${ANIMALS[A.anim]} y ${AEMOJI[B.anim]} ${ANIMALS[B.anim]} son <b>六合 · amigos secretos</b>, uno de los seis pares de armonía oculta del zodiaco. Es la mejor combinación posible para pareja: se protegen sin ruido.`}
+  else if(an==='friend'){sAn=90;tAn=`Están en el <b>mismo trine</b>: ${AEMOJI[A.anim]} ${ANIMALS[A.anim]} y ${AEMOJI[B.anim]} ${ANIMALS[B.anim]} entienden el mundo igual. Se explican poco porque no hace falta.`}
+  else if(an==='same'){sAn=66;tAn=`Comparten animal (${AEMOJI[A.anim]} ${ANIMALS[A.anim]}): se leen al instante, y también se repiten los defectos.`;fAn='Cuidado con el eco: si los dos tienen el mismo punto ciego, nadie lo va a ver. Busquen un tercero de confianza para las decisiones grandes.';}
+  else if(an==='enemy'){sAn=14;tAn=`${AEMOJI[A.anim]} ${ANIMALS[A.anim]} y ${AEMOJI[B.anim]} ${ANIMALS[B.anim]} son <b>opuestos</b> — 6 casas de distancia, el eje del choque.`;fAn='El opuesto no es incompatible: es el que ve exactamente lo que tú no ves. Funciona cuando cada quien acepta ser el ángulo muerto del otro, en vez de discutir quién tiene razón.';}
+  else{sAn=52;tAn=`${AEMOJI[A.anim]} ${ANIMALS[A.anim]} y ${AEMOJI[B.anim]} ${ANIMALS[B.anim]} son neutrales entre sí: ni empuje ni freno del zodiaco.`}
+  dims.push({k:'anim',s:sAn,t:tAn,fix:fAn});
+  if(lh)comun.push(['🔗','<b>Armonía secreta 六合.</b> El apoyo entre ustedes tiende a ser silencioso: se nota más en lo que el otro evita que en lo que promete.']);
+  if(an==='friend')comun.push(['△','<b>Mismo trine.</b> Comparten ritmo, humor y lectura de las situaciones. Suelen coincidir sin discutirlo.']);
+  if(an==='enemy')choque.push(['✕','<b>Animales opuestos.</b> Lo que a uno le parece obvio, al otro le parece exactamente al revés.',fAn]);
+
+  // ── 3 · CINCO ELEMENTOS 生剋
+  const er=elemRel(eA,eB,nA,nB);
+  const sEl={gen:90,same:66,ctrl:26}[er.k];
+  dims.push({k:'elem',s:sEl,t:er.t,
+    fix:er.k==='ctrl'?`El ciclo de control no se rompe, se administra: el elemento que domina tiene que ceder el terreno donde el otro es fuerte. Definan territorios (casa, dinero, social, familia) y respétenlos.`
+      :er.k==='same'?`Mismo elemento: mucha comodidad y poco movimiento. Si sienten que se estancan, el desbloqueo viene de afuera — gente, viajes, proyectos nuevos.`:null});
+  if(er.k==='gen')comun.push(['♻',`<b>Ciclo de generación.</b> ${er.t} Ese flujo es la razón de que juntos rindan más que separados.`]);
+  if(er.k==='same')comun.push(['≡',`<b>Mismo elemento (${ELEM5[eA]}).</b> Misma velocidad, mismas prioridades, mismos puntos ciegos.`]);
+  if(er.k==='ctrl')choque.push(['⚡',`<b>Ciclo de control.</b> ${er.t}`,`Territorios separados y decisiones por turnos. La dominancia solo pesa cuando compiten por el mismo terreno.`]);
+
+  // ── 4 · POLARIDAD YIN / YANG
+  const sPo=pA!==pB?84:56;
+  dims.push({k:'pol',s:sPo,
+    t:pA!==pB?`<b>Polaridades complementarias</b>: ${nA} es ${pA} y ${nB} es ${pB}. Uno empuja, el otro contiene — se turnan sin negociarlo.`
+      :`<b>Misma polaridad</b> (${pA} los dos): empujan en el mismo sentido y al mismo tiempo.`,
+    fix:pA===pB?`Cuando los dos empujan a la vez, nadie amortigua. Acuerden de antemano quién baja el volumen en qué tipo de conflicto.`:null});
+  if(pA===pB)choque.push(['≡',`<b>Misma polaridad (${pA}).</b> Reaccionan igual ante la presión, así que las discusiones escalan rápido: nadie hace de freno.`,
+    `Regla simple: el que se dé cuenta primero de que están escalando, para. No es perder, es turnarse.`]);
+  else comun.push(['☯',`<b>Yin y yang.</b> ${nA} ${pA} y ${nB} ${pB}: se equilibran de forma natural, sobre todo bajo presión.`]);
+
+  // ── 5 · SINCRONÍA DE FASE (año personal)
+  const pyA=ph9(personalYear(PA,TODAY0)),pyB=ph9(personalYear(PB,TODAY0));
+  const df=Math.abs(pyA-pyB),dist=Math.min(df,9-df);
+  const sSy=[88,74,62,52,40][dist];
+  const FASE={1:'arranque',2:'espera y vínculos',3:'expansión y voz',4:'construcción',5:'cambio',
+              6:'hogar y responsabilidad',7:'repliegue',8:'cosecha material',9:'cierre'};
+  dims.push({k:'sync',s:sSy,
+    t:`${nA} va en <b>año personal ${pyA}</b> (${FASE[pyA]}) y ${nB} en <b>año personal ${pyB}</b> (${FASE[pyB]}). Distancia de fase: ${dist} de 4. Los dos ciclos avanzan un número por año, así que <b>este desfase es permanente</b>: no se corrige con el tiempo, se administra.`,
+    fix:dist>=3?`Están en momentos vitales distintos y van a seguir estándolo. El año de ${pyA>pyB?nA:nB} pide una cosa y el de ${pyA>pyB?nB:nA} otra; leerlo como desinterés es el error clásico. Es calendario, no falta de ganas.`:null});
+  if(dist<=1)comun.push(['◷',`<b>Van en la misma fase</b> (${pyA} y ${pyB}). Quieren cosas parecidas al mismo tiempo, así que planear juntos les sale barato.`]);
+  if(dist>=3)choque.push(['◑',`<b>Fases desacopladas</b> (${pyA} vs ${pyB}).`,`Cuando uno quiere expandir y el otro cerrar, no compitan: pacten un plazo. Las fases rotan cada año y se vuelven a cruzar.`]);
+
+  // ── 6 · NÚMERO DE DÍA
+  const dA=reduce(dsum(PA.bd)),dB=reduce(dsum(PB.bd));
+  const dc=numCompat(dA,dB);
+  const sDi=dA===dB?92:MN[dc];
+  dims.push({k:'dia',s:sDi,
+    t:dA===dB?`Los dos nacieron en un día que reduce a <b>${dA}</b>. Comparten la manera instintiva de reaccionar.`
+      :`Día ${dA} frente a día ${dB}: en lo cotidiano se leen como <b>${L[dc]}</b>.`,fix:null});
+  if(dA===dB)curios.push(`Los dos nacieron en un día que reduce a <b>${dA}</b> — ${PA.bd} y ${PB.bd}.`);
+
+  // ── ÍNDICE GLOBAL PONDERADO
+  const byK={};dims.forEach(d=>byK[d.k]=d);
+  const score=Math.max(3,Math.min(99,Math.round(VIPW.reduce((a,w)=>a+w.w*byK[w.k].s,0)/100)));
+
+  // ── ESCENARIOS · TEORÍA DE JUEGOS
+  const J=(DATA&&DATA.juegos)||{};
+  const escenarios=VIPESC.filter(([k])=>J[k]).map(([k,ic,nom])=>{
+    const g=J[k];
+    const fit=lp=>g.good.includes(lp)?1:g.bad.includes(lp)?-1:0;
+    const fa=fit(A.lp),fb=fit(B.lp);
+    // el desnivel entre los dos es fricción para la pareja, aunque el neto sea cero
+    const sc=Math.max(5,Math.min(97,Math.round(55+15*(fa+fb)-9*Math.abs(fa-fb)+(score-50)*0.25)));
+    let lec;
+    if(fa>0&&fb>0)lec=`Los dos juegan bien aquí: LP${A.lp} y LP${B.lp} encajan con ${g.corto.toLowerCase()}. Es de sus terrenos fuertes.`;
+    else if(fa<0&&fb<0)lec=`Terreno flojo para ambos: ni LP${A.lp} ni LP${B.lp} se mueven cómodos en ${g.corto.toLowerCase()}. Aquí se atoran los dos a la vez.`;
+    else if(fa>0&&fb<0)lec=`<b>${nA}</b> (LP${A.lp}) domina este escenario y <b>${nB}</b> (LP${B.lp}) lo sufre. Si nadie lo nombra, se lee como que uno siempre gana.`;
+    else if(fb>0&&fa<0)lec=`<b>${nB}</b> (LP${B.lp}) domina este escenario y <b>${nA}</b> (LP${A.lp}) lo sufre. Si nadie lo nombra, se lee como que uno siempre gana.`;
+    else if(fa>0||fb>0)lec=`<b>${fa>0?nA:nB}</b> lleva ventaja natural aquí; el otro juega neutral.`;
+    else if(fa<0||fb<0)lec=`<b>${fa<0?nA:nB}</b> está en desventaja aquí; el otro juega neutral.`;
+    else lec=`Ninguno tiene ventaja estructural: el resultado depende del acuerdo, no de los números.`;
+    return{k,ic,nom,g,sc,lec};
+  }).sort((x,y)=>y.sc-x.sc);
+
+  // ── CURIOSIDADES
+  const dt=Math.abs(Date.UTC(PA.by,PA.bm-1,PA.bd)-Date.UTC(PB.by,PB.bm-1,PB.bd))/864e5;
+  const anios=(dt/365.2425);
+  curios.push(`Los separan <b>${Math.round(dt).toLocaleString('es-MX')} días</b> de nacimiento — ${anios<1?'menos de un año':`unos ${anios.toFixed(1)} años`}.`);
+  const dist12=Math.min((A.anim-B.anim+12)%12,(B.anim-A.anim+12)%12);
+  curios.push(`Sus animales están a <b>${dist12} ${dist12===1?'casa':'casas'}</b> de distancia en la rueda de 12.`);
+  const dif=Math.abs(A.lp-B.lp);
+  if(dif===0)curios.push(`Comparten <b>camino de vida ${A.lp}</b>: el mismo guion, dos actores distintos.`);
+  else curios.push(`Entre sus caminos de vida hay <b>${dif}</b> de diferencia${LP[dif]?` — el número ${dif}, ${LP[dif].name.toLowerCase()}, describe bastante bien el terreno donde se encuentran`:''}.`);
+  if(isMaster(A.lp)&&isMaster(B.lp))curios.push(`<b>Dos números maestros juntos</b> (${A.lp} y ${B.lp}). Intensidad alta y poca tolerancia a lo tibio.`);
+  else if(isMaster(A.lp)||isMaster(B.lp))curios.push(`<b>${isMaster(A.lp)?nA:nB}</b> carga un número maestro (${isMaster(A.lp)?A.lp:B.lp}): pide más espacio del que suele pedir en voz alta.`);
+  const wd=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  const wA=new Date(PA.by,PA.bm-1,PA.bd).getDay(),wB=new Date(PB.by,PB.bm-1,PB.bd).getDay();
+  if(wA===wB)curios.push(`Los dos nacieron en <b>${wd[wA]}</b>.`);
+  if(PA.bm===PB.bm)curios.push(`Cumplen años el mismo mes: <b>${MONTHS_ES[PA.bm-1]}</b>.`);
+  if(eA===eB)curios.push(`Comparten elemento chino: <b>${ELEM5[eA]}</b>.`);
+  if(cyA===cyB)curios.push(`Nacieron dentro del <b>mismo año chino</b> (${anioNombre(cyA)}), aunque el calendario diga otra cosa.`);
+  const bdA=bdayIn(PA,TODAY0.getFullYear()),bdB=bdayIn(PB,TODAY0.getFullYear());
+  const gap=Math.min(Math.abs(bdA-bdB),365*864e5-Math.abs(bdA-bdB))/864e5;
+  if(gap<=14&&PA.bm!==PB.bm||gap<=14&&PA.bd!==PB.bd)curios.push(`Sus cumpleaños caen a <b>${Math.round(gap)} días</b> uno del otro.`);
+
+  // ── PROYECCIÓN DE FASES (9 ciclos)
+  const Y0=TODAY0.getFullYear();
+  const phase=Array.from({length:9},(_,i)=>({y:Y0+i,a:phaseAt(PA,Y0+i),b:phaseAt(PB,Y0+i)}));
+
+  const verdict=score>=80?['Química fuerte','Los números se amplifican entre sí. El riesgo de una pareja así no es la falta de conexión: es confiarse en ella y dejar de mantenerla.']
+    :score>=65?['Buena base','Hay más motor que fricción. Los roces existen y son manejables si se nombran temprano.']
+    :score>=50?['Equilibrio parejo','Ni viento a favor ni en contra. Esta relación la construyen ustedes con acuerdos, no la sostienen los números.']
+    :score>=35?['Fricción real','Pide traducción constante: lo que uno dice no es lo que el otro escucha. Funciona con reglas explícitas.']
+    :['Energías en tensión','Los números marcan choque en varios frentes a la vez. No es sentencia: es aviso de que aquí hace falta mucho acuerdo consciente.'];
+
+  return{score,dims:VIPW.map(w=>({...w,...byK[w.k]})),comun,choque,escenarios,curios,phase,
+         A,B,nA,nB,cyA,cyB,eA,eB,pA,pB,asym,verdict,lh,an,pyA,pyB,dist};
+}
+
+// ═══ VIP · GRÁFICAS SVG ════════════════════════════════════
+function vipWheel(r){
+  const C=160,R=124,rr=Math.PI/180;
+  const pt=(i,rad)=>[C+rad*Math.cos((-90+i*30)*rr),C+rad*Math.sin((-90+i*30)*rr)];
+  let g='';
+  // trine de cada uno si coinciden
+  const tri=TRINES.find(t=>t.includes(r.A.anim)&&t.includes(r.B.anim));
+  if(tri){
+    const p=tri.map(i=>pt(i,R).join(',')).join(' ');
+    g+=`<polygon points="${p}" fill="var(--jade-9)" fill-opacity=".10" stroke="var(--jade-8)" stroke-width="1" stroke-dasharray="3 3"/>`;
+  }
+  const [ax,ay]=pt(r.A.anim,R),[bx,by]=pt(r.B.anim,R);
+  const col=r.lh?'var(--amber-9)':r.an==='enemy'?'var(--ruby-9)':r.an==='friend'?'var(--jade-9)':'var(--mauve-8)';
+  if(r.A.anim!==r.B.anim)
+    g+=`<line x1="${ax.toFixed(1)}" y1="${ay.toFixed(1)}" x2="${bx.toFixed(1)}" y2="${by.toFixed(1)}" stroke="${col}" stroke-width="2.2" stroke-linecap="round"${r.lh?' stroke-dasharray="7 4"':''}/>`;
+  let dots='';
+  for(let i=0;i<12;i++){
+    const[x,y]=pt(i,R),on=i===r.A.anim||i===r.B.anim,both=r.A.anim===r.B.anim&&on;
+    const c=i===r.A.anim?'var(--amber-9)':i===r.B.anim?'var(--violet-9)':'var(--mauve-6)';
+    dots+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${on?15:8}" fill="${on?'var(--mauve-2)':'var(--mauve-3)'}" stroke="${both?'var(--amber-9)':c}" stroke-width="${on?2.4:1}"/>`;
+    dots+=`<text x="${x.toFixed(1)}" y="${(y+ (on?5.5:4)).toFixed(1)}" text-anchor="middle" font-size="${on?16:11}" opacity="${on?1:.5}">${AEMOJI[i]}</text>`;
+    const[lx,ly]=pt(i,R+22);
+    if(on)dots+=`<text x="${lx.toFixed(1)}" y="${(ly+3).toFixed(1)}" text-anchor="middle" font-size="7.5" fill="${c}" font-family="var(--font-mono)" letter-spacing=".06em">${ANIMALS[i].toUpperCase()}</text>`;
+  }
+  return `<svg class="vip-wheel" viewBox="-22 -10 364 340" width="330" role="img" aria-label="Rueda del zodiaco con la geometría entre los dos animales">
+    <circle cx="${C}" cy="${C}" r="${R}" fill="none" stroke="var(--mauve-4)" stroke-width="1"/>
+    ${g}${dots}</svg>`;
+}
+
+function vipPhaseChart(r){
+  const W=320,H=132,PL=22,PR=8,PT=12,PB=22;
+  const n=r.phase.length,iw=W-PL-PR,ih=H-PT-PB;
+  const X=i=>PL+iw*i/(n-1),Y=v=>PT+ih*(9-v)/8;
+  const la=r.phase.map((p,i)=>`${X(i).toFixed(1)},${Y(p.a).toFixed(1)}`).join(' ');
+  const lb=r.phase.map((p,i)=>`${X(i).toFixed(1)},${Y(p.b).toFixed(1)}`).join(' ');
+  let marks='',grid='';
+  for(let v=1;v<=9;v+=2)grid+=`<line x1="${PL}" y1="${Y(v).toFixed(1)}" x2="${W-PR}" y2="${Y(v).toFixed(1)}" stroke="var(--mauve-4)" stroke-width=".5"/>
+    <text x="${PL-5}" y="${(Y(v)+3).toFixed(1)}" text-anchor="end" font-size="7" fill="var(--mauve-9)" font-family="var(--font-mono)">${v}</text>`;
+  const BUILD=[1,2,3,6],MOVE=[5,9];
+  r.phase.forEach((p,i)=>{
+    if(BUILD.includes(p.a)&&BUILD.includes(p.b))
+      marks+=`<rect x="${(X(i)-8).toFixed(1)}" y="${PT}" width="16" height="${ih}" fill="var(--jade-9)" opacity=".13" rx="3"/>`;
+    else if(MOVE.includes(p.a)||MOVE.includes(p.b))
+      marks+=`<rect x="${(X(i)-8).toFixed(1)}" y="${PT}" width="16" height="${ih}" fill="var(--amber-9)" opacity=".09" rx="3"/>`;
+    marks+=`<text x="${X(i).toFixed(1)}" y="${H-7}" text-anchor="middle" font-size="7" fill="var(--mauve-9)" font-family="var(--font-mono)">'${String(p.y).slice(2)}</text>`;
+  });
+  return `<svg class="vip-phase" viewBox="0 0 ${W} ${H}" role="img" aria-label="Proyección de años personales a nueve ciclos">
+    ${grid}${marks}
+    <polyline points="${la}" fill="none" stroke="var(--amber-9)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline points="${lb}" fill="none" stroke="var(--violet-9)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5 3"/>
+    ${r.phase.map((p,i)=>`<circle cx="${X(i).toFixed(1)}" cy="${Y(p.a).toFixed(1)}" r="2.6" fill="var(--amber-9)"/><circle cx="${X(i).toFixed(1)}" cy="${Y(p.b).toFixed(1)}" r="2.6" fill="var(--violet-9)"/>`).join('')}
+  </svg>`;
+}
+
+function vipBarRow(d){
+  const c=d.s>=70?'var(--pos)':d.s>=45?'var(--gold)':'var(--neg)';
+  return `<div class="vip-bar">
+    <div class="bl">${d.n}</div>
+    <div class="bt"><div class="bf" style="width:${d.s}%;background:${c}"></div></div>
+    <div class="bv" style="color:${c}">${d.s}</div>
+    <div class="bw">${d.t} <span style="color:var(--text-3);font-family:var(--font-mono);font-size:.62rem">· peso ${d.w}%</span>
+      ${d.fix?`<div style="color:var(--gold);margin-top:.25rem">↳ ${d.fix}</div>`:''}</div>
+  </div>`;
+}
+
+// ═══ VIP · VISTA ═══════════════════════════════════════════
+function pickVip(w,v){if(w==='a')vipA=+v;else vipB=+v;renderVip()}
+function vipSwap(){const t=vipA;vipA=vipB;vipB=t;renderVip()}
+function vipToggleBlood(){vipBlood=!vipBlood;renderVip()}
+function vipToggleRank(){vipRank=!vipRank;renderVip()}
+function vipPick(a,b){vipA=a;vipB=b;vipRank=false;renderVip();window.scrollTo({top:0,behavior:'smooth'})}
+
+function renderVip(){
+  const el=document.getElementById('vip-body');if(!el)return;
+  const idx=profiles.map((p,i)=>i).filter(i=>hasDate(profiles[i]));
+  if(idx.length<2){
+    el.innerHTML=`<div class="vip-head"><div class="vip-tag">◆ Sección Pareja</div>
+      <p class="muted">Necesito <b>dos personas con fecha de nacimiento completa</b> para armar el estudio. Añádelas en la pestaña Familia y vuelve aquí.</p></div>`;
+    return;
+  }
+  if(!idx.includes(vipA))vipA=idx.includes(activeIdx)?activeIdx:idx[0];
+  if(!idx.includes(vipB)||vipB===vipA)vipB=idx.find(i=>i!==vipA);
+  const PA=profiles[vipA],PB=profiles[vipB];
+  const r=coupleReport(PA,PB);
+  const sangre=isBloodPair(PA,PB);
+  const col=r.score>=65?'var(--pos)':r.score>=45?'var(--gold)':'var(--neg)';
+  const sel=on=>profiles.map((p,i)=>idx.includes(i)?opt(i,`${escapeHtml(p.name)} · LP${p.lp}`,i===on):'').join('');
+
+  // ranking de todas las parejas posibles
+  let rank='';
+  if(vipRank){
+    const pares=[];
+    for(let i=0;i<idx.length;i++)for(let j=i+1;j<idx.length;j++){
+      const a=profiles[idx[i]],b=profiles[idx[j]];
+      if(!vipBlood&&!vipPlausible(a,b))continue;
+      pares.push({a:idx[i],b:idx[j],s:coupleReport(a,b).score,na:a.name,nb:b.name});
+    }
+    pares.sort((x,y)=>y.s-x.s);
+    rank=`<div class="card"><div class="eyebrow">▲ Ranking de parejas posibles</div>
+      ${pares.length?pares.slice(0,12).map((p,i)=>{
+        const c=p.s>=65?'var(--pos)':p.s>=45?'var(--gold)':'var(--neg)';
+        const on=(p.a===vipA&&p.b===vipB)||(p.a===vipB&&p.b===vipA);
+        return `<button class="vip-rank${on?' on':''}" onclick="vipPick(${p.a},${p.b})">
+          <div class="pos">${i+1}</div>
+          <div class="who">${escapeHtml(p.na)} &amp; ${escapeHtml(p.nb)}<small>LP${profiles[p.a].lp} · LP${profiles[p.b].lp}</small></div>
+          <div class="val" style="color:${c}">${p.s}</div></button>`}).join('')
+        :`<p class="muted">Ningún par pasa el filtro: se excluyen familiares de sangre y saltos de generación. Activa la casilla de abajo si quieres ver todos los pares como afinidad general.</p>`}
+      <label class="vip-toggle"><input type="checkbox" ${vipBlood?'checked':''} onchange="vipToggleBlood()">Incluir sangre y otras generaciones</label>
+      <p class="muted" style="margin-top:.5rem;font-size:.78rem">${pares.length} par${pares.length===1?'':'es'} evaluado${pares.length===1?'':'s'} de ${idx.length*(idx.length-1)/2} posibles.</p></div>`;
+  }
+
+  el.innerHTML=`
+  <div class="vip-head">
+    <div class="vip-tag">◆ Sección Pareja · estudio de compatibilidad</div>
+    ${sangre?`<div class="vip-warn">⚠ Estas dos personas están marcadas como familiares de sangre en tu árbol. El estudio está pensado para vínculos de pareja; léelo como afinidad general.</div>`:''}
+    <div class="vip-duo">
+      <div class="vip-who"><div class="em">${AEMOJI[r.A.anim]}</div><div class="nm">${escapeHtml(r.nA)}</div>
+        <div class="mt">LP${r.A.lp} · ${ELEM5[r.eA]} · ${r.pA}</div></div>
+      <div class="vip-amp">&amp;</div>
+      <div class="vip-who"><div class="em">${AEMOJI[r.B.anim]}</div><div class="nm">${escapeHtml(r.nB)}</div>
+        <div class="mt">LP${r.B.lp} · ${ELEM5[r.eB]} · ${r.pB}</div></div>
+    </div>
+    <div class="vip-gauge">
+      <div class="vip-big" style="color:${col}">${r.score}<small>/100</small></div>
+      <div class="vip-verd"><div class="t">${r.verdict[0]}</div><div class="d">${r.verdict[1]}</div></div>
+    </div>
+    <div class="vip-note">Índice ponderado y determinista: no cambia de un día para otro. Lenguaje simbólico para pensar la relación, no un diagnóstico.</div>
+  </div>
+
+  <div class="card">
+    <div class="syn-pick">
+      <div class="field"><label>Persona A</label><select onchange="pickVip('a',this.value)">${sel(vipA)}</select></div>
+      <div class="syn-vs"><button class="tool-btn" onclick="vipSwap()" title="Intercambiar">⇄</button></div>
+      <div class="field"><label>Persona B</label><select onchange="pickVip('b',this.value)">${sel(vipB)}</select></div>
+    </div>
+    <button class="tool-btn" onclick="vipToggleRank()" style="width:100%">${vipRank?'▾ Ocultar ranking':'▲ Ver ranking de todas las parejas'}</button>
+  </div>
+  ${rank}
+
+  <div class="card">
+    <div class="eyebrow">⌗ Desglose por dimensión</div>
+    ${r.dims.map(vipBarRow).join('')}
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">◯ Geometría zodiacal</div>
+    <div style="overflow-x:auto">${vipWheel(r)}</div>
+    <div class="vip-legend">
+      <span style="color:var(--gold)">● ${escapeHtml(r.nA)}</span>
+      <span style="color:var(--accent)">● ${escapeHtml(r.nB)}</span>
+      ${r.lh?'<span style="color:var(--gold)">╌ armonía 六合</span>':''}
+      ${r.an==='friend'?'<span style="color:var(--pos)">△ mismo trine</span>':''}
+      ${r.an==='enemy'?'<span style="color:var(--neg)">— eje opuesto</span>':''}
+    </div>
+  </div>
+
+  <div class="vip-two">
+    <div class="card"><div class="eyebrow" style="color:var(--pos)">✦ Probablemente comparten</div>
+      ${r.comun.length?r.comun.map(([i,t])=>`<div class="vip-li"><i>${i}</i><span>${t}</span></div>`).join('')
+        :'<p class="muted">Poco terreno común estructural. No es sentencia: significa que lo que compartan lo van a construir ustedes.</p>'}</div>
+    <div class="card"><div class="eyebrow" style="color:var(--neg)">✕ Probablemente no</div>
+      ${r.choque.length?r.choque.map(([i,t,f])=>`<div class="vip-li"><i>${i}</i><span>${t}${f?`<div style="color:var(--gold);margin-top:.3rem">↳ ${f}</div>`:''}</span></div>`).join('')
+        :'<p class="muted">Sin choques estructurales detectados entre estas dos cartas.</p>'}</div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">🎲 Diez escenarios · teoría de juegos</div>
+    <p class="muted" style="margin-bottom:var(--size-3)">Cada situación típica de pareja es un juego distinto. Ordenados de donde mejor juegan a donde peor.</p>
+    ${r.escenarios.map(e=>{
+      const c=e.sc>=65?'var(--pos)':e.sc>=45?'var(--gold)':'var(--neg)';
+      return `<div class="vip-sc ${e.sc>=70?'good':e.sc<=38?'bad':''}">
+        <div class="vip-sc-h"><span class="ic">${e.ic}</span><span class="nm">${e.nom}</span><span class="sc" style="color:${c}">${e.sc}</span></div>
+        <div class="vip-sc-g">${e.g.n} · ${e.g.corto}</div>
+        <div class="vip-sc-t">${e.lec}</div>
+        <div class="vip-sc-k">${e.g.estrategia}</div></div>`}).join('')}
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">◷ Proyección de fases · 9 ciclos</div>
+    <p class="muted" style="margin-bottom:var(--size-3)">Año personal de cada uno en los próximos nueve cumpleaños. Las dos curvas suben en paralelo — el desfase de <b>${r.dist}</b> entre ustedes nunca cambia — así que lo que importa no es cuándo se cruzan, sino <b>en qué fase cae cada quien</b> cada año.</p>
+    <div style="overflow-x:auto">${vipPhaseChart(r)}</div>
+    <div class="vip-legend">
+      <span style="color:var(--gold)">— ${escapeHtml(r.nA)}</span>
+      <span style="color:var(--accent)">╌ ${escapeHtml(r.nB)}</span>
+      <span style="color:var(--pos)">▮ los dos en fase de construir (1·2·3·6)</span>
+      <span style="color:var(--gold)">▮ año de cambio o cierre para alguno (5·9)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">✧ Curiosidades</div>
+    ${r.curios.map(c=>`<div class="vip-cur"><span>${c}</span></div>`).join('')}
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">◈ Mejores días para los dos · ${MONTHS_ES[cur.month]}</div>
+    ${sharedDays(r.A,r.B,cur.year,cur.month).slice(0,5).map(x=>
+      `<button class="row-item row-good" onclick="jumpTo(${cur.year},${cur.month},${x.day})">
+        <div class="row-day">${x.day}</div>
+        <div class="row-info"><div class="row-meta">${escapeHtml(r.nA).toUpperCase()} ${x.a>0?'+':''}${x.a} · ${escapeHtml(r.nB).toUpperCase()} ${x.b>0?'+':''}${x.b}</div>
+        <div class="row-why">${x.why.join(' · ')||'día tranquilo para ambos'}</div></div>
+        <div class="row-score">${x.s>0?'+':''}${x.s}</div></button>`).join('')}
+  </div>
+
+  <p class="credit">Estudio determinista sobre numerología GG33 y calendario chino preciso.<br>
+  Mantén pulsada la firma del pie para volver a ocultar esta sección.</p>`;
+}
+
 // ═══ ORQUESTADOR ═══════════════════════════════════════════
 function renderAll(){
   if(tab==='hoy')renderHoy();
@@ -2209,6 +2736,7 @@ function renderAll(){
   if(tab==='anio')renderAnio();
   if(tab==='plan')renderPlan();
   if(tab==='perfil')renderProfiles();
+  if(tab==='vip')renderVip();
   document.getElementById('who-btn').textContent=user?user.name.trim()[0].toUpperCase():'✦';
 }
 
@@ -2247,6 +2775,14 @@ if('serviceWorker' in navigator){
 
 // ═══ INIT ══════════════════════════════════════════════════
 loadStore();syncUser();
+try{vipOn=localStorage.getItem(VIPK)==='1'}catch(e){vipOn=false}
+vipApply();
+(()=>{
+  const s=document.getElementById('foot-sig');if(!s)return;
+  s.addEventListener('click',sigTap);
+  s.addEventListener('pointerdown',sigDown);
+  ['pointerup','pointerleave','pointercancel'].forEach(ev=>s.addEventListener(ev,sigUp));
+})();
 go('hoy');
 loadData().then(ok=>{if(ok)renderAll()});
 updatePwaStatus();

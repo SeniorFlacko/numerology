@@ -1,5 +1,5 @@
 /* GG33 · service worker — app shell offline */
-const V='gg33-v5';
+const V='gg33-v7';
 const SHELL=['./','./index.html','./manifest.webmanifest','./data.json',
   './vendor/cytoscape.min.js',
   './icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable-512.png','./icons/icon-180.png'];
